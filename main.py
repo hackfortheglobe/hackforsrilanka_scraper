@@ -58,7 +58,10 @@ def process_tables(tables):
 
         df = pd.DataFrame(data=df.iloc[1:].values, columns=df.iloc[0])
         df['start_time'] = df['Period'].apply(lambda x: x.split(' ')[0] if ' ' in x else x.split('-')[0])
-        df['end_time'] = df['Period'].apply(lambda x: x.split(' ')[0] if ' ' in x else x.split('-')[-1])
+        df['end_time'] = df['Period'].apply(lambda x: x.split(' ')[-1] if ' ' in x else x.split('-')[-1])
+
+        df['start_time'] = df['start_time'].apply(lambda x: x.replace('–', ''))
+        df['end_time'] = df['end_time'].apply(lambda x: x.replace('–', ''))
 
         for jj in range(len(df)):
             eles = df['Schedule Group'][jj].replace(' ', '').split(',')
