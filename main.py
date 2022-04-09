@@ -1,4 +1,3 @@
-import requests
 from lxml import html
 import requests
 import camelot
@@ -7,6 +6,11 @@ import pandas as pd
 from datetime import datetime
 import pytz
 import uuid
+import json
+
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+sched = BlockingScheduler()
 
 # request, bypass certificate check
 req = requests.get('https://ceb.lk', verify=False)
@@ -20,6 +24,17 @@ sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
 gd_link = [i for i in links if 'drive.google.com' in i]
 # remove duplicates
 gd_link = list(set(gd_link))
+
+
+def retrieve_url():
+    req = requests.get('https://ceb.lk', verify=False)
+    webpage = html.fromstring(req.content)
+    links = webpage.xpath('//a/@href')
+    # look for google drive link
+    gd_link = [i for i in links if 'drive.google.com' in i]
+    # remove duplicates
+    gd_link = list(set(gd_link))
+    return gd_link[0]
 
 def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
@@ -50,8 +65,6 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-
-
 def process_tables(tables):
     dff = pd.DataFrame()
 
@@ -83,6 +96,10 @@ if __name__ == "__main__":
     # convert to json format {"group":..., "start_time":..., "end_time":...}
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
 
+    dict_obj = {"schedules": json.loads(json_out)}
+
+    print(dict_obj)
+    # 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
     # print(json_out)
 
 
