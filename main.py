@@ -98,7 +98,8 @@ if __name__ == "__main__":
 
     dict_obj = {"schedules": json.loads(json_out)}
     print(dict_obj)
-    requests.post('https://hackforsrilanka-api.herokuapp.com/api/illuminati/data', json=dict_obj)
+    r = requests.post('https://hackforsrilanka-api.herokuapp.com/api/illuminati/data', json=dict_obj)
+    print(r.text)
 
     # 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
     # print(json_out)
