@@ -74,4 +74,4 @@ def process_tables(tables):
 
 tables = camelot.read_pdf('ceb_googledoc.pdf', pages = 'all')
 # convert to json format {"Group":..., "start_time":..., "end_time":...}
-json_out = process_tables(tables).reset_index(drop=True).to_json()
+json_out = process_tables(tables).reset_index(drop = True).to_json(orient = 'records')
