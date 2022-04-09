@@ -84,8 +84,8 @@ def process_tables(tables):
             eles = ' '.join(eles).split()
             for ele in eles:
                 dff = dff.append(pd.DataFrame(data={'group_name': ele, 'starting_period': [df.iloc[jj]['starting_period']],
-                                                    'ending_period': [df.iloc[jj]['ending_period']],
-                                                    'unique_id': str(uuid.uuid1())}))
+                                                    'ending_period': [df.iloc[jj]['ending_period']]
+                                                    }))
         return dff
 
 if __name__ == "__main__":
@@ -97,8 +97,9 @@ if __name__ == "__main__":
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
 
     dict_obj = {"schedules": json.loads(json_out)}
-
     print(dict_obj)
+    requests.post('https://hackforsrilanka-api.herokuapp.com/api/illuminati/data', json=dict_obj)
+
     # 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
     # print(json_out)
 
