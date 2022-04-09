@@ -16,7 +16,7 @@ def timed_job():
         tables = camelot.read_pdf(destination)
         json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
         dict_obj = {"schedules": json.loads(json_out)}
-        requests.post('https://hackforsrilanka-api.herokuapp.com/api/illuminati/data', json=self.output_json())
+        requests.post('https://hackforsrilanka-api.herokuapp.com/api/illuminati/data', json=dict_obj)
 
     else:
         pass
