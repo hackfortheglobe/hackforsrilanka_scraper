@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # convert to json format {"group":..., "start_time":..., "end_time":...}
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
 
-    print(json_out)
+    # print(json_out)
 
 
 
