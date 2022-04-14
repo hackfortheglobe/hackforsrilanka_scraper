@@ -1,17 +1,18 @@
+from calendar import c
+from pickle import FALSE, TRUE
 from lxml import html
 import requests
 import camelot
 import pandas as pd
-
 from datetime import datetime
 import pytz
 import json
-
 from apscheduler.schedulers.blocking import BlockingScheduler
-
 import logging
 import logging.config
 import yaml
+import os
+import sys
 
 # Init logging into file and console
 with open('logging_config.yml', 'r') as config:
@@ -19,6 +20,8 @@ with open('logging_config.yml', 'r') as config:
 logger = logging.getLogger(__name__)
 
 logging.info('Scraper init')
+
+lastIdStorage = './assets/last_ceb_filename.txt'
 
 # Init scheduler
 sched = BlockingScheduler()
@@ -36,6 +39,22 @@ def get_target_url():
     # remove duplicates
     gd_link = list(set(gd_link))
     return gd_link[0]
+
+def validate_target_id(currentId):
+    # Check if the file is present and their content is not currentId
+    if os.path.isfile(lastIdStorage):
+        text_file = open(lastIdStorage, "r")
+        lastId = text_file.read()
+        text_file.close()
+        if (lastId == currentId):
+            return False
+    # Is valid: return True
+    return True
+
+def save_last_id_processed(currentId):
+    # Override the content of lastIdStorage for next validate_target_id()
+    with open(lastIdStorage,'w') as f:
+        f.write(currentId)
 
 def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
@@ -87,13 +106,23 @@ def process_tables(tables):
 if __name__ == "__main__":
     logging.info('Scraper start')
 
-    # Get the Google Docs file
+    # Get the Google Docs url
     targetUrl = get_target_url()
     logging.info("Target Google Docs URL:" + targetUrl)
-    file_id = targetUrl.split('/')[5]
+
+    # Validate not processed
+    targetId = targetUrl.split('/')[5]
+    isValidId = validate_target_id(targetId)
+    if not isValidId:
+        logging.info("Skipping target, this file is already processed")
+        sys.exit()
+        
+    logging.info("Detected new document to process")    
+
+    # Download the Google Docs
     destination = './assets/ceb_googledoc.pdf'
     logging.info("Saving Google Doc into " + destination)
-    download_file_from_google_drive(file_id, destination)
+    download_file_from_google_drive(targetId, destination)
     
     # Extract the data from the file
     tables = camelot.read_pdf('./assets/ceb_googledoc.pdf')
@@ -108,11 +137,13 @@ if __name__ == "__main__":
     response = requests.post(api_url, json=dict_obj)
 
     # Log the response from API
-    if (response.status_code == 200):
-        logging.info("Data posted successfully")
-    else:
-        logging.error("Error posting data")
     logging.info("Response code: " + str(response.status_code))
     logging.info("Response reason: " + response.reason)
     logging.info("Response content: " + str(response.content))
+
+    if (response.status_code == 200):
+        logging.info("Data posted successfully")
+        save_last_id_processed(targetId)
+    else:
+        logging.error("Error posting data")
         
