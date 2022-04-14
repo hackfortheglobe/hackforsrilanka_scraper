@@ -13,6 +13,9 @@ import logging.config
 import yaml
 import os
 import sys
+import time
+
+start_time = time.time()
 
 # Init logging into file and console
 with open('logging_config.yml', 'r') as config:
@@ -82,7 +85,7 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-                
+
 def process_tables(tables):
     logging.info("Processing Tables")
     dff = pd.DataFrame()
@@ -103,6 +106,11 @@ def process_tables(tables):
                                                     }))
         return dff
 
+def logFinish(reason):
+    logging.info("========> %s" % (reason))
+    logging.info("========> %s seconds" % (time.time() - start_time))
+    logging.info("")
+
 if __name__ == "__main__":
     logging.info('Scraper start')
 
@@ -114,9 +122,9 @@ if __name__ == "__main__":
     targetId = targetUrl.split('/')[5]
     isValidId = validate_target_id(targetId)
     if not isValidId:
-        logging.info("Skipping target, this file is already processed")
+        logFinish("Skipping target, this file is already processed")
         sys.exit()
-        
+
     logging.info("Detected new document to process")    
 
     # Download the Google Docs
@@ -142,8 +150,9 @@ if __name__ == "__main__":
     logging.info("Response content: " + str(response.content))
 
     if (response.status_code == 200):
-        logging.info("Data posted successfully")
         save_last_id_processed(targetId)
+        logFinish("Data posted successfully")
     else:
         logging.error("Error posting data")
+        logFinish("Error posting data")
         
