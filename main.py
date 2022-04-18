@@ -139,20 +139,29 @@ if __name__ == "__main__":
     dict_obj = {"schedules": json.loads(json_out)}
     api_url = 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
 
-    # Push the scraped data into our API 
-    logging.info("Posting data to: " + api_url)
+	# Log extracted data
+	data_size = len(json_out)
+	logging.info("Obtained %s new squedules" % (data_size))
     logging.info(dict_obj)
-    response = requests.post(api_url, json=dict_obj)
+	
+	if not 'POST_TO_API' in os.environ or os.get('POST_TO_API'] != 'true':
+		# Skipping the post
+		logging.info("Skipping data post to API")
+		logFinish("Skipped post of %s new squedules" % (data_size)))
+	else:
+		# Post the scraped data into our API 
+		logging.info("Post data to API at: " + api_url)
+		response = requests.post(api_url, json=dict_obj)
 
-    # Log the response from API
-    logging.info("Response code: " + str(response.status_code))
-    logging.info("Response reason: " + response.reason)
-    logging.info("Response content: " + str(response.content))
+		# Log the response from API
+		logging.info("Response code: " + str(response.status_code))
+		logging.info("Response reason: " + response.reason)
+		logging.info("Response content: " + str(response.content))
 
-    if (response.status_code == 200):
-        save_last_id_processed(targetId)
-        logFinish("Data posted successfully")
-    else:
-        logging.error("Error posting data")
-        logFinish("Error posting data")
+		if (response.status_code == 200):
+			save_last_id_processed(targetId)
+			logFinish("Data posted successfully")
+		else:
+			logging.error("Error posting data")
+			logFinish("Error posting data")
         
