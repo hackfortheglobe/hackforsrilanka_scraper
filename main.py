@@ -63,6 +63,12 @@ def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
     return time_str
 
+def get_new_destination_path():
+    now = datetime.now()
+    formatedDate = time.strftime("%y-%m-%d_%H:%M:%S")
+    destinationPath = "./assets/ceb_%s.pdf" % (formatedDate)
+    return destinationPath
+
 def download_file_from_google_drive(id, destination):
     URL = "https://docs.google.com/uc?export=download"
     session = requests.Session()
@@ -128,12 +134,12 @@ if __name__ == "__main__":
     logging.info("Detected new document to process")    
 
     # Download the Google Docs
-    destination = './assets/ceb_googledoc.pdf'
+    destination = get_new_destination_path()
     logging.info("Saving Google Doc into " + destination)
     download_file_from_google_drive(targetId, destination)
     
     # Extract the data from the file
-    tables = camelot.read_pdf('./assets/ceb_googledoc.pdf')
+    tables = camelot.read_pdf(destination)
     # convert to json format {"group":..., "start_time":..., "end_time":...}
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
     dict_obj = {"schedules": json.loads(json_out)}
