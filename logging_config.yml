@@ -13,7 +13,7 @@ handlers:
     class: logging.FileHandler
     level: INFO
     formatter: standard
-    filename: scraper.log
+    filename: hfsl_backend_scraper.log
   # email:
   #   class: logging.handlers.SMTPHandler
   #   level: WARNING
