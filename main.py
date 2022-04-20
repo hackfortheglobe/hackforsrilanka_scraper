@@ -104,7 +104,8 @@ def process_tables(tables):
         df['ending_period'] = df['ending_period'].apply(lambda x: x.replace('–', '')).apply(lambda x: convert_time(x))
 
         for jj in range(len(df)):
-            eles = df['Schedule Group'][jj].replace(' ', '').split(',')
+            # TODO: check for 'Schedule Group' and 'Group'
+            eles = df['Group'][jj].replace(' ', '').split(',')
             eles = ' '.join(eles).split()
             for ele in eles:
                 dff = dff.append(pd.DataFrame(data={'group_name': ele, 'starting_period': [df.iloc[jj]['starting_period']],
