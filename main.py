@@ -65,7 +65,7 @@ def convert_time(time_str, time_date = sl_time):
 
 def get_new_destination_path():
     now = datetime.now()
-    formatedDate = time.strftime("%y-%m-%d_%H:%M:%S")
+    formatedDate = time.strftime("%y-%m-%d_%H-%M-%S")
     destinationPath = "./assets/ceb_%s.pdf" % (formatedDate)
     return destinationPath
 
@@ -141,6 +141,7 @@ if __name__ == "__main__":
     
     # Extract the data from the file
     tables = camelot.read_pdf(destination)
+    
     # convert to json format {"group":..., "start_time":..., "end_time":...}
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
     dict_obj = {"schedules": json.loads(json_out)}
