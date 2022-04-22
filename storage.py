@@ -8,8 +8,9 @@ class Storage:
   localLastIdPath = './assets/last_ceb_filename.txt'
   localCurrentPath = './assets/ceb_current.pdf'
 
-  def __init__(self, start_datetime):
+  def __init__(self, start_datetime, logger):
     self.start_datetime = start_datetime
+    self.logger = logger
 
   def myfunc(abc):
     print("Hello my name is " + abc.name)

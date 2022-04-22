@@ -23,16 +23,13 @@ start_datetime = datetime.now()
 with open('logging_config.yml', 'r') as config:
     logging.config.dictConfig(yaml.safe_load(config))
 logger = logging.getLogger(__name__)
-
-logging.info('Scraper init')
-
-
+logger.info('Scraper init')
 
 # Init scheduler
 sched = BlockingScheduler()
 
 # Init storage
-storage = Storage(start_datetime)
+storage = Storage(start_datetime, logger)
 
 # Get Sri Lanka local time
 sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
@@ -76,7 +73,7 @@ def save_response_content(response, destination):
                 f.write(chunk)
 
 def process_tables(tables):
-    logging.info("Processing Tables")
+    logger.info("Processing Tables")
     dff = pd.DataFrame()
     for ii in range(2):
         df = tables[ii].df
@@ -97,16 +94,16 @@ def process_tables(tables):
         return dff
 
 def logFinish(reason):
-    logging.info("========> %s" % (reason))
-    logging.info("========> %s seconds" % (datetime.now().timestamp() - start_datetime.timestamp()))
-    logging.info("")
+    logger.info("========> %s" % (reason))
+    logger.info("========> %s seconds" % (datetime.now().timestamp() - start_datetime.timestamp()))
+    logger.info("")
 
 if __name__ == "__main__":
-    logging.info('Scraper start')
+    logger.info('Scraper start')
 
     # Get the Google Docs url
     targetUrl = get_target_url()
-    logging.info("Target Google Docs URL:" + targetUrl)
+    logger.info("Target Google Docs URL:" + targetUrl)
 
     # Validate not processed
     targetId = targetUrl.split('/')[5]
@@ -115,11 +112,11 @@ if __name__ == "__main__":
         logFinish("Skipping target, this file is already processed")
         sys.exit()
 
-    logging.info("Detected new document to process")    
+    logger.info("Detected new document to process")    
 
     # Download the Google Docs
     localDocPath = storage.get_local_doc_path()
-    logging.info("Saving Google Doc into " + localDocPath)
+    logger.info("Saving Google Doc into " + localDocPath)
     download_file_from_google_drive(targetId, localDocPath)
     
     # Extract the data from the file
@@ -132,27 +129,27 @@ if __name__ == "__main__":
 
 	# Log extracted data
     data_size = len(json_out)
-    logging.info("Obtained %s new squedules" % (data_size))
-    logging.info(dict_obj)
+    logger.info("Obtained %s new squedules" % (data_size))
+    logger.info(dict_obj)
     
     if not 'POST_TO_API' in os.environ or os.get('POST_TO_API') != 'true':
         # Skipping the post
-        logging.info("Skipping data post to API")
+        logger.info("Skipping data post to API")
         logFinish("Skipped post of %s entries" % (data_size))
     else:
         # Post the scraped data into our API 
-        logging.info("Post data to API at: " + api_url)
+        logger.info("Post data to API at: " + api_url)
         response = requests.post(api_url, json=dict_obj)
         
         # Log the response from API
-        logging.info("Response code: " + str(response.status_code))
-        logging.info("Response reason: " + response.reason)
-        logging.info("Response content: " + str(response.content))
+        logger.info("Response code: " + str(response.status_code))
+        logger.info("Response reason: " + response.reason)
+        logger.info("Response content: " + str(response.content))
 
         if (response.status_code == 200):
             storage.save_doc_id(targetId)
             logFinish("Data posted successfully (%s entries" % (data_size))
         else:
-            logging.error("Error posting data")
+            logger.error("Error posting data")
             logFinish("Error posting data")
 	
