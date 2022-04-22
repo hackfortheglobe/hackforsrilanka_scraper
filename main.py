@@ -7,7 +7,6 @@ import pandas as pd
 from datetime import datetime
 import pytz
 import json
-from apscheduler.schedulers.blocking import BlockingScheduler
 import logging
 import logging.config
 import yaml
@@ -15,7 +14,10 @@ import os
 import sys
 import time
 
-start_time = time.time()
+from apscheduler.schedulers.blocking import BlockingScheduler
+from storage import Storage
+
+start_datetime = datetime.now()
 
 # Init logging into file and console
 with open('logging_config.yml', 'r') as config:
@@ -24,10 +26,13 @@ logger = logging.getLogger(__name__)
 
 logging.info('Scraper init')
 
-lastIdStorage = './assets/last_ceb_filename.txt'
+
 
 # Init scheduler
 sched = BlockingScheduler()
+
+# Init storage
+storage = Storage(start_datetime)
 
 # Get Sri Lanka local time
 sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
@@ -43,31 +48,9 @@ def get_target_url():
     gd_link = list(set(gd_link))
     return gd_link[0]
 
-def validate_target_id(currentId):
-    # Check if the file is present and their content is not currentId
-    if os.path.isfile(lastIdStorage):
-        text_file = open(lastIdStorage, "r")
-        lastId = text_file.read()
-        text_file.close()
-        if (lastId == currentId):
-            return False
-    # Is valid: return True
-    return True
-
-def save_last_id_processed(currentId):
-    # Override the content of lastIdStorage for next validate_target_id()
-    with open(lastIdStorage,'w') as f:
-        f.write(currentId)
-
 def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
     return time_str
-
-def get_new_destination_path():
-    now = datetime.now()
-    formatedDate = time.strftime("%y-%m-%d_%H-%M-%S")
-    destinationPath = "./assets/ceb_%s.pdf" % (formatedDate)
-    return destinationPath
 
 def download_file_from_google_drive(id, destination):
     URL = "https://docs.google.com/uc?export=download"
@@ -115,7 +98,7 @@ def process_tables(tables):
 
 def logFinish(reason):
     logging.info("========> %s" % (reason))
-    logging.info("========> %s seconds" % (time.time() - start_time))
+    logging.info("========> %s seconds" % (datetime.now().timestamp() - start_datetime.timestamp()))
     logging.info("")
 
 if __name__ == "__main__":
@@ -127,7 +110,7 @@ if __name__ == "__main__":
 
     # Validate not processed
     targetId = targetUrl.split('/')[5]
-    isValidId = validate_target_id(targetId)
+    isValidId = storage.validate_doc_id(targetId)
     if not isValidId:
         logFinish("Skipping target, this file is already processed")
         sys.exit()
@@ -135,12 +118,12 @@ if __name__ == "__main__":
     logging.info("Detected new document to process")    
 
     # Download the Google Docs
-    destination = get_new_destination_path()
-    logging.info("Saving Google Doc into " + destination)
-    download_file_from_google_drive(targetId, destination)
+    localDocPath = storage.get_local_doc_path()
+    logging.info("Saving Google Doc into " + localDocPath)
+    download_file_from_google_drive(targetId, localDocPath)
     
     # Extract the data from the file
-    tables = camelot.read_pdf(destination)
+    tables = camelot.read_pdf(localDocPath)
     
     # convert to json format {"group":..., "start_time":..., "end_time":...}
     json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
@@ -167,7 +150,7 @@ if __name__ == "__main__":
         logging.info("Response content: " + str(response.content))
 
         if (response.status_code == 200):
-            save_last_id_processed(targetId)
+            storage.save_doc_id(targetId)
             logFinish("Data posted successfully (%s entries" % (data_size))
         else:
             logging.error("Error posting data")
