@@ -97,6 +97,7 @@ def logFinish(reason):
     logger.info("========> %s" % (reason))
     logger.info("========> %s seconds" % (datetime.now().timestamp() - start_datetime.timestamp()))
     logger.info("")
+    sys.exit()
 
 if __name__ == "__main__":
     logger.info('Scraper start')
@@ -104,14 +105,19 @@ if __name__ == "__main__":
     # Get the Google Docs url
     targetUrl = get_target_url()
     logger.info("Target Google Docs URL:" + targetUrl)
-
-    # Validate not processed
     targetId = targetUrl.split('/')[5]
+
+    # Donwload last processed id by ftp
+    try:
+        storage.download_last_processed()
+    except Exception as e:
+        logger.error(e)
+        logFinish("Error downloading last processed Id")
+
+    # Check if should continue processing
     isValidId = storage.validate_doc_id(targetId)
     if not isValidId:
         logFinish("Skipping target, this file is already processed")
-        sys.exit()
-
     logger.info("Detected new document to process")    
 
     # Download the Google Docs
@@ -131,8 +137,8 @@ if __name__ == "__main__":
     data_size = len(json_out)
     logger.info("Obtained %s new squedules" % (data_size))
     logger.info(dict_obj)
-    
-    if not 'POST_TO_API' in os.environ or os.get('POST_TO_API') != 'true':
+
+    if not 'POST_TO_API' in os.environ or os.environ.get('POST_TO_API') != 'true':
         # Skipping the post
         logger.info("Skipping data post to API")
         logFinish("Skipped post of %s entries" % (data_size))
@@ -147,7 +153,7 @@ if __name__ == "__main__":
         logger.info("Response content: " + str(response.content))
 
         if (response.status_code == 200):
-            storage.save_doc_id(targetId)
+            storage.save_processed(targetId)
             logFinish("Data posted successfully (%s entries" % (data_size))
         else:
             logger.error("Error posting data")
