@@ -84,8 +84,16 @@ def process_tables(tables):
         df['ending_period'] = df['ending_period'].apply(lambda x: x.replace('–', '')).apply(lambda x: convert_time(x))
 
         for jj in range(len(df)):
-            # TODO: check for 'Schedule Group' and 'Group'
-            eles = df['Group'][jj].replace(' ', '').split(',')
+            if 'Schedule Group' in df.columns:
+                column = df['Schedule Group']
+            elif 'Group' in df.columns:
+                column = df['Group']
+            else:
+                logging.error("Not found column called 'Schedule Group' or 'Group'")
+                logFinish("Unable to parse the pdf tables, the structure could have changed")
+                return
+                
+            eles = column[jj].replace(' ', '').split(',')
             eles = ' '.join(eles).split()
             for ele in eles:
                 dff = dff.append(pd.DataFrame(data={'group_name': ele, 'starting_period': [df.iloc[jj]['starting_period']],
