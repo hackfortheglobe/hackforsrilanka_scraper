@@ -13,6 +13,7 @@ import yaml
 import os
 import sys
 import time
+import re
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from storage import Storage
@@ -35,15 +36,31 @@ storage = Storage(start_datetime, logger)
 sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
 
 def get_target_url():
-    # request, bypass certificate check
+    # request ceb.lk home page
     req = requests.get('https://ceb.lk', verify=False)
     webpage = html.fromstring(req.content)
     links = webpage.xpath('//a/@href')
-    # look for google drive link
+    
+    # look for google drive links
     gd_link = [i for i in links if 'drive.google.com' in i]
-    # remove duplicates
     gd_link = list(set(gd_link))
-    return gd_link[0]
+    if len(gd_link)>0:
+        return gd_link[0]
+
+    # look for bit.ly links and resolve it
+    bl_link = [i for i in links if 'bit.ly' in i]
+    bl_link = list(set(bl_link))
+    if len(bl_link)>0:
+        logger.info("Resolving Bit.ly: %s" % (bl_link[0]))
+        req = requests.get(bl_link[0] + '+', verify=False)
+        resolved_gd_link = re.search("\"long_url\": \"(.*)\", \"user_hash\": \"", str(req.content)).group(1)
+        logger.info("Resolved Bit.ly: %s" % (resolved_gd_link))
+        return resolved_gd_link
+
+    logging.error("Not Google Drive link or Bit.ly links founded")
+    logFinish("Unable to find document url")
+                
+
 
 def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
@@ -92,7 +109,7 @@ def process_tables(tables):
                 logging.error("Not found column called 'Schedule Group' or 'Group'")
                 logFinish("Unable to parse the pdf tables, the structure could have changed")
                 return
-                
+
             eles = column[jj].replace(' ', '').split(',')
             eles = ' '.join(eles).split()
             for ele in eles:
