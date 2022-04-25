@@ -14,6 +14,8 @@ import os
 import sys
 import time
 import re
+from pathlib import Path
+import string
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from storage import Storage
@@ -59,8 +61,6 @@ def get_target_url():
 
     logging.error("Not Google Drive link or Bit.ly links founded")
     logFinish("Unable to find document url")
-                
-
 
 def convert_time(time_str, time_date = sl_time):
     time_str = time_date+'T'+time_str+':00.000Z'
@@ -88,6 +88,13 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
+
+def extract_schedules(localDocPath):
+    tables = camelot.read_pdf(localDocPath)
+    dataframe = process_tables(tables)
+    # convert to json format {"group":..., "start_time":..., "end_time":...}
+    json_out = dataframe.reset_index(drop=True).to_json(orient='records')
+    return json_out
 
 def process_tables(tables):
     logger.info("Processing Tables")
@@ -117,6 +124,99 @@ def process_tables(tables):
                                                     'ending_period': [df.iloc[jj]['ending_period']]
                                                     }))
         return dff
+
+def extract_locations(pdf_dir):
+    # reading the pdf file
+    tables = camelot.read_pdf(pdf_dir,pages='all')
+    # dictionary to store all tables in pandas dataframe with keys assigned as data0,data1 and so on..to process
+    data_dic = {}
+    # getting all the tables from pdf file
+    for no in range(0,len(tables)):
+        data_dic['data{}'.format(no)] = tables[no].df
+    # It checks group info in each database by looping through database and each cell of that
+    # here 'no' is dataFrame/table no & 'x' is column no
+    all_groups = [] # all groups that are indexed in starting pages
+    actual_groups = [] # Groups infs available in the cells of their table
+    for no in range(0,len(data_dic)):
+        for x in range(0,data_dic['data{}'.format(no)].shape[1]):
+            if 'Group' in data_dic['data{}'.format(no)].iloc[0].values[x]:
+                if no>6 :
+                    actual_groups.append((no,x))
+                else:
+                    all_groups.append((no,x))
+    # Setting columns for main(all) grouping data
+    for y in range(0,len(all_groups)):
+        data_dic['data{}'.format(y)].columns  = data_dic['data{}'.format(y)].iloc[0]
+        data_dic['data{}'.format(y)].drop(0,inplace=True)
+    # look for what groups we have by looping through columns data
+    groups =[]
+    for table_no in range(0,len(all_groups)):
+        current_table = data_dic['data{}'.format(table_no)]
+        #TODO pick groups by column name
+        for x in current_table.iloc[:,3].values:
+            print(x)
+            for letter in string.ascii_uppercase:
+                if letter in x:
+                    groups.append(letter)
+    groups = [x for x in groups if x in groups]
+    groups = set(groups)
+    groups = sorted(groups)
+    main_dict = {}
+    group_count = 0
+
+    print (groups)
+    print(all_groups)
+    print(data_dic)
+
+    # settings indexes,removing extra row, assigning groups
+    for table_no in range(len(all_groups),len(data_dic)):
+        
+        current_table = data_dic['data{}'.format(table_no)]
+        print("Parsing table %s: %s", table_no, current_table)
+
+        # it checks whether tht table has 3 cols
+        # it rules out of adding unsymmetrical data to group which just got processed
+        if current_table.shape[1] == 3:
+            # it checks whether the data is countinuing for last group or data of new group
+            col_check=[]
+            for col in current_table.iloc[0].values:
+                if 'GSS' in col:
+                    col_check.append(True)
+                elif 'Affected' in col:
+                    col_check.append(True)
+                elif 'Feeder' in col:
+                    col_check.append(True)
+                else:
+                    col_check.append(False)
+            # Starting a New Group
+            if all(col_check):
+                current_table.columns  = ['GSS','Feeder No','Affected area']
+                current_table.drop(0,inplace=True)
+                main_dict['Group {}'.format(groups[group_count])] = current_table
+                last_group = 'Group {}'.format(groups[group_count])
+                group_count+=1
+            # Starting new group for data whose groups are not indexed on above pages
+            if actual_groups:
+                if table_no>=actual_groups[0][0] and table_no<=actual_groups[-1][0]:
+                    current_table.columns  = ['GSS','Feeder No','Affected area']
+                    main_dict[current_table.iloc[0].values[0]]= current_table[2:]
+                    last_group = current_table.iloc[0].values[0]
+            # it is concatenating continous data of last group(Note: one filter only which is.. it should have 3 columns
+            else:
+                current_table.columns = ['GSS','Feeder No','Affected area']
+                main_dict[last_group] = pd.concat([main_dict[last_group],current_table])
+    final={}
+    # Resetting index and converting into dic
+    for group,table in main_dict.items():
+        table.reset_index(drop=True)
+        table = table.to_dict('list')
+        final[group] = table
+
+    # Save into a file
+    with open('locations_data.json', 'w') as outfile:
+        json.dump(final, outfile, indent=4)
+
+    return final
 
 def logFinish(reason):
     logger.info("========> %s" % (reason))
@@ -150,25 +250,30 @@ if __name__ == "__main__":
     logger.info("Saving Google Doc into " + localDocPath)
     download_file_from_google_drive(targetId, localDocPath)
     
-    # Extract the data from the file
-    tables = camelot.read_pdf(localDocPath)
-    
-    # convert to json format {"group":..., "start_time":..., "end_time":...}
-    json_out = process_tables(tables).reset_index(drop=True).to_json(orient='records')
-    dict_obj = {"schedules": json.loads(json_out)}
-    api_url = 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
+    # Extract locations
+    json_locations = extract_locations(localDocPath)
+    data_size = len(json_locations)
+    logger.info("Obtained %s new squedules" % (data_size))
+    logger.info(json_locations)
 
-	# Log extracted data
-    data_size = len(json_out)
+    # Extract schedules
+    json_schedules = extract_schedules(localDocPath)
+    dict_obj = {"schedules": json.loads(json_schedules)}
+
+	# Log extracted schedules
+    data_size = len(json_schedules)
     logger.info("Obtained %s new squedules" % (data_size))
     logger.info(dict_obj)
 
+
+    # Uploading schedules to our API
     if not 'POST_TO_API' in os.environ or os.environ.get('POST_TO_API') != 'true':
         # Skipping the post
         logger.info("Skipping data post to API")
         logFinish("Skipped post of %s entries" % (data_size))
     else:
-        # Post the scraped data into our API 
+        # Post the scraped data into our API
+        api_url = 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
         logger.info("Post data to API at: " + api_url)
         response = requests.post(api_url, json=dict_obj)
         
