@@ -31,8 +31,16 @@ logger.info('Scraper init')
 # Init scheduler
 sched = BlockingScheduler()
 
+# Init dev_mode variable
+if not 'POST_TO_API' in os.environ or os.environ.get('POST_TO_API') != 'true':
+    logger.info("Dev mode enabled (no push to api and no connections to ftp storage).")
+    dev_mode = True
+else:
+    logger.info("Dev mode disabled (data will be pushed to our API and stored in our FTP storage).")
+    dev_mode = False
+
 # Init storage
-storage = Storage(start_datetime, logger)
+storage = Storage(start_datetime, logger, dev_mode)
 
 # Get Sri Lanka local time
 sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
@@ -213,8 +221,9 @@ def extract_locations(pdf_dir):
         final[group] = table
 
     # Save into a file
-    with open('locations_data.json', 'w') as outfile:
-        json.dump(final, outfile, indent=4)
+    if dev_mode:
+        with open('locations_data.json', 'w') as outfile:
+            json.dump(final, outfile, indent=4)
 
     return final
 
@@ -267,7 +276,7 @@ if __name__ == "__main__":
 
 
     # Uploading schedules to our API
-    if not 'POST_TO_API' in os.environ or os.environ.get('POST_TO_API') != 'true':
+    if dev_mode:
         # Skipping the post
         logger.info("Skipping data post to API")
         logFinish("Skipped post of %s entries" % (data_size))

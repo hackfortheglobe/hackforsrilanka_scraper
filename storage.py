@@ -1,4 +1,3 @@
-
 from distutils.command.upload import upload
 from ftplib import FTP
 import os
@@ -15,9 +14,10 @@ class Storage:
   remote_password = os.environ.get('FTP_PASSWORD')
   remoteDebugValue = 0
 
-  def __init__(self, start_datetime, logger):
+  def __init__(self, start_datetime, logger, dev_mode):
     self.start_datetime = start_datetime
     self.logger = logger
+    self.dev_mode = dev_mode
 
 
   def get_local_last_path(self):
@@ -33,22 +33,9 @@ class Storage:
 
 
   def download_last_processed(self):
-    self.download_file(self.lastFileName, self.get_local_last_path())
+    if not self.dev_mode:
+      self.download_file(self.lastFileName, self.get_local_last_path())
     return
-
-  def download_file(self, remoteFilePath, localFilePath):
-    session = FTP(self.remote_host)
-    session.encoding = "utf-8"
-    session.set_debuglevel(self.remoteDebugValue)
-    self.logger.info("Connecting with " + self.remote_host)
-    session.login(self.remote_username, self.remote_password)
-
-    self.logger.info("Preparing local file " + localFilePath)
-    localFile = open(localFilePath, 'wb')
-    self.logger.info("Downloading " + remoteFilePath + " to " + localFilePath)
-    session.retrbinary('RETR ' + remoteFilePath, localFile.write, 1024)
-    localFile.close()
-    session.quit()
 
   def validate_doc_id(self, docId):
     # Check if the file is present and their content is not the currentId
@@ -70,12 +57,32 @@ class Storage:
     # Override the content of localLastIdPath for next validate_target_id()
     with open(self.get_local_last_path(), 'w') as f:
         f.write(docId)
-    self.upload_file(self.get_local_last_path(), self.lastFileName)
+
+    if not self.dev_mode:
+      self.upload_file(self.get_local_last_path(), self.lastFileName)
 
   def save_doc_file(self):
     localFilePath = self.get_local_doc_path()
     remoteFilePath = self.get_remote_doc_name()
-    self.upload_file(localFilePath, remoteFilePath)
+
+    if not self.dev_mode:
+      self.upload_file(localFilePath, remoteFilePath)
+
+
+
+  def download_file(self, remoteFilePath, localFilePath):
+    session = FTP(self.remote_host)
+    session.encoding = "utf-8"
+    session.set_debuglevel(self.remoteDebugValue)
+    self.logger.info("Connecting with " + self.remote_host)
+    session.login(self.remote_username, self.remote_password)
+
+    self.logger.info("Preparing local file " + localFilePath)
+    localFile = open(localFilePath, 'wb')
+    self.logger.info("Downloading " + remoteFilePath + " to " + localFilePath)
+    session.retrbinary('RETR ' + remoteFilePath, localFile.write, 1024)
+    localFile.close()
+    session.quit()
 
   def upload_file(self, localFilePath, remoteFilePath):
     session = FTP(self.remote_host)
