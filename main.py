@@ -148,7 +148,7 @@ def extract_locations(pdf_dir):
     for no in range(0,len(data_dic)):
         for x in range(0,data_dic['data{}'.format(no)].shape[1]):
             if 'Group' in data_dic['data{}'.format(no)].iloc[0].values[x]:
-                if no>6 :
+                if no>5 :
                     actual_groups.append((no,x))
                 else:
                     all_groups.append((no,x))
@@ -160,8 +160,7 @@ def extract_locations(pdf_dir):
     groups =[]
     for table_no in range(0,len(all_groups)):
         current_table = data_dic['data{}'.format(table_no)]
-        #TODO pick groups by column name
-        for x in current_table.iloc[:,3].values:
+        for x in current_table.iloc[:,all_groups[1][1]].values:
             print(x)
             for letter in string.ascii_uppercase:
                 if letter in x:
