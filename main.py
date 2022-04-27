@@ -265,17 +265,17 @@ if __name__ == "__main__":
     logger.info("Obtained %s new squedules" % (data_size))
     logger.info(json_locations)
 
+    #TODO: Pushing locations to our API
+
     # Extract schedules
     json_schedules = extract_schedules(localDocPath)
     dict_obj = {"schedules": json.loads(json_schedules)}
-
-	# Log extracted schedules
     data_size = len(json_schedules)
     logger.info("Obtained %s new squedules" % (data_size))
     logger.info(dict_obj)
 
 
-    # Uploading schedules to our API
+    # Pushing schedules to our API
     if dev_mode:
         # Skipping the post
         logger.info("Skipping data post to API")
