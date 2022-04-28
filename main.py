@@ -16,6 +16,7 @@ import time
 import re
 from pathlib import Path
 import string
+import numpy as np
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from storage import Storage
@@ -133,22 +134,24 @@ def process_tables(tables):
                                                     }))
         return dff
 
-def extract_locations(pdf_dir):
-    # reading the pdf file
-    tables = camelot.read_pdf(pdf_dir,pages='all')
-    # dictionary to store all tables in pandas dataframe with keys assigned as data0,data1 and so on..to process
+def extract_places(pdf_local_path):
+    # Reading the pdf file
+    tables = camelot.read_pdf(pdf_local_path,pages='all')
+
+    # Prepare dictionary to store all tables in pandas dataframe with keys assigned as data0,data1 and so on..
+    # for all tables found by camelot
     data_dic = {}
     # getting all the tables from pdf file
     for no in range(0,len(tables)):
         data_dic['data{}'.format(no)] = tables[no].df
-    # It checks group info in each database by looping through database and each cell of that
-    # here 'no' is dataFrame/table no & 'x' is column no
+
+    # Retrieve group info in each table dataFrame by looping through it. 'x' is column no, 'no' is table no
     all_groups = [] # all groups that are indexed in starting pages
     actual_groups = [] # Groups infs available in the cells of their table
     for no in range(0,len(data_dic)):
         for x in range(0,data_dic['data{}'.format(no)].shape[1]):
             if 'Group' in data_dic['data{}'.format(no)].iloc[0].values[x]:
-                if no>5 :
+                if no>5:
                     actual_groups.append((no,x))
                 else:
                     all_groups.append((no,x))
@@ -161,30 +164,25 @@ def extract_locations(pdf_dir):
     for table_no in range(0,len(all_groups)):
         current_table = data_dic['data{}'.format(table_no)]
         for x in current_table.iloc[:,all_groups[1][1]].values:
-            print(x)
             for letter in string.ascii_uppercase:
                 if letter in x:
                     groups.append(letter)
     groups = [x for x in groups if x in groups]
     groups = set(groups)
     groups = sorted(groups)
+
     main_dict = {}
     group_count = 0
-
-    print (groups)
-    print(all_groups)
-    print(data_dic)
-
     # settings indexes,removing extra row, assigning groups
     for table_no in range(len(all_groups),len(data_dic)):
-        
+
         current_table = data_dic['data{}'.format(table_no)]
-        print("Parsing table %s: %s", table_no, current_table)
+        #print("Parsing table %s: %s", table_no, current_table)
 
         # it checks whether tht table has 3 cols
         # it rules out of adding unsymmetrical data to group which just got processed
         if current_table.shape[1] == 3:
-            # it checks whether the data is countinuing for last group or data of new group
+            # it checks whether the data is countinuing for last group or data for new group
             col_check=[]
             for col in current_table.iloc[0].values:
                 if 'GSS' in col:
@@ -203,28 +201,64 @@ def extract_locations(pdf_dir):
                 last_group = 'Group {}'.format(groups[group_count])
                 group_count+=1
             # Starting new group for data whose groups are not indexed on above pages
-            if actual_groups:
+            elif actual_groups:
                 if table_no>=actual_groups[0][0] and table_no<=actual_groups[-1][0]:
                     current_table.columns  = ['GSS','Feeder No','Affected area']
                     main_dict[current_table.iloc[0].values[0]]= current_table[2:]
+
                     last_group = current_table.iloc[0].values[0]
-            # it is concatenating continous data of last group(Note: one filter only which is.. it should have 3 columns
+            # it is concatenating continous data of last group(Note: one filter only: which is.. it should have 3 columns
+            #  no way of knowing what data is on current page.)
             else:
+                # setting index for this
                 current_table.columns = ['GSS','Feeder No','Affected area']
                 main_dict[last_group] = pd.concat([main_dict[last_group],current_table])
-    final={}
-    # Resetting index and converting into dic
+
+    # Resetting index
     for group,table in main_dict.items():
         table.reset_index(drop=True)
-        table = table.to_dict('list')
-        final[group] = table
+    # Cleaning new lines ('/n') and splitting it using separator (',')
+    for table in main_dict.values():
+        table['Affected area'] = table['Affected area'].apply(lambda x : list(filter(None,[y.strip() for y in x.replace("\n", "").split(',')])))
+        table['GSS'] = table['GSS'].apply(lambda x : x.replace('\n',''))
+    # Fixing multiple rows issue in single row
+    for table in main_dict.values():
+        table['GSS'][table['GSS']==''] = np.NaN
+        table['Feeder No'][table['Feeder No']==''] = np.NaN
+        table['GSS'].fillna(method='ffill')
+        table['Feeder No'].fillna(method='ffill')
+
+    # Creating final output as json dictionary
+    final_dic = {}
+    for group,table in main_dict.items():
+        for row in table.iterrows():
+            # checking if GSS is already stored in as keys of final_dic
+            if row[1][0] in final_dic.keys():
+                # looping through places to save data
+                for place in row[1][2]:
+                    # checking if place is already stored or not.. as key of District
+                    if place in final_dic['{}'.format(row[1][0])].keys():
+                        final_dic['{}'.format(row[1][0])][place]['Group'].append(group.split()[1])
+                        final_dic['{}'.format(row[1][0])][place]['Feeder No'].append(row[1][1])
+
+                        # saving only unique groups and feeder No
+                        final_dic['{}'.format(row[1][0])][place]['Group'] = list(set(final_dic['{}'.format(row[1][0])][place]['Group']))
+                        final_dic['{}'.format(row[1][0])][place]['Feeder No'] = list(set(final_dic['{}'.format(row[1][0])][place]['Feeder No']))
+
+                    # if place is not saved yet
+                    else:
+                        final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
+            else:
+                final_dic['{}'.format(row[1][0])] = {}
+                for place in row[1][2]:
+                    final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
 
     # Save into a file
     if dev_mode:
-        with open('locations_data.json', 'w') as outfile:
-            json.dump(final, outfile, indent=4)
+        with open('places_data.json', 'w') as outfile:
+            json.dump(final_dic, outfile, indent=4)
 
-    return final
+    return final_dic
 
 def logFinish(reason):
     logger.info("========> %s" % (reason))
@@ -258,32 +292,36 @@ if __name__ == "__main__":
     logger.info("Saving Google Doc into " + localDocPath)
     download_file_from_google_drive(targetId, localDocPath)
     
-    # Extract locations
-    json_locations = extract_locations(localDocPath)
-    data_size = len(json_locations)
-    logger.info("Obtained %s new squedules" % (data_size))
-    logger.info(json_locations)
+    # Extract places
+    json_places = extract_places(localDocPath)
+    gss_count = len(json_places)
+    area_count = 0
+    for gss_name in json_places.keys():
+        current_gss_areas = len(json_places[gss_name])
+        area_count = area_count + current_gss_areas
+    logger.info("Obtained places: %s areas in %s gss" % (area_count, gss_count))
+    #logger.info(json_places)
 
     #TODO: Pushing locations to our API
 
     # Extract schedules
     json_schedules = extract_schedules(localDocPath)
-    dict_obj = {"schedules": json.loads(json_schedules)}
-    data_size = len(json_schedules)
-    logger.info("Obtained %s new squedules" % (data_size))
-    logger.info(dict_obj)
+    dict_schedules = {"schedules": json.loads(json_schedules)}
+    schedules_count = len(json_schedules)
+    logger.info("Obtained schedules: %s new items" % (schedules_count))
+    #logger.info(dict_schedules)
 
 
     # Pushing schedules to our API
     if dev_mode:
         # Skipping the post
         logger.info("Skipping data post to API")
-        logFinish("Skipped post of %s entries" % (data_size))
+        logFinish("Skipped post of %s entries" % (schedules_count))
     else:
         # Post the scraped data into our API
         api_url = 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
         logger.info("Post data to API at: " + api_url)
-        response = requests.post(api_url, json=dict_obj)
+        response = requests.post(api_url, json=dict_schedules)
         
         # Log the response from API
         logger.info("Response code: " + str(response.status_code))
@@ -292,7 +330,7 @@ if __name__ == "__main__":
 
         if (response.status_code == 200):
             storage.save_processed(targetId)
-            logFinish("Data posted successfully (%s entries" % (data_size))
+            logFinish("Data posted successfully (%s entries" % (schedules_count))
         else:
             logger.error("Error posting data")
             logFinish("Error posting data")
