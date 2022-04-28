@@ -14,6 +14,8 @@ import yaml
 import os
 import sys
 import time
+import string
+import numpy as np
 
 start_time = time.time()
 
@@ -78,7 +80,7 @@ def download_file_from_google_drive(id, destination):
         params = { 'id' : id, 'confirm' : token }
         response = session.get(URL, params = params, stream = True)
     save_response_content(response, destination)
-    
+
 def get_confirm_token(response):
     for key, value in response.cookies.items():
         if key.startswith('download_warning'):
@@ -111,6 +113,141 @@ def process_tables(tables):
                                                     'ending_period': [df.iloc[jj]['ending_period']]
                                                     }))
         return dff
+def extract_locations(pdf_loc):
+    # reading the pdf file
+    tables = camelot.read_pdf(pdf_loc,pages='all')
+    # dictionary to store all tables in pandas dataframe with keys assigned as data0,data1 and so on..
+    # for all tables found by camelot
+    data_dic = {}
+    # getting all the tables from pdf file
+    for no in range(0,len(tables)):
+        data_dic['data{}'.format(no)] = tables[no].df
+    # It checks group info in each table dataFrame by looping through it 'x' is column no, 'no'  is table no
+
+    all_groups = []
+    actual_groups = []
+    for no in range(0,len(data_dic)):
+        for x in range(0,data_dic['data{}'.format(no)].shape[1]):
+            if 'Group' in data_dic['data{}'.format(no)].iloc[0].values[x]:
+                if no>5:
+                    actual_groups.append((no,x))
+                else:
+                    all_groups.append((no,x))
+    # Setting columns for main(all) grouping data
+    for y in range(0,len(all_groups)):
+        data_dic['data{}'.format(y)].columns  = data_dic['data{}'.format(y)].iloc[0]
+        data_dic['data{}'.format(y)].drop(0,inplace=True)
+    # look for what groups we have by looping through columns data
+    groups =[]
+    for table_no in range(0,len(all_groups)):
+        for x in data_dic['data{}'.format(table_no)].iloc[:,all_groups[1][1]].values:
+            for letter in string.ascii_uppercase:
+                if letter in x:
+                    groups.append(letter)
+    groups = [x for x in groups if x in groups]
+    groups = set(groups)
+    groups = sorted(groups)
+
+    main_dict = {}
+    group_count = 0
+    # settings indexes,removing extra row, assigning groups
+    for table_no in range(len(all_groups),len(data_dic)):
+        # it checks whether tht table has 3 cols
+        # it rules out of adding unsymmetrical data to group which just got processed
+
+        if data_dic['data{}'.format(table_no)].shape[1] == 3:
+            # it checks whether the data is countinuing for last group or data for new group
+            col_check=[]
+            for col in data_dic['data{}'.format(table_no)].iloc[0].values:
+                if 'GSS' in col:
+                    col_check.append(True)
+                elif 'Affected' in col:
+                    col_check.append(True)
+                elif 'Feeder' in col:
+                    col_check.append(True)
+                else:
+                    col_check.append(False)
+            # Starting a New Group
+            if all(col_check):
+                data_dic['data{}'.format(table_no)].columns  = ['GSS','Feeder No','Affected area']
+                data_dic['data{}'.format(table_no)].drop(0,inplace=True)
+                main_dict['Group {}'.format(groups[group_count])] = data_dic['data{}'.format(table_no)]
+                last_group = 'Group {}'.format(groups[group_count])
+                group_count+=1
+            # Starting new group for data whose groups are not indexed on above pages
+            elif actual_groups:
+                if table_no>=actual_groups[0][0] and table_no<=actual_groups[-1][0]:
+                    data_dic['data{}'.format(table_no)].columns  = ['GSS','Feeder No','Affected area']
+                    main_dict[data_dic['data{}'.format(table_no)].iloc[0].values[0]]= data_dic['data{}'.format(table_no)][2:]
+
+                    last_group = data_dic['data{}'.format(table_no)].iloc[0].values[0]
+            # it is concatenating continous data of last group(Note: one filter only: which is.. it should have 3 columns
+            #  no way of knowing what data is on current page.)
+            else:
+                # setting index for this
+                data_dic['data{}'.format(table_no)].columns = ['GSS','Feeder No','Affected area']
+                main_dict[last_group] = pd.concat([main_dict[last_group],data_dic['data{}'.format(table_no)]])
+
+
+
+
+    # Resetting index,converting into dic and saving it to the file.
+    for group,table in main_dict.items():
+        table.reset_index(drop=True)
+    # cleaning new lines and splitting it using (',')
+    for table in main_dict.values():
+        table['Affected area'] = table['Affected area'].apply(lambda x : list(filter(None,[y.strip() for y in x.replace("\n", "").split(',')])))
+        table['GSS'] = table['GSS'].apply(lambda x : x.replace('\n',''))
+    # Fixing multiple rows issue in single row
+    for table in main_dict.values():
+        table['GSS'][table['GSS']==''] = np.NaN
+        table['Feeder No'][table['Feeder No']==''] = np.NaN
+        table['GSS'].fillna(method='ffill')
+        table['Feeder No'].fillna(method='ffill')
+    final_dic = {}
+    for group,table in main_dict.items():
+        for row in table.iterrows():
+            # checking if GSS is already stored in as keys of final_dic
+            if row[1][0] in final_dic.keys():
+                # looping through places to save data
+                for place in row[1][2]:
+                    # checking if place is already stored or not.. as key of District
+                    if place in final_dic['{}'.format(row[1][0])].keys():
+                        final_dic['{}'.format(row[1][0])][place]['Group'].append(group.split()[1])
+                        final_dic['{}'.format(row[1][0])][place]['Feeder No'].append(row[1][1])
+
+                        # saving only unique groups and feeder No
+                        final_dic['{}'.format(row[1][0])][place]['Group'] = list(set(final_dic['{}'.format(row[1][0])][place]['Group']))
+                        final_dic['{}'.format(row[1][0])][place]['Feeder No'] = list(set(final_dic['{}'.format(row[1][0])][place]['Feeder No']))
+
+                    # if place is not saved yet
+                    else:
+                        final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
+
+
+            else:
+                final_dic['{}'.format(row[1][0])] = {}
+                for place in row[1][2]:
+                    final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
+    return final_dic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def logFinish(reason):
     logging.info("========> %s" % (reason))
@@ -131,13 +268,13 @@ if __name__ == "__main__":
         logFinish("Skipping target, this file is already processed")
         sys.exit()
 
-    logging.info("Detected new document to process")    
+    logging.info("Detected new document to process")
 
     # Download the Google Docs
     destination = get_new_destination_path()
     logging.info("Saving Google Doc into " + destination)
     download_file_from_google_drive(targetId, destination)
-    
+
     # Extract the data from the file
     tables = camelot.read_pdf(destination)
     # convert to json format {"group":..., "start_time":..., "end_time":...}
@@ -149,16 +286,16 @@ if __name__ == "__main__":
     data_size = len(json_out)
     logging.info("Obtained %s new squedules" % (data_size))
     logging.info(dict_obj)
-    
+
     if not 'POST_TO_API' in os.environ or os.get('POST_TO_API') != 'true':
         # Skipping the post
         logging.info("Skipping data post to API")
         logFinish("Skipped post of %s entries" % (data_size))
     else:
-        # Post the scraped data into our API 
+        # Post the scraped data into our API
         logging.info("Post data to API at: " + api_url)
         response = requests.post(api_url, json=dict_obj)
-        
+
         # Log the response from API
         logging.info("Response code: " + str(response.status_code))
         logging.info("Response reason: " + response.reason)
@@ -170,4 +307,3 @@ if __name__ == "__main__":
         else:
             logging.error("Error posting data")
             logFinish("Error posting data")
-	
