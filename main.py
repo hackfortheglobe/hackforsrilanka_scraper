@@ -107,8 +107,8 @@ def date_range(start, end):
     return days
 
 #getting the dates from pdf file name
-def get_dates(pdf_file_name):
-    dates= re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\D\d\d\D)',pdf_file_name)
+def get_dates(pdf_local_path):
+    dates= re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\D\d\d\D)',pdf_local_path)
     if len(dates)==1:
         date = ''.join(dates[0])
         return f'{date} 00:00:00'
@@ -163,6 +163,22 @@ def process_tables(tables):
                                                     'ending_period': [df.iloc[jj]['ending_period']]
                                                     }))
         return dff
+def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
+    # converting schedues data from pdf to dictionary form
+    schedules = {'schedules':[]}
+    for table_no in range(0,len(all_groups)):
+        #passing rows of current table
+        for index,row in data_dic['data{}'.format(table_no)].iterrows():
+            joined_row = ' '.join(row.values)
+            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
+            time_matches = time_patt.findall(joined_row)
+            timings = [time_match for time_match in time_matches]
+            if timings:
+                groups = row[all_groups[1][1]].split(',')
+                for group in groups:
+                    for date in get_dates(pdf_local_path):
+                        schedules['schedules'].append({'Group':group.strip(),'Starting Period':f'{date} {timings[0]}','Ending Period':f'{date} {timings[-1]}'})
+        return schedules
 
 def extract_places(pdf_local_path):
     # Reading the pdf file
@@ -197,25 +213,8 @@ def extract_places(pdf_local_path):
             for letter in string.ascii_uppercase:
                 if letter in x:
                     groups.append(letter)
-    groups = [x for x in groups if x in groups]
-    groups = set(groups)
-    groups = sorted(groups)
-
-    # converting schedues data from pdf to dictionary form
-    schedules = {'schedules':[]}
-    for table_no in range(0,len(all_groups)):
-        #passing rows of current table
-        for index,row in data_dic['data{}'.format(table_no)].iterrows():
-            joined_row = ' '.join(row.values)
-            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
-            time_matches = time_patt.findall(joined_row)
-            timings = [time_match for time_match in time_matches]
-            if timings:
-                groups = row[all_groups[1][1]].split(',')
-                for group in groups:
-                    for date in get_dates(pdf_local_path):
-                        schedules['schedules'].append({'Group':group.strip(),'Starting Period':f'{date} {timings[0]}','Ending Period':f'{date} {timings[-1]}'})
-
+    groups = sorted(list(set(groups)))
+    schedules = extract_schedule_data(data_dic,all_groups,groups,pdf_local_path)
 
     main_dict = {}
     group_count = 0
