@@ -17,6 +17,8 @@ import re
 from pathlib import Path
 import string
 import numpy as np
+from datetime import datetime as dt
+from datetime import datetime as dt,timedelta
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from storage import Storage
@@ -44,14 +46,14 @@ else:
 storage = Storage(start_datetime, logger, dev_mode)
 
 # Get Sri Lanka local time
-sl_time = datetime.now(pytz.timezone('Asia/Colombo')).strftime('%Y-%m-%d')
+sl_time = datetime.now(pytz.timezone('Asia/Colombo'))
 
 def get_target_url():
     # request ceb.lk home page
     req = requests.get('https://ceb.lk', verify=False)
     webpage = html.fromstring(req.content)
     links = webpage.xpath('//a/@href')
-    
+
     # look for google drive links
     gd_link = [i for i in links if 'drive.google.com' in i]
     gd_link = list(set(gd_link))
@@ -84,7 +86,7 @@ def download_file_from_google_drive(id, destination):
         params = { 'id' : id, 'confirm' : token }
         response = session.get(URL, params = params, stream = True)
     save_response_content(response, destination)
-    
+
 def get_confirm_token(response):
     for key, value in response.cookies.items():
         if key.startswith('download_warning'):
@@ -97,6 +99,34 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
+
+#this function gives all days between two dates in datetime format
+def date_range(start, end):
+    delta = end - start  # as timedelta
+    days = [start + timedelta(days=i) for i in range(delta.days + 1)]
+    return days
+
+#getting the dates from pdf file name
+def get_dates(pdf_local_path):
+    dates= re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\D\d\d\D)',pdf_local_path)
+    if len(dates)==1:
+        date = ''.join(dates[0])
+        return [f'{date} 00:00:00']
+    start = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[0]))[0])[-2:])
+    end = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[1]))[0])[-2:])
+    #putting pdf dates into datetime format  by using if else statemnts
+    if start<end and start<sl_time.today().day:
+        start_date = dt(2022,sl_time.today().month+1, start)
+        end_date = dt(2022,sl_time.today().month+1, end)
+    elif start>sl_time.today().day and start<end:
+        start_date = dt(2022,sl_time.today().month, start)
+        end_date = dt(2022,sl_time.today().month+1, end)
+
+    else:
+        start_date = dt(2022,sl_time.today().month,start)
+        end_date = dt(2022,sl_time.today().month, end)
+    return date_range(start_date,end_date)
+
 
 def extract_schedules(localDocPath):
     tables = camelot.read_pdf(localDocPath)
@@ -133,6 +163,23 @@ def process_tables(tables):
                                                     'ending_period': [df.iloc[jj]['ending_period']]
                                                     }))
         return dff
+def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
+    # converting schedues data from pdf to dictionary form
+    schedules = {'schedules':[]}
+    for table_no in range(0,len(all_groups)):
+        #passing rows of current table
+        for index,row in data_dic['data{}'.format(table_no)].iterrows():
+            joined_row = ' '.join(row.values)
+            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
+            time_matches = time_patt.findall(joined_row)
+            timings = [time_match for time_match in time_matches]
+            if timings:
+                groups = row[all_groups[1][1]].split(',')
+                for group in groups:
+                    for date in get_dates(pdf_local_path):
+                        print(get_dates(pdf_local_path))
+                        schedules['schedules'].append({'Group':group.strip(),'Starting Period':f'{date} {timings[0]}','Ending Period':f'{date} {timings[-1]}'})
+        return schedules
 
 def extract_places(pdf_local_path):
     # Reading the pdf file
@@ -167,52 +214,48 @@ def extract_places(pdf_local_path):
             for letter in string.ascii_uppercase:
                 if letter in x:
                     groups.append(letter)
-    groups = [x for x in groups if x in groups]
-    groups = set(groups)
-    groups = sorted(groups)
+    groups = sorted(list(set(groups)))
+    schedules = extract_schedule_data(data_dic,all_groups,groups,pdf_local_path)
 
     main_dict = {}
     group_count = 0
     # settings indexes,removing extra row, assigning groups
     for table_no in range(len(all_groups),len(data_dic)):
-
-        current_table = data_dic['data{}'.format(table_no)]
-        #print("Parsing table %s: %s", table_no, current_table)
-
         # it checks whether tht table has 3 cols
         # it rules out of adding unsymmetrical data to group which just got processed
-        if current_table.shape[1] == 3:
+
+        if data_dic['data{}'.format(table_no)].shape[1] == 3:
             # it checks whether the data is countinuing for last group or data for new group
             col_check=[]
-            for col in current_table.iloc[0].values:
+            for col in data_dic['data{}'.format(table_no)].iloc[0].values:
                 if 'GSS' in col:
                     col_check.append(True)
                 elif 'Affected' in col:
                     col_check.append(True)
                 elif 'Feeder' in col:
-                    col_check.append(True)
+                        col_check.append(True)
                 else:
                     col_check.append(False)
             # Starting a New Group
             if all(col_check):
-                current_table.columns  = ['GSS','Feeder No','Affected area']
-                current_table.drop(0,inplace=True)
-                main_dict['Group {}'.format(groups[group_count])] = current_table
+                data_dic['data{}'.format(table_no)].columns  = ['GSS','Feeder No','Affected area']
+                data_dic['data{}'.format(table_no)].drop(0,inplace=True)
+                main_dict['Group {}'.format(groups[group_count])] = data_dic['data{}'.format(table_no)]
                 last_group = 'Group {}'.format(groups[group_count])
                 group_count+=1
             # Starting new group for data whose groups are not indexed on above pages
             elif actual_groups:
                 if table_no>=actual_groups[0][0] and table_no<=actual_groups[-1][0]:
-                    current_table.columns  = ['GSS','Feeder No','Affected area']
-                    main_dict[current_table.iloc[0].values[0]]= current_table[2:]
+                    data_dic['data{}'.format(table_no)].columns  = ['GSS','Feeder No','Affected area']
+                    main_dict[data_dic['data{}'.format(table_no)].iloc[0].values[0]]= data_dic['data{}'.format(table_no)][2:]
 
-                    last_group = current_table.iloc[0].values[0]
+                    last_group = data_dic['data{}'.format(table_no)].iloc[0].values[0]
             # it is concatenating continous data of last group(Note: one filter only: which is.. it should have 3 columns
             #  no way of knowing what data is on current page.)
             else:
                 # setting index for this
-                current_table.columns = ['GSS','Feeder No','Affected area']
-                main_dict[last_group] = pd.concat([main_dict[last_group],current_table])
+                data_dic['data{}'.format(table_no)].columns = ['GSS','Feeder No','Affected area']
+                main_dict[last_group] = pd.concat([main_dict[last_group],data_dic['data{}'.format(table_no)]])
 
     # Resetting index
     for group,table in main_dict.items():
@@ -236,6 +279,10 @@ def extract_places(pdf_local_path):
             if row[1][0] in final_dic.keys():
                 # looping through places to save data
                 for place in row[1][2]:
+                    place = place.title()
+                    place = re.sub(r'\srd',' Road',place,flags=re.IGNORECASE)
+                    place = re.sub(r'\spl',' Road',place,flags=re.IGNORECASE)
+                    place = re.sub(r'(\s)?LECO.+(\.)?','',place,flags=re.IGNORECASE)
                     # checking if place is already stored or not.. as key of District
                     if place in final_dic['{}'.format(row[1][0])].keys():
                         final_dic['{}'.format(row[1][0])][place]['Group'].append(group.split()[1])
@@ -258,7 +305,7 @@ def extract_places(pdf_local_path):
         with open('places_data.json', 'w') as outfile:
             json.dump(final_dic, outfile, indent=4)
 
-    return final_dic
+    return [final_dic,schedules]
 
 def logFinish(reason):
     logger.info("========> %s" % (reason))
@@ -285,13 +332,13 @@ if __name__ == "__main__":
     isValidId = storage.validate_doc_id(targetId)
     if not isValidId:
         logFinish("Skipping target, this file is already processed")
-    logger.info("Detected new document to process")    
+    logger.info("Detected new document to process")
 
     # Download the Google Docs
     localDocPath = storage.get_local_doc_path()
     logger.info("Saving Google Doc into " + localDocPath)
     download_file_from_google_drive(targetId, localDocPath)
-    
+
     # Extract places
     json_places = extract_places(localDocPath)
     gss_count = len(json_places)
@@ -322,7 +369,7 @@ if __name__ == "__main__":
         api_url = 'https://hackforsrilanka-api.herokuapp.com/api/illuminati/data'
         logger.info("Post data to API at: " + api_url)
         response = requests.post(api_url, json=dict_schedules)
-        
+
         # Log the response from API
         logger.info("Response code: " + str(response.status_code))
         logger.info("Response reason: " + response.reason)
@@ -334,4 +381,3 @@ if __name__ == "__main__":
         else:
             logger.error("Error posting data")
             logFinish("Error posting data")
-	
