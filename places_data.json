@@ -56,11 +56,13 @@
                 "3"
             ]
         },
-        "LECO areas:Galle Road from Pereliya to Balapitiya via Ambalangoda town": {
+        "": {
             "Group": [
+                "K",
                 "D"
             ],
             "Feeder No": [
+                "6",
                 "3"
             ]
         },
@@ -72,7 +74,7 @@
                 "3"
             ]
         },
-        "Delduwa Rd": {
+        "Delduwa Road": {
             "Group": [
                 "D"
             ],
@@ -80,7 +82,7 @@
                 "3"
             ]
         },
-        "Kuleegoda Rd": {
+        "Kuleegoda Road": {
             "Group": [
                 "D"
             ],
@@ -88,7 +90,7 @@
                 "3"
             ]
         },
-        "Thalgasgoda Rd": {
+        "Thalgasgoda Road": {
             "Group": [
                 "D"
             ],
@@ -104,7 +106,7 @@
                 "3"
             ]
         },
-        "Andadola Rd": {
+        "Andadola Road": {
             "Group": [
                 "D"
             ],
@@ -112,7 +114,7 @@
                 "3"
             ]
         },
-        "Balapitiya Station rd": {
+        "Balapitiya Station Road": {
             "Group": [
                 "D"
             ],
@@ -120,7 +122,7 @@
                 "3"
             ]
         },
-        "Heenatiya Rd and all connected by roads": {
+        "Heenatiya Road And All Connected By Roads": {
             "Group": [
                 "D"
             ],
@@ -232,7 +234,7 @@
                 "5"
             ]
         },
-        "CEB Areas : Warapitiya": {
+        "Ceb Areas : Warapitiya": {
             "Group": [
                 "K"
             ],
@@ -312,7 +314,7 @@
                 "6"
             ]
         },
-        "Uragasmanhandiya to Ahungalla by roads": {
+        "Uragasmanhandiya To Ahungalla By Roads": {
             "Group": [
                 "K"
             ],
@@ -320,7 +322,7 @@
                 "6"
             ]
         },
-        "Ahungalle to Bentota in Galle road and by roads": {
+        "Ahungalle To Bentota In Galle Road And By Roads": {
             "Group": [
                 "K"
             ],
@@ -328,15 +330,7 @@
                 "6"
             ]
         },
-        "LECO Areas: Galle Road from Benthota Bridge to Aluthgama Police Station": {
-            "Group": [
-                "K"
-            ],
-            "Feeder No": [
-                "6"
-            ]
-        },
-        "Mathugama Road from Aluthgama town to Dharga town and all connected by roads": {
+        "Mathugama Road From Aluthgama Town To Dharga Town And All Connected By Roads": {
             "Group": [
                 "K"
             ],
@@ -372,14 +366,14 @@
         },
         "Kaduwela": {
             "Group": [
-                "B",
                 "C",
+                "B",
                 "A"
             ],
             "Feeder No": [
+                "6",
                 "1",
-                "2",
-                "6"
+                "2"
             ]
         },
         "Hewagama": {
@@ -498,7 +492,7 @@
                 "2"
             ]
         },
-        "Pothuwarawa rd": {
+        "Pothuwarawa Road": {
             "Group": [
                 "B"
             ],
@@ -508,12 +502,12 @@
         },
         "Malabe": {
             "Group": [
-                "B",
-                "C"
+                "C",
+                "B"
             ],
             "Feeder No": [
-                "2",
-                "6"
+                "6",
+                "2"
             ]
         },
         "Pittugala": {
@@ -530,8 +524,8 @@
                 "F"
             ],
             "Feeder No": [
-                "2",
-                "5"
+                "5",
+                "2"
             ]
         },
         "Homagama": {
@@ -542,7 +536,7 @@
                 "2"
             ]
         },
-        "Lake rd": {
+        "Lake Road": {
             "Group": [
                 "B"
             ],
@@ -550,7 +544,7 @@
                 "2"
             ]
         },
-        "Welivita rd": {
+        "Welivita Road": {
             "Group": [
                 "B"
             ],
@@ -580,8 +574,8 @@
                 "F"
             ],
             "Feeder No": [
-                "5",
-                "6"
+                "6",
+                "5"
             ]
         },
         "Korathota Kaduwela": {
@@ -592,7 +586,7 @@
                 "6"
             ]
         },
-        "Govinna mw": {
+        "Govinna Mw": {
             "Group": [
                 "C"
             ],
@@ -656,7 +650,7 @@
                 "6"
             ]
         },
-        "Moratuhena Rd": {
+        "Moratuhena Road": {
             "Group": [
                 "C"
             ],
@@ -688,7 +682,7 @@
                 "5"
             ]
         },
-        "1st post": {
+        "1St Post": {
             "Group": [
                 "F"
             ],
@@ -696,7 +690,7 @@
                 "5"
             ]
         },
-        "2nd post": {
+        "2Nd Post": {
             "Group": [
                 "F"
             ],
@@ -866,7 +860,7 @@
                 "7"
             ]
         },
-        "Sabaragamuawa university": {
+        "Sabaragamuawa University": {
             "Group": [
                 "A"
             ],
@@ -874,7 +868,7 @@
                 "7"
             ]
         },
-        "Uwa kosgama": {
+        "Uwa Kosgama": {
             "Group": [
                 "A"
             ],
@@ -1080,8 +1074,8 @@
                 "D"
             ],
             "Feeder No": [
-                "1",
-                "4"
+                "4",
+                "1"
             ]
         },
         "Opanayaka": {
@@ -1130,8 +1124,8 @@
                 "D"
             ],
             "Feeder No": [
-                "3",
-                "6"
+                "6",
+                "3"
             ]
         },
         "Kawuduwawa": {
@@ -1278,7 +1272,7 @@
                 "1"
             ]
         },
-        "hapugahakubura": {
+        "Hapugahakubura": {
             "Group": [
                 "G"
             ],
@@ -1326,7 +1320,7 @@
                 "1"
             ]
         },
-        "Dahamana galgoda": {
+        "Dahamana Galgoda": {
             "Group": [
                 "G"
             ],
@@ -1334,7 +1328,7 @@
                 "1"
             ]
         },
-        "Rukathanna welange": {
+        "Rukathanna Welange": {
             "Group": [
                 "G"
             ],
@@ -1342,7 +1336,7 @@
                 "1"
             ]
         },
-        "Balangoda hospital": {
+        "Balangoda Hospital": {
             "Group": [
                 "G"
             ],
@@ -1800,7 +1794,7 @@
                 "G1"
             ]
         },
-        "Morawaka town": {
+        "Morawaka Town": {
             "Group": [
                 "F"
             ],
@@ -2232,7 +2226,7 @@
                 "4"
             ]
         },
-        "Madugata MHP": {
+        "Madugata Mhp": {
             "Group": [
                 "G"
             ],
@@ -2240,7 +2234,7 @@
                 "4"
             ]
         },
-        "Lower Neluwa MHP": {
+        "Lower Neluwa Mhp": {
             "Group": [
                 "G"
             ],
@@ -2368,7 +2362,7 @@
                 "3"
             ]
         },
-        "Deniyaya town": {
+        "Deniyaya Town": {
             "Group": [
                 "H"
             ],
@@ -2408,7 +2402,7 @@
                 "3"
             ]
         },
-        "Deniyaya hospital": {
+        "Deniyaya Hospital": {
             "Group": [
                 "H"
             ],
@@ -2712,8 +2706,8 @@
                 "H"
             ],
             "Feeder No": [
-                "4",
-                "6"
+                "6",
+                "4"
             ]
         },
         "Kalagediara": {
@@ -2756,7 +2750,7 @@
                 "6"
             ]
         },
-        "Moraketiya Rd - Embilipitiya": {
+        "Moraketiya Road - Embilipitiya": {
             "Group": [
                 "G"
             ],
@@ -2926,15 +2920,15 @@
         },
         "Kuttigala": {
             "Group": [
-                "J",
-                "H"
+                "H",
+                "J"
             ],
             "Feeder No": [
-                "1",
-                "5"
+                "5",
+                "1"
             ]
         },
-        "Barawakumbuka and Angunukolapalessa": {
+        "Barawakumbuka And Angunukolapalessa": {
             "Group": [
                 "H"
             ],
@@ -3046,7 +3040,7 @@
                 "4"
             ]
         },
-        "MauAra": {
+        "Mauara": {
             "Group": [
                 "H"
             ],
@@ -3078,7 +3072,7 @@
                 "4"
             ]
         },
-        "Part of Southern province 2  (Wiharagala": {
+        "Part Of Southern Province 2  (Wiharagala": {
             "Group": [
                 "H"
             ],
@@ -3086,7 +3080,7 @@
                 "4"
             ]
         },
-        "Kiri ibban wewa": {
+        "Kiri Ibban Wewa": {
             "Group": [
                 "H"
             ],
@@ -3200,7 +3194,7 @@
                 "7"
             ]
         },
-        "Saw gas handiya": {
+        "Saw Gas Handiya": {
             "Group": [
                 "H"
             ],
@@ -3224,7 +3218,7 @@
                 "3"
             ]
         },
-        "Dikhena pura": {
+        "Dikhena Pura": {
             "Group": [
                 "I"
             ],
@@ -3424,7 +3418,7 @@
                 "12"
             ]
         },
-        "Gamage pedesa": {
+        "Gamage Pedesa": {
             "Group": [
                 "J"
             ],
@@ -3560,7 +3554,7 @@
                 "12"
             ]
         },
-        "Adandola Rd": {
+        "Adandola Road": {
             "Group": [
                 "J"
             ],
@@ -3850,7 +3844,17 @@
                 "6"
             ]
         },
-        "LECO Areas: Galle road from Wadiyamankada to Kalutara  Vidyalaya via Waskaduwa and Kalutara Town. Bandaragama Rd(portion)": {
+        "": {
+            "Group": [
+                "B",
+                "F"
+            ],
+            "Feeder No": [
+                "8",
+                "3"
+            ]
+        },
+        "Negrodarama Road": {
             "Group": [
                 "B"
             ],
@@ -3858,7 +3862,7 @@
                 "3"
             ]
         },
-        "Negrodarama Rd": {
+        "Nawa Negrodarama Road": {
             "Group": [
                 "B"
             ],
@@ -3866,15 +3870,7 @@
                 "3"
             ]
         },
-        "Nawa Negrodarama Rd": {
-            "Group": [
-                "B"
-            ],
-            "Feeder No": [
-                "3"
-            ]
-        },
-        "Horana Road (portion)": {
+        "Horana Road (Portion)": {
             "Group": [
                 "B"
             ],
@@ -3898,7 +3894,7 @@
                 "3"
             ]
         },
-        "Fonseka Mw and all connected by roads": {
+        "Fonseka Mw And All Connected By Roads": {
             "Group": [
                 "B"
             ],
@@ -3906,7 +3902,7 @@
                 "3"
             ]
         },
-        "Galle road from Rockland road junction to Sebasthiyan Mw Junction via Maggona and Payagala": {
+        "Galle Road From Rockland Road Junction To Sebasthiyan Mw Junction Via Maggona And Payagala": {
             "Group": [
                 "C"
             ],
@@ -3922,7 +3918,7 @@
                 "7"
             ]
         },
-        "STF road": {
+        "Stf Road": {
             "Group": [
                 "C"
             ],
@@ -3930,7 +3926,7 @@
                 "7"
             ]
         },
-        "Gallassahena road": {
+        "Gallassahena Road": {
             "Group": [
                 "C"
             ],
@@ -3938,7 +3934,7 @@
                 "7"
             ]
         },
-        "Air port road": {
+        "Air Port Road": {
             "Group": [
                 "C"
             ],
@@ -3946,7 +3942,7 @@
                 "7"
             ]
         },
-        "pinidiyamulla": {
+        "Pinidiyamulla": {
             "Group": [
                 "C"
             ],
@@ -3954,7 +3950,7 @@
                 "7"
             ]
         },
-        "Nagahaduwa road": {
+        "Nagahaduwa Road": {
             "Group": [
                 "C"
             ],
@@ -3962,7 +3958,7 @@
                 "7"
             ]
         },
-        "Pothuwila road": {
+        "Pothuwila Road": {
             "Group": [
                 "C"
             ],
@@ -3970,7 +3966,7 @@
                 "7"
             ]
         },
-        "Halkadawila road": {
+        "Halkadawila Road": {
             "Group": [
                 "C"
             ],
@@ -3986,7 +3982,7 @@
                 "7"
             ]
         },
-        "Dewalakanda road": {
+        "Dewalakanda Road": {
             "Group": [
                 "C"
             ],
@@ -3994,7 +3990,7 @@
                 "7"
             ]
         },
-        "Munhena road": {
+        "Munhena Road": {
             "Group": [
                 "C"
             ],
@@ -4002,7 +3998,7 @@
                 "7"
             ]
         },
-        "st Vincent road and all connected by roads.": {
+        "St Vincent Road And All Connected By Roads.": {
             "Group": [
                 "C"
             ],
@@ -4026,7 +4022,7 @@
                 "4"
             ]
         },
-        "LaosWtta": {
+        "Laoswtta": {
             "Group": [
                 "E"
             ],
@@ -4090,7 +4086,7 @@
                 "4"
             ]
         },
-        "LECO areas: Palathota road from Kalutara Bodhiya to Fullerton": {
+        "Koholana Road": {
             "Group": [
                 "F"
             ],
@@ -4098,7 +4094,7 @@
                 "8"
             ]
         },
-        "Koholana road": {
+        "Duwa Temple Road": {
             "Group": [
                 "F"
             ],
@@ -4106,15 +4102,7 @@
                 "8"
             ]
         },
-        "Duwa temple road": {
-            "Group": [
-                "F"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
-        "Lagos Watta road": {
+        "Lagos Watta Road": {
             "Group": [
                 "F"
             ],
@@ -4138,7 +4126,7 @@
                 "8"
             ]
         },
-        "Neboda Road and all connected roads. AMW": {
+        "Neboda Road And All Connected Roads. Amw": {
             "Group": [
                 "F"
             ],
@@ -4146,7 +4134,7 @@
                 "8"
             ]
         },
-        "CEAT and EuroTech bulk supplies": {
+        "Ceat And Eurotech Bulk Supplies": {
             "Group": [
                 "F"
             ],
@@ -4154,7 +4142,7 @@
                 "8"
             ]
         },
-        "Neboda Road (Portion) from Nagoda Junction to PTS and all connected by roads.": {
+        "Neboda Road (Portion) From Nagoda Junction To Pts And All Connected By Roads.": {
             "Group": [
                 "F"
             ],
@@ -4228,7 +4216,7 @@
                 "9"
             ]
         },
-        "Bogambara Primary (Kandy city)": {
+        "Bogambara Primary (Kandy City)": {
             "Group": [
                 "C"
             ],
@@ -4422,7 +4410,7 @@
                 "7"
             ]
         },
-        "Peradeniya town": {
+        "Peradeniya Town": {
             "Group": [
                 "K"
             ],
@@ -5048,7 +5036,7 @@
                 "2"
             ]
         },
-        "Debegala watta - Millawa": {
+        "Debegala Watta - Millawa": {
             "Group": [
                 "J"
             ],
@@ -5120,7 +5108,7 @@
                 "2"
             ]
         },
-        "Muthuhena watta": {
+        "Muthuhena Watta": {
             "Group": [
                 "J"
             ],
@@ -5136,7 +5124,7 @@
                 "2"
             ]
         },
-        "ovitigama": {
+        "Ovitigama": {
             "Group": [
                 "J"
             ],
@@ -5152,7 +5140,7 @@
                 "2"
             ]
         },
-        "Padukka Rd Meegoda": {
+        "Padukka Road Meegoda": {
             "Group": [
                 "J"
             ],
@@ -5176,7 +5164,7 @@
                 "2"
             ]
         },
-        "Old Rd Watareka": {
+        "Old Road Watareka": {
             "Group": [
                 "J"
             ],
@@ -5216,7 +5204,7 @@
                 "2"
             ]
         },
-        "High level Rd Watareka": {
+        "High Level Road Watareka": {
             "Group": [
                 "J"
             ],
@@ -5224,7 +5212,7 @@
                 "2"
             ]
         },
-        "Puwak watta  Meegoda": {
+        "Puwak Watta  Meegoda": {
             "Group": [
                 "J"
             ],
@@ -5388,7 +5376,7 @@
                 "3"
             ]
         },
-        "Kumaradasa MW": {
+        "Kumaradasa Mw": {
             "Group": [
                 "B"
             ],
@@ -5404,7 +5392,7 @@
                 "3"
             ]
         },
-        "Pump house": {
+        "Pump House": {
             "Group": [
                 "B"
             ],
@@ -5412,7 +5400,7 @@
                 "3"
             ]
         },
-        "Thotupala Rd": {
+        "Thotupala Road": {
             "Group": [
                 "B"
             ],
@@ -5468,7 +5456,7 @@
                 "3"
             ]
         },
-        "Pragathi MW": {
+        "Pragathi Mw": {
             "Group": [
                 "B"
             ],
@@ -5476,7 +5464,7 @@
                 "3"
             ]
         },
-        "Karuwala bedda": {
+        "Karuwala Bedda": {
             "Group": [
                 "B"
             ],
@@ -5508,7 +5496,7 @@
                 "3"
             ]
         },
-        "Ranpokuna gama": {
+        "Ranpokuna Gama": {
             "Group": [
                 "B"
             ],
@@ -5546,8 +5534,8 @@
                 "D"
             ],
             "Feeder No": [
-                "3",
-                "8"
+                "8",
+                "3"
             ]
         },
         "Kotawila": {
@@ -5814,7 +5802,7 @@
                 "8"
             ]
         },
-        "kumbalgama": {
+        "Kumbalgama": {
             "Group": [
                 "D"
             ],
@@ -5831,14 +5819,6 @@
             ]
         },
         "Midigam": {
-            "Group": [
-                "D"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
-        "Kumbalgama": {
             "Group": [
                 "D"
             ],
@@ -5974,7 +5954,7 @@
                 "12"
             ]
         },
-        "poramba": {
+        "Poramba": {
             "Group": [
                 "F"
             ],
@@ -6102,7 +6082,7 @@
                 "6"
             ]
         },
-        "University of Ruhuna": {
+        "University Of Ruhuna": {
             "Group": [
                 "H"
             ],
@@ -6176,7 +6156,7 @@
                 "7"
             ]
         },
-        "Godagama junction": {
+        "Godagama Junction": {
             "Group": [
                 "J"
             ],
@@ -6184,7 +6164,7 @@
                 "2"
             ]
         },
-        "Nilwala gate": {
+        "Nilwala Gate": {
             "Group": [
                 "J"
             ],
@@ -6192,7 +6172,7 @@
                 "2"
             ]
         },
-        "aaduwa": {
+        "Aaduwa": {
             "Group": [
                 "J"
             ],
@@ -6216,7 +6196,7 @@
                 "2"
             ]
         },
-        "2500 kade": {
+        "2500 Kade": {
             "Group": [
                 "J"
             ],
@@ -6296,7 +6276,7 @@
                 "4"
             ]
         },
-        "Isadeen town": {
+        "Isadeen Town": {
             "Group": [
                 "L"
             ],
@@ -6328,7 +6308,7 @@
                 "4"
             ]
         },
-        "Wijayathilakarama RD": {
+        "Wijayathilakarama Road": {
             "Group": [
                 "L"
             ],
@@ -6376,7 +6356,7 @@
                 "4"
             ]
         },
-        "Kamburgamuwa wawa ihala": {
+        "Kamburgamuwa Wawa Ihala": {
             "Group": [
                 "L"
             ],
@@ -6392,7 +6372,7 @@
                 "4"
             ]
         },
-        "Blood bank": {
+        "Blood Bank": {
             "Group": [
                 "L"
             ],
@@ -6424,7 +6404,7 @@
                 "4"
             ]
         },
-        "Matara town": {
+        "Matara Town": {
             "Group": [
                 "L"
             ],
@@ -6432,7 +6412,7 @@
                 "4"
             ]
         },
-        "Kmarathunga mawatha": {
+        "Kmarathunga Mawatha": {
             "Group": [
                 "L"
             ],
@@ -6504,7 +6484,7 @@
                 "4"
             ]
         },
-        "Kings watta": {
+        "Kings Watta": {
             "Group": [
                 "L"
             ],
@@ -6554,7 +6534,7 @@
                 "5"
             ]
         },
-        "CEB Areas : Aluthgamagoda": {
+        "Ceb Areas : Aluthgamagoda": {
             "Group": [
                 "G"
             ],
@@ -6626,7 +6606,7 @@
                 "1"
             ]
         },
-        "Bandanagoda.LECO Areas: Galle road from Beruwala to Maggona Rockland road": {
+        "Bandanagoda.": {
             "Group": [
                 "G"
             ],
@@ -6634,40 +6614,40 @@
                 "1"
             ]
         },
-        "Pannila road": {
+        "Pannila Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Pinhena Road and Pitawala Road": {
+        "Pinhena Road And Pitawala Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Custom House Rd": {
+        "Custom House Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Panghananda Mw from Massala Junction to Ambepitiya Junction": {
+        "Panghananda Mw From Massala Junction To Ambepitiya Junction": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Kankanangoda": {
@@ -6675,8 +6655,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Ganearaba": {
@@ -6684,17 +6664,17 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Mangala Rd": {
+        "Mangala Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Maradana Area": {
@@ -6702,8 +6682,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Bandarawatta": {
@@ -6711,17 +6691,17 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Nallahena Rd": {
+        "Nallahena Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Munhena": {
@@ -6729,8 +6709,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Batedeniya": {
@@ -6738,8 +6718,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Pahalawela": {
@@ -6747,8 +6727,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Beruwala Town": {
@@ -6756,17 +6736,17 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Custom Rd(portion)": {
+        "Custom Road(Portion)": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "China Port": {
@@ -6774,8 +6754,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Perera Mw": {
@@ -6783,62 +6763,62 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Maradana Rd": {
+        "Maradana Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Hettimulla Rd": {
+        "Hettimulla Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Station Rd and all connected by roads. Galle Road from Aluthgama Police Station to Beruwala via Hettimulla": {
+        "Station Road And All Connected By Roads. Galle Road From Aluthgama Police Station To Beruwala Via Hettimulla": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Purwarama Rd": {
+        "Purwarama Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Kandevihara Rd": {
+        "Kandevihara Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Old Rd": {
+        "Old Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Mahagoda": {
@@ -6846,17 +6826,17 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Devala Rd": {
+        "Devala Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Wadumulla": {
@@ -6864,26 +6844,26 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Galhena Rd": {
+        "Galhena Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Zaviya Rd": {
+        "Zaviya Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Welipitiya": {
@@ -6891,8 +6871,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Samsudeen Mw": {
@@ -6900,8 +6880,8 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Dharga Town": {
@@ -6909,35 +6889,35 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Mathugama Rd(portion)": {
+        "Mathugama Road(Portion)": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Mihiripenna Rd": {
+        "Mihiripenna Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Military Rd": {
+        "Military Road": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
         "Meerachchikanda": {
@@ -6945,11 +6925,11 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "MainStreet": {
+        "Mainstreet": {
             "Group": [
                 "G"
             ],
@@ -6962,25 +6942,27 @@
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "Hospital Rd and all connected by roads": {
+        "Hospital Road And All Connected By Roads": {
             "Group": [
                 "G"
             ],
             "Feeder No": [
-                "1",
-                "10"
+                "10",
+                "1"
             ]
         },
-        "LECO Areas: Galle road from Beruwala to Maggona Rockland road": {
+        "": {
             "Group": [
-                "G"
+                "G",
+                "K"
             ],
             "Feeder No": [
-                "10"
+                "10",
+                "8"
             ]
         },
         "Main Street": {
@@ -7007,14 +6989,6 @@
                 "6"
             ]
         },
-        "LECO areas: Galle road from Kalutara vidyalaya to Katukurunda junction. Mathugama Road from Katukurunda Junction to Nagoda Hospital": {
-            "Group": [
-                "K"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
         "Heenatiyangala Road": {
             "Group": [
                 "K"
@@ -7023,7 +6997,7 @@
                 "8"
             ]
         },
-        "Sebesthiyan road and all connected by roads": {
+        "Sebesthiyan Road And All Connected By Roads": {
             "Group": [
                 "K"
             ],
@@ -7057,7 +7031,7 @@
                 "6"
             ]
         },
-        "Ulapane BOI Zone": {
+        "Ulapane Boi Zone": {
             "Group": [
                 "D"
             ],
@@ -7081,7 +7055,7 @@
                 "5"
             ]
         },
-        "kotakadeniya": {
+        "Kotakadeniya": {
             "Group": [
                 "E"
             ],
@@ -7089,7 +7063,7 @@
                 "5"
             ]
         },
-        "douwe": {
+        "Douwe": {
             "Group": [
                 "E"
             ],
@@ -7097,7 +7071,7 @@
                 "5"
             ]
         },
-        "mount temple": {
+        "Mount Temple": {
             "Group": [
                 "E"
             ],
@@ -7105,7 +7079,7 @@
                 "5"
             ]
         },
-        "ulapane town": {
+        "Ulapane Town": {
             "Group": [
                 "I"
             ],
@@ -7113,7 +7087,7 @@
                 "7"
             ]
         },
-        "imbulpitiya": {
+        "Imbulpitiya": {
             "Group": [
                 "I"
             ],
@@ -7121,7 +7095,7 @@
                 "7"
             ]
         },
-        "galatha": {
+        "Galatha": {
             "Group": [
                 "I"
             ],
@@ -7129,7 +7103,7 @@
                 "7"
             ]
         },
-        "moragolla": {
+        "Moragolla": {
             "Group": [
                 "I"
             ],
@@ -7277,7 +7251,7 @@
                 "2"
             ]
         },
-        "LECO areas: Dias Place": {
+        "": {
             "Group": [
                 "B"
             ],
@@ -7301,7 +7275,7 @@
                 "9"
             ]
         },
-        "Atambagoda Rd": {
+        "Atambagoda Road": {
             "Group": [
                 "B"
             ],
@@ -7333,7 +7307,7 @@
                 "9"
             ]
         },
-        "Horana road (portion)": {
+        "Horana Road (Portion)": {
             "Group": [
                 "B"
             ],
@@ -7357,7 +7331,7 @@
                 "9"
             ]
         },
-        "Pathalirukkarama Rd": {
+        "Pathalirukkarama Road": {
             "Group": [
                 "B"
             ],
@@ -7373,7 +7347,7 @@
                 "9"
             ]
         },
-        "Suduwella Rd": {
+        "Suduwella Road": {
             "Group": [
                 "B"
             ],
@@ -7381,7 +7355,7 @@
                 "9"
             ]
         },
-        "Kaviraja Mw(portion)": {
+        "Kaviraja Mw(Portion)": {
             "Group": [
                 "B"
             ],
@@ -7405,7 +7379,7 @@
                 "9"
             ]
         },
-        "Moravinna Rd": {
+        "Moravinna Road": {
             "Group": [
                 "B"
             ],
@@ -7413,7 +7387,7 @@
                 "9"
             ]
         },
-        "Kaludewala Rd": {
+        "Kaludewala Road": {
             "Group": [
                 "B"
             ],
@@ -7429,7 +7403,7 @@
                 "9"
             ]
         },
-        "Deerananda Mw. Modarawila road": {
+        "Deerananda Mw. Modarawila Road": {
             "Group": [
                 "B"
             ],
@@ -7437,7 +7411,7 @@
                 "9"
             ]
         },
-        "Morawinna road (portion) and all connected by roads. Old Galle Road from Paratta Junction to Panadura Damro Showroom via Keselwatta": {
+        "Morawinna Road (Portion) And All Connected By Roads. Old Galle Road From Paratta Junction To Panadura Damro Showroom Via Keselwatta": {
             "Group": [
                 "B"
             ],
@@ -7445,7 +7419,7 @@
                 "9"
             ]
         },
-        "Pallimulla and Walana. Thotawatta Road": {
+        "Pallimulla And Walana. Thotawatta Road": {
             "Group": [
                 "B"
             ],
@@ -7461,7 +7435,7 @@
                 "9"
             ]
         },
-        "Paraththa road": {
+        "Paraththa Road": {
             "Group": [
                 "B"
             ],
@@ -7469,7 +7443,7 @@
                 "9"
             ]
         },
-        "Wattalpola Rd": {
+        "Wattalpola Road": {
             "Group": [
                 "B"
             ],
@@ -7477,7 +7451,7 @@
                 "9"
             ]
         },
-        "Gimpotha Rd": {
+        "Gimpotha Road": {
             "Group": [
                 "B"
             ],
@@ -7485,7 +7459,7 @@
                 "9"
             ]
         },
-        "Totupola Rd": {
+        "Totupola Road": {
             "Group": [
                 "B"
             ],
@@ -7501,7 +7475,7 @@
                 "9"
             ]
         },
-        "Galkanuwa Rd": {
+        "Galkanuwa Road": {
             "Group": [
                 "B"
             ],
@@ -7509,7 +7483,7 @@
                 "9"
             ]
         },
-        "Kaduruduwa Rd": {
+        "Kaduruduwa Road": {
             "Group": [
                 "B"
             ],
@@ -7541,7 +7515,7 @@
                 "9"
             ]
         },
-        "Koralawella area (portion) and Modara and all connected by roads.": {
+        "Koralawella Area (Portion) And Modara And All Connected By Roads.": {
             "Group": [
                 "B"
             ],
@@ -7595,8 +7569,8 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Mawala": {
@@ -7621,8 +7595,8 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Walawwatta": {
@@ -7671,8 +7645,8 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Muttettuwa": {
@@ -7705,11 +7679,11 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
-        "Ambagahathota Rd": {
+        "Ambagahathota Road": {
             "Group": [
                 "C"
             ],
@@ -7757,8 +7731,8 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Haltota": {
@@ -7785,7 +7759,7 @@
                 "1"
             ]
         },
-        "Wishwa flywood": {
+        "Wishwa Flywood": {
             "Group": [
                 "C"
             ],
@@ -7880,9 +7854,9 @@
                 "L"
             ],
             "Feeder No": [
-                "3",
+                "6",
                 "1",
-                "6"
+                "3"
             ]
         },
         "Maswila": {
@@ -7915,8 +7889,8 @@
                 "E"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Galgemandiya": {
@@ -8127,7 +8101,7 @@
                 "3"
             ]
         },
-        "Aruggoda Rd": {
+        "Aruggoda Road": {
             "Group": [
                 "E"
             ],
@@ -8311,7 +8285,7 @@
                 "3"
             ]
         },
-        "Telecom-Goonapola": {
+        "Te": {
             "Group": [
                 "E"
             ],
@@ -8336,14 +8310,6 @@
             ]
         },
         "Pamunugama": {
-            "Group": [
-                "E"
-            ],
-            "Feeder No": [
-                "3"
-            ]
-        },
-        "Telecom-Bandaragama": {
             "Group": [
                 "E"
             ],
@@ -8421,8 +8387,8 @@
                 "L"
             ],
             "Feeder No": [
-                "3",
-                "6"
+                "6",
+                "3"
             ]
         },
         "Lokapila": {
@@ -8609,7 +8575,7 @@
                 "8"
             ]
         },
-        "Korala ima": {
+        "Korala Ima": {
             "Group": [
                 "J"
             ],
@@ -8617,7 +8583,7 @@
                 "8"
             ]
         },
-        "Jambugasmull Rd": {
+        "Jambugasmull Road": {
             "Group": [
                 "J"
             ],
@@ -8755,7 +8721,7 @@
                 "4"
             ]
         },
-        "Maduru oya": {
+        "Maduru Oya": {
             "Group": [
                 "K"
             ],
@@ -8941,7 +8907,7 @@
                 "6"
             ]
         },
-        "Vithanakanda tea Factory": {
+        "Vithanakanda Tea Factory": {
             "Group": [
                 "C"
             ],
@@ -8989,7 +8955,7 @@
                 "6"
             ]
         },
-        "Sisiramba TF": {
+        "Sisiramba Tf": {
             "Group": [
                 "C"
             ],
@@ -8997,7 +8963,7 @@
                 "6"
             ]
         },
-        "Delwala II": {
+        "Delwala Ii": {
             "Group": [
                 "C"
             ],
@@ -9005,7 +8971,7 @@
                 "6"
             ]
         },
-        "Uda Delwela II": {
+        "Uda Delwela Ii": {
             "Group": [
                 "C"
             ],
@@ -9037,7 +9003,7 @@
                 "6"
             ]
         },
-        "Telecom Nivithigala": {
+        "Te": {
             "Group": [
                 "C"
             ],
@@ -9053,7 +9019,7 @@
                 "6"
             ]
         },
-        "Kiriella Watha s's": {
+        "Kiriella Watha S'S": {
             "Group": [
                 "C"
             ],
@@ -9229,7 +9195,7 @@
                 "6"
             ]
         },
-        "Yatagara Manatun kanda": {
+        "Yatagara Manatun Kanda": {
             "Group": [
                 "C"
             ],
@@ -9245,7 +9211,7 @@
                 "6"
             ]
         },
-        "Kolombugama II": {
+        "Kolombugama Ii": {
             "Group": [
                 "C"
             ],
@@ -9757,7 +9723,7 @@
                 "8"
             ]
         },
-        "Kanegalla NorthAmbatenna": {
+        "Kanegalla Northambatenna": {
             "Group": [
                 "J"
             ],
@@ -9765,7 +9731,7 @@
                 "8"
             ]
         },
-        "Guruluwana TF": {
+        "Guruluwana Tf": {
             "Group": [
                 "J"
             ],
@@ -9861,7 +9827,7 @@
                 "8"
             ]
         },
-        "Veenes Hero Water Plant": {
+        "Veenes Hero Water Roadant": {
             "Group": [
                 "J"
             ],
@@ -10063,7 +10029,7 @@
                 "1"
             ]
         },
-        "miriswatta": {
+        "Miriswatta": {
             "Group": [
                 "C"
             ],
@@ -10127,7 +10093,7 @@
                 "1"
             ]
         },
-        "manikkawatta": {
+        "Manikkawatta": {
             "Group": [
                 "C"
             ],
@@ -10313,7 +10279,7 @@
                 "11"
             ]
         },
-        "Reservoir control": {
+        "Reservoir Control": {
             "Group": [
                 "G"
             ],
@@ -10425,8 +10391,8 @@
                 "L"
             ],
             "Feeder No": [
-                "5",
-                "4"
+                "4",
+                "5"
             ]
         },
         "Kallady": {
@@ -10581,7 +10547,7 @@
                 "6"
             ]
         },
-        "Pasikudah Hotel area": {
+        "Pasikudah Hotel Area": {
             "Group": [
                 "K"
             ],
@@ -10589,7 +10555,7 @@
                 "1"
             ]
         },
-        "pasikudah": {
+        "Pasikudah": {
             "Group": [
                 "K"
             ],
@@ -10597,7 +10563,7 @@
                 "1"
             ]
         },
-        "Valachchenei town": {
+        "Valachchenei Town": {
             "Group": [
                 "K"
             ],
@@ -10717,8 +10683,8 @@
                 "H"
             ],
             "Feeder No": [
-                "8",
-                "6"
+                "6",
+                "8"
             ]
         },
         "Kandalama": {
@@ -10967,8 +10933,8 @@
         },
         "Andarawewa": {
             "Group": [
-                "B",
-                "C"
+                "C",
+                "B"
             ],
             "Feeder No": [
                 "4",
@@ -11039,7 +11005,7 @@
                 "4"
             ]
         },
-        "Bata atha": {
+        "Bata Atha": {
             "Group": [
                 "C"
             ],
@@ -11111,7 +11077,7 @@
                 "4"
             ]
         },
-        "Shangrila hotel": {
+        "Shangrila Hotel": {
             "Group": [
                 "C"
             ],
@@ -11247,7 +11213,7 @@
                 "4"
             ]
         },
-        "Boralu kanda": {
+        "Boralu Kanda": {
             "Group": [
                 "C"
             ],
@@ -11441,7 +11407,7 @@
                 "8"
             ]
         },
-        "Sooriyawewa 100ft Rd": {
+        "Sooriyawewa 100Ft Road": {
             "Group": [
                 "E"
             ],
@@ -11481,7 +11447,7 @@
                 "8"
             ]
         },
-        "Pahala andarawewa": {
+        "Pahala Andarawewa": {
             "Group": [
                 "E"
             ],
@@ -11513,7 +11479,7 @@
                 "8"
             ]
         },
-        "Sooriyawewa town": {
+        "Sooriyawewa Town": {
             "Group": [
                 "E"
             ],
@@ -11577,7 +11543,7 @@
                 "6"
             ]
         },
-        "HIPG Hambantota Habour": {
+        "Hipg Hambantota Habour": {
             "Group": [
                 "I"
             ],
@@ -11697,8 +11663,8 @@
                 "F"
             ],
             "Feeder No": [
-                "11",
-                "4"
+                "4",
+                "11"
             ]
         },
         "Rideegama": {
@@ -11759,7 +11725,7 @@
                 "3"
             ]
         },
-        "dambagolla": {
+        "Dambagolla": {
             "Group": [
                 "D"
             ],
@@ -11807,7 +11773,7 @@
                 "7"
             ]
         },
-        "40th milepost": {
+        "40Th Milepost": {
             "Group": [
                 "K"
             ],
@@ -11891,12 +11857,12 @@
         },
         "Pitiduwa": {
             "Group": [
-                "B",
-                "I"
+                "I",
+                "B"
             ],
             "Feeder No": [
-                "11",
-                "8"
+                "8",
+                "11"
             ]
         },
         "Wawulugala": {
@@ -11961,8 +11927,8 @@
                 "J"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Balagoda": {
@@ -11971,8 +11937,8 @@
                 "J"
             ],
             "Feeder No": [
-                "3",
-                "1"
+                "1",
+                "3"
             ]
         },
         "Sandarawala": {
@@ -11983,7 +11949,7 @@
                 "3"
             ]
         },
-        "Baddegama town": {
+        "Baddegama Town": {
             "Group": [
                 "C"
             ],
@@ -12079,7 +12045,19 @@
                 "3"
             ]
         },
-        "LECO Areas:Udugama Road from Makuluwa Junction to Sambodi": {
+        "": {
+            "Group": [
+                "K",
+                "E",
+                "F"
+            ],
+            "Feeder No": [
+                "6",
+                "7",
+                "5"
+            ]
+        },
+        "Matara Road From Sambodiya To Unawatuna Cement Factory": {
             "Group": [
                 "E"
             ],
@@ -12087,7 +12065,7 @@
                 "6"
             ]
         },
-        "Matara road from Sambodiya to Unawatuna Cement Factory": {
+        "Akuressa Road From Dewata Junction Towards Nugaduwa And By Roads. Udugama Road From Dikela To Makuluwa": {
             "Group": [
                 "E"
             ],
@@ -12095,7 +12073,7 @@
                 "6"
             ]
         },
-        "Akuressa road from Dewata junction towards Nugaduwa and by roads. Udugama road from Dikela to Makuluwa": {
+        "Makuluwa To Magalla": {
             "Group": [
                 "E"
             ],
@@ -12103,15 +12081,7 @@
                 "6"
             ]
         },
-        "Makuluwa to Magalla": {
-            "Group": [
-                "E"
-            ],
-            "Feeder No": [
-                "6"
-            ]
-        },
-        "Matara road from Magalla to Navy Camp": {
+        "Matara Road From Magalla To Navy Camp": {
             "Group": [
                 "E"
             ],
@@ -12143,7 +12113,7 @@
                 "6"
             ]
         },
-        "Thakkiya Road and by roads": {
+        "Thakkiya Road And By Roads": {
             "Group": [
                 "E"
             ],
@@ -12191,7 +12161,7 @@
                 "5"
             ]
         },
-        "Mount plesent": {
+        "Mount Roadesent": {
             "Group": [
                 "F"
             ],
@@ -12207,7 +12177,7 @@
                 "5"
             ]
         },
-        "Beligaha PSS with LECO (Boosa": {
+        "Beligaha Pss With": {
             "Group": [
                 "F"
             ],
@@ -12271,7 +12241,7 @@
                 "5"
             ]
         },
-        "HNDE": {
+        "Hnde": {
             "Group": [
                 "F"
             ],
@@ -12343,7 +12313,7 @@
                 "5"
             ]
         },
-        "LECO areas:Hirimbura cross road from Beligaha Junction to Karapitiya": {
+        "Labuduwa Road From Karapitiya To Labuduwa And By Roads": {
             "Group": [
                 "F"
             ],
@@ -12351,7 +12321,7 @@
                 "5"
             ]
         },
-        "Labuduwa road from Karapitiya to Labuduwa and by roads": {
+        "Galle Town (Portion)Hirimbura Road From Beligaha Junction To Sarenthukade Junction Via Dangedara": {
             "Group": [
                 "F"
             ],
@@ -12359,7 +12329,7 @@
                 "5"
             ]
         },
-        "Galle town (Portion)Hirimbura road from Beligaha junction to Sarenthukade junction via Dangedara": {
+        "Jifriya Mw From Sarenthukade To Minuwangoda": {
             "Group": [
                 "F"
             ],
@@ -12367,15 +12337,7 @@
                 "5"
             ]
         },
-        "Jifriya Mw from Sarenthukade to Minuwangoda": {
-            "Group": [
-                "F"
-            ],
-            "Feeder No": [
-                "5"
-            ]
-        },
-        "Wakwella road from Kalegana to Asiri hospital": {
+        "Wakwella Road From Kalegana To Asiri Hospital": {
             "Group": [
                 "F"
             ],
@@ -12391,7 +12353,7 @@
                 "5"
             ]
         },
-        "Bataganwila road from Julgaha Junction to Beligaha Junction": {
+        "Bataganwila Road From Julgaha Junction To Beligaha Junction": {
             "Group": [
                 "F"
             ],
@@ -12399,7 +12361,7 @@
                 "5"
             ]
         },
-        "Richmond Hill road": {
+        "Richmond Hill Road": {
             "Group": [
                 "F"
             ],
@@ -12407,7 +12369,7 @@
                 "5"
             ]
         },
-        "Havelok road and town Hirimbura road from Beligaha junction to Karapitiya via Kahaduwatta and Hirimbura junctions": {
+        "Havelok Road And Town Hirimbura Road From Beligaha Junction To Karapitiya Via Kahaduwatta And Hirimbura Junctions": {
             "Group": [
                 "F"
             ],
@@ -12415,7 +12377,7 @@
                 "5"
             ]
         },
-        "Wiskam Rd": {
+        "Wiskam Road": {
             "Group": [
                 "F"
             ],
@@ -12423,7 +12385,7 @@
                 "5"
             ]
         },
-        "Kandewatta Rd": {
+        "Kandewatta Road": {
             "Group": [
                 "F"
             ],
@@ -12431,7 +12393,7 @@
                 "5"
             ]
         },
-        "Eliot Rd": {
+        "Eliot Road": {
             "Group": [
                 "F"
             ],
@@ -12439,7 +12401,7 @@
                 "5"
             ]
         },
-        "Kalegana road from Kahaduwatta to Ginthota via Kalegana Junction": {
+        "Kalegana Road From Kahaduwatta To Ginthota Via Kalegana Junction": {
             "Group": [
                 "F"
             ],
@@ -12447,7 +12409,7 @@
                 "5"
             ]
         },
-        "Wakunugoda road": {
+        "Wakunugoda Road": {
             "Group": [
                 "F"
             ],
@@ -12455,7 +12417,7 @@
                 "5"
             ]
         },
-        "Galle road from Bus Stand to Ginthota bridge via Kaluwella": {
+        "Galle Road From Bus Stand To Ginthota Bridge Via Kaluwella": {
             "Group": [
                 "F"
             ],
@@ -12463,7 +12425,7 @@
                 "5"
             ]
         },
-        "Mahamudali Mw and all connected by roads": {
+        "Mahamudali Mw And All Connected By Roads": {
             "Group": [
                 "F"
             ],
@@ -12583,7 +12545,7 @@
                 "2"
             ]
         },
-        "Koggala industrial zone": {
+        "Koggala Industrial Zone": {
             "Group": [
                 "I"
             ],
@@ -12729,8 +12691,8 @@
         },
         "Kurunduwatta": {
             "Group": [
-                "J",
-                "L"
+                "L",
+                "J"
             ],
             "Feeder No": [
                 "1",
@@ -12785,7 +12747,7 @@
                 "7"
             ]
         },
-        "wawlagala": {
+        "Wawlagala": {
             "Group": [
                 "K"
             ],
@@ -12817,14 +12779,6 @@
                 "7"
             ]
         },
-        "LECO Areas:Galle Road from Peraliya to Ginthota Bridge via Hikkaduwa town": {
-            "Group": [
-                "K"
-            ],
-            "Feeder No": [
-                "7"
-            ]
-        },
         "Thiranagama": {
             "Group": [
                 "K"
@@ -12849,7 +12803,7 @@
                 "7"
             ]
         },
-        "Rathgama and Boossa. Baddegama Road from Hikkaduwa town to Nalagasdeniya. Wewalamilla Road. Rathgama-Dodangoda road (portion) and all connected by roads. Pinkanda Road": {
+        "Rathgama And Boossa. Baddegama Road From Hikkaduwa Town To Nalagasdeniya. Wewalamilla Road. Rathgama-Dodangoda Road (Portion) And All Connected By Roads. Pinkanda Road": {
             "Group": [
                 "K"
             ],
@@ -12857,7 +12811,7 @@
                 "7"
             ]
         },
-        "Elpitiya Road from Kumarakanda to Pinkanda and all connected by roads": {
+        "Elpitiya Road From Kumarakanda To Pinkanda And All Connected By Roads": {
             "Group": [
                 "K"
             ],
@@ -12889,7 +12843,7 @@
                 "9"
             ]
         },
-        "kakillahena": {
+        "Kakillahena": {
             "Group": [
                 "L"
             ],
@@ -12897,7 +12851,7 @@
                 "9"
             ]
         },
-        "katandola": {
+        "Katandola": {
             "Group": [
                 "L"
             ],
@@ -13205,7 +13159,7 @@
                 "4"
             ]
         },
-        "Hatton town area": {
+        "Hatton Town Area": {
             "Group": [
                 "K"
             ],
@@ -13237,7 +13191,7 @@
                 "5"
             ]
         },
-        "Dikoya town": {
+        "Dikoya Town": {
             "Group": [
                 "L"
             ],
@@ -13317,8 +13271,8 @@
                 "H"
             ],
             "Feeder No": [
-                "2",
-                "8"
+                "8",
+                "2"
             ]
         },
         "Athgalamulla": {
@@ -13385,7 +13339,7 @@
                 "1"
             ]
         },
-        "AGA office Beliatta": {
+        "Aga Office Beliatta": {
             "Group": [
                 "E"
             ],
@@ -13393,7 +13347,7 @@
                 "1"
             ]
         },
-        "Dickwella road": {
+        "Dickwella Road": {
             "Group": [
                 "E"
             ],
@@ -13961,7 +13915,7 @@
                 "3"
             ]
         },
-        "Henkaduwa.medilla": {
+        "Henkaduwa.Medilla": {
             "Group": [
                 "J"
             ],
@@ -13993,7 +13947,7 @@
                 "3"
             ]
         },
-        "CTB": {
+        "Ctb": {
             "Group": [
                 "J"
             ],
@@ -14033,7 +13987,7 @@
                 "3"
             ]
         },
-        "Port complex": {
+        "Port Complex": {
             "Group": [
                 "J"
             ],
@@ -14401,7 +14355,7 @@
                 "4"
             ]
         },
-        "WalasmullaTown": {
+        "Walasmullatown": {
             "Group": [
                 "L"
             ],
@@ -14721,7 +14675,7 @@
                 "4"
             ]
         },
-        "kanumuldeniya": {
+        "Kanumuldeniya": {
             "Group": [
                 "L"
             ],
@@ -14779,7 +14733,7 @@
                 "3"
             ]
         },
-        "Morontota CSC Area (Thalewela": {
+        "Morontota Csc Area (Thalewela": {
             "Group": [
                 "D"
             ],
@@ -14811,7 +14765,7 @@
                 "4"
             ]
         },
-        "Kekalle town": {
+        "Kekalle Town": {
             "Group": [
                 "E"
             ],
@@ -14867,7 +14821,7 @@
                 "1"
             ]
         },
-        "Galagedara town": {
+        "Galagedara Town": {
             "Group": [
                 "K"
             ],
@@ -14965,7 +14919,7 @@
                 "3"
             ]
         },
-        "Maththegoda housing scheme": {
+        "Maththegoda Housing Scheme": {
             "Group": [
                 "K"
             ],
@@ -15013,7 +14967,7 @@
                 "3"
             ]
         },
-        "Sikuradha pola": {
+        "Sikuradha Pola": {
             "Group": [
                 "K"
             ],
@@ -15340,7 +15294,7 @@
     "133": {},
     "1428": {},
     "359": {
-        "THE CHAIRMAN": {
+        "The Chairman": {
             "Group": [
                 "L"
             ],
@@ -15348,7 +15302,7 @@
                 "370002059"
             ]
         },
-        "MILK INDUS. OF LANKACO. LTD": {
+        "Milk Indus. Of Lankaco. Ltd": {
             "Group": [
                 "L"
             ],
@@ -15356,7 +15310,7 @@
                 "370002059"
             ]
         },
-        "COLOMBO 5.": {
+        "Colombo 5.": {
             "Group": [
                 "L"
             ],
@@ -15539,8 +15493,8 @@
                 "P"
             ],
             "Feeder No": [
-                "8",
-                "6"
+                "6",
+                "8"
             ]
         },
         "Posonpura": {
@@ -15753,11 +15707,9 @@
         },
         "3rd Mile Post": {
             "Group": [
-                "U",
                 "P"
             ],
             "Feeder No": [
-                "5",
                 "6"
             ]
         },
@@ -15915,8 +15867,8 @@
         },
         "Himidurawa": {
             "Group": [
-                "T",
-                "P"
+                "P",
+                "T"
             ],
             "Feeder No": [
                 "10",
@@ -15979,7 +15931,7 @@
                 "8"
             ]
         },
-        "4th Bridge": {
+        "4Th Bridge": {
             "Group": [
                 "P"
             ],
@@ -16075,7 +16027,7 @@
                 "7"
             ]
         },
-        "7th Mile post": {
+        "7Th Mile Post": {
             "Group": [
                 "Q"
             ],
@@ -16139,7 +16091,7 @@
                 "2"
             ]
         },
-        "onthachchimadam": {
+        "Onthachchimadam": {
             "Group": [
                 "R"
             ],
@@ -16147,7 +16099,7 @@
                 "2"
             ]
         },
-        "puthukkudiyiruppu": {
+        "Puthukkudiyiruppu": {
             "Group": [
                 "R"
             ],
@@ -16173,12 +16125,12 @@
         },
         "Majeedpuram": {
             "Group": [
-                "S",
-                "U"
+                "U",
+                "S"
             ],
             "Feeder No": [
-                "1",
-                "5"
+                "5",
+                "1"
             ]
         },
         "Buddangala": {
@@ -16189,7 +16141,7 @@
                 "1"
             ]
         },
-        "26th Colony": {
+        "26Th Colony": {
             "Group": [
                 "S"
             ],
@@ -16205,7 +16157,7 @@
                 "1"
             ]
         },
-        "9th": {
+        "9Th": {
             "Group": [
                 "S"
             ],
@@ -16213,7 +16165,7 @@
                 "1"
             ]
         },
-        "3rd": {
+        "3Rd": {
             "Group": [
                 "S"
             ],
@@ -16221,7 +16173,7 @@
                 "1"
             ]
         },
-        "10th": {
+        "10Th": {
             "Group": [
                 "S"
             ],
@@ -16229,7 +16181,7 @@
                 "1"
             ]
         },
-        "17th": {
+        "17Th": {
             "Group": [
                 "S"
             ],
@@ -16237,7 +16189,7 @@
                 "1"
             ]
         },
-        "18th": {
+        "18Th": {
             "Group": [
                 "S"
             ],
@@ -16245,7 +16197,7 @@
                 "1"
             ]
         },
-        "19th Colonies": {
+        "19Th Colonies": {
             "Group": [
                 "S"
             ],
@@ -16277,7 +16229,7 @@
                 "10"
             ]
         },
-        "4th Lane": {
+        "4Th Lane": {
             "Group": [
                 "T"
             ],
@@ -16325,7 +16277,7 @@
                 "10"
             ]
         },
-        "Ampara kachcheri Area": {
+        "Ampara Kachcheri Area": {
             "Group": [
                 "T"
             ],
@@ -16365,7 +16317,7 @@
                 "10"
             ]
         },
-        "17th Colony": {
+        "17Th Colony": {
             "Group": [
                 "T"
             ],
@@ -16373,7 +16325,7 @@
                 "10"
             ]
         },
-        "21st Colony": {
+        "21St Colony": {
             "Group": [
                 "T"
             ],
@@ -16453,7 +16405,7 @@
                 "5"
             ]
         },
-        "Mahanagapura 8th Ela": {
+        "Mahanagapura 8Th Ela": {
             "Group": [
                 "U"
             ],
@@ -16477,7 +16429,7 @@
                 "5"
             ]
         },
-        "8th Mile post": {
+        "8Th Mile Post": {
             "Group": [
                 "U"
             ],
@@ -16485,7 +16437,7 @@
                 "5"
             ]
         },
-        "9th Mile Post": {
+        "9Th Mile Post": {
             "Group": [
                 "U"
             ],
@@ -16533,7 +16485,15 @@
                 "5"
             ]
         },
-        "2nd Mile post": {
+        "3Rd Mile Post": {
+            "Group": [
+                "U"
+            ],
+            "Feeder No": [
+                "5"
+            ]
+        },
+        "2Nd Mile Post": {
             "Group": [
                 "U"
             ],
@@ -16613,7 +16573,7 @@
                 "5"
             ]
         },
-        "Akkaraipatthu pottuvil Rd": {
+        "Akkaraipatthu Pottuvil Road": {
             "Group": [
                 "U"
             ],
@@ -16661,7 +16621,7 @@
                 "5"
             ]
         },
-        "kanchikudiyaru": {
+        "Kanchikudiyaru": {
             "Group": [
                 "U"
             ],
@@ -16693,7 +16653,7 @@
                 "5"
             ]
         },
-        "Sagama Rd": {
+        "Sagama Road": {
             "Group": [
                 "U"
             ],
@@ -17027,15 +16987,15 @@
     "Badulla": {
         "Haliela": {
             "Group": [
-                "S",
-                "P"
+                "P",
+                "S"
             ],
             "Feeder No": [
-                "3",
-                "6"
+                "6",
+                "3"
             ]
         },
-        "Badulla town": {
+        "Badulla Town": {
             "Group": [
                 "R"
             ],
@@ -17045,12 +17005,12 @@
         },
         "Bandarawela": {
             "Group": [
-                "S",
-                "R"
+                "R",
+                "S"
             ],
             "Feeder No": [
-                "3",
-                "4"
+                "4",
+                "3"
             ]
         },
         "Ella": {
@@ -17067,8 +17027,8 @@
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "8"
+                "8",
+                "3"
             ]
         },
         "Meegahakiula": {
@@ -17155,12 +17115,12 @@
         },
         "Udupila": {
             "Group": [
-                "T",
-                "P"
+                "P",
+                "T"
             ],
             "Feeder No": [
-                "14",
-                "10"
+                "10",
+                "14"
             ]
         },
         "Meegahawatta": {
@@ -17197,12 +17157,12 @@
         },
         "Weliweriya": {
             "Group": [
-                "T",
-                "P"
+                "P",
+                "T"
             ],
             "Feeder No": [
-                "14",
-                "10"
+                "10",
+                "14"
             ]
         },
         "Etikehelgalla": {
@@ -17373,7 +17333,7 @@
                 "7"
             ]
         },
-        "Mahena Rd": {
+        "Mahena Road": {
             "Group": [
                 "Q"
             ],
@@ -17405,7 +17365,7 @@
                 "7"
             ]
         },
-        "Kottunna Rd": {
+        "Kottunna Road": {
             "Group": [
                 "Q"
             ],
@@ -17413,7 +17373,7 @@
                 "12"
             ]
         },
-        "Samagi MW": {
+        "Samagi Mw": {
             "Group": [
                 "Q"
             ],
@@ -17437,7 +17397,7 @@
                 "12"
             ]
         },
-        "Sampaya MW": {
+        "Sampaya Mw": {
             "Group": [
                 "Q"
             ],
@@ -17469,7 +17429,7 @@
                 "12"
             ]
         },
-        "Kandakapapu JN": {
+        "Kandakapapu Jn": {
             "Group": [
                 "T"
             ],
@@ -17477,7 +17437,7 @@
                 "10"
             ]
         },
-        "Kokiskade JN": {
+        "Kokiskade Jn": {
             "Group": [
                 "T"
             ],
@@ -17509,7 +17469,7 @@
                 "10"
             ]
         },
-        "Mihidu MW": {
+        "Mihidu Mw": {
             "Group": [
                 "T"
             ],
@@ -17517,7 +17477,7 @@
                 "10"
             ]
         },
-        "Batahena Rd": {
+        "Batahena Road": {
             "Group": [
                 "T"
             ],
@@ -17565,7 +17525,7 @@
                 "10"
             ]
         },
-        "Araliyagaha JN": {
+        "Araliyagaha Jn": {
             "Group": [
                 "T"
             ],
@@ -17613,7 +17573,7 @@
                 "11"
             ]
         },
-        "Galwala JN": {
+        "Galwala Jn": {
             "Group": [
                 "U"
             ],
@@ -17621,7 +17581,7 @@
                 "11"
             ]
         },
-        "Sabawa RD": {
+        "Sabawa Road": {
             "Group": [
                 "U"
             ],
@@ -17629,7 +17589,7 @@
                 "11"
             ]
         },
-        "Sagabo MW": {
+        "Sagabo Mw": {
             "Group": [
                 "U"
             ],
@@ -17645,7 +17605,7 @@
                 "11"
             ]
         },
-        "Gunarathna MW": {
+        "Gunarathna Mw": {
             "Group": [
                 "U"
             ],
@@ -17653,7 +17613,7 @@
                 "11"
             ]
         },
-        "Keselpadura JN": {
+        "Keselpadura Jn": {
             "Group": [
                 "U"
             ],
@@ -17807,7 +17767,7 @@
                 "4"
             ]
         },
-        "dankotuwa": {
+        "Dankotuwa": {
             "Group": [
                 "Q"
             ],
@@ -17815,7 +17775,7 @@
                 "5"
             ]
         },
-        "dankotuwa hospital": {
+        "Dankotuwa Hospital": {
             "Group": [
                 "Q"
             ],
@@ -17823,7 +17783,7 @@
                 "5"
             ]
         },
-        "Dankotuwa - Pannala road up to singakkuliya": {
+        "Dankotuwa - Pannala Road Up To Singakkuliya": {
             "Group": [
                 "Q"
             ],
@@ -17831,7 +17791,7 @@
                 "5"
             ]
         },
-        "matikotuwa": {
+        "Matikotuwa": {
             "Group": [
                 "Q"
             ],
@@ -17839,7 +17799,7 @@
                 "5"
             ]
         },
-        "yogiyana": {
+        "Yogiyana": {
             "Group": [
                 "Q"
             ],
@@ -17847,7 +17807,7 @@
                 "5"
             ]
         },
-        "mohottimulla. Dankotuwa  -  Naththandiya road up to Kirimetiyana Junction": {
+        "Mohottimulla. Dankotuwa  -  Naththandiya Road Up To Kirimetiyana Junction": {
             "Group": [
                 "Q"
             ],
@@ -17855,7 +17815,7 @@
                 "5"
             ]
         },
-        "Halldanduwana to Mallwaththa": {
+        "Halldanduwana To Mallwaththa": {
             "Group": [
                 "Q"
             ],
@@ -17863,7 +17823,7 @@
                 "5"
             ]
         },
-        "Ginigalpola to mirissankotuwa": {
+        "Ginigalpola To Mirissankotuwa": {
             "Group": [
                 "Q"
             ],
@@ -17871,7 +17831,7 @@
                 "5"
             ]
         },
-        "Kirimatiyana Junction to Pothuatawana Hundirapola.": {
+        "Kirimatiyana Junction To Pothuatawana Hundirapola.": {
             "Group": [
                 "Q"
             ],
@@ -17879,7 +17839,7 @@
                 "5"
             ]
         },
-        "Dunagaha Miriswatta Rd": {
+        "Dunagaha Miriswatta Road": {
             "Group": [
                 "R"
             ],
@@ -17895,7 +17855,7 @@
                 "7"
             ]
         },
-        "Kochchikade PSS": {
+        "Kochchikade Pss": {
             "Group": [
                 "T"
             ],
@@ -17951,7 +17911,7 @@
                 "8"
             ]
         },
-        "Kochchikade Town to Ronowel": {
+        "Kochchikade Town To Ronowel": {
             "Group": [
                 "T"
             ],
@@ -17999,7 +17959,7 @@
                 "8"
             ]
         },
-        "Bolawaththa PSS": {
+        "Bolawaththa Pss": {
             "Group": [
                 "U"
             ],
@@ -18007,7 +17967,7 @@
                 "2"
             ]
         },
-        "Bolawththa Junction to ranweli Hotel": {
+        "Bolawththa Junction To Ranweli Hotel": {
             "Group": [
                 "U"
             ],
@@ -18015,7 +17975,7 @@
                 "2"
             ]
         },
-        "Gin Oya lodge": {
+        "Gin Oya Lodge": {
             "Group": [
                 "U"
             ],
@@ -18031,7 +17991,7 @@
                 "2"
             ]
         },
-        "waikkala.": {
+        "Waikkala.": {
             "Group": [
                 "U"
             ],
@@ -18063,7 +18023,7 @@
                 "3"
             ]
         },
-        "lunuvila": {
+        "Lunuvila": {
             "Group": [
                 "W"
             ],
@@ -18071,7 +18031,7 @@
                 "3"
             ]
         },
-        "little Rome": {
+        "Little Rome": {
             "Group": [
                 "W"
             ],
@@ -18095,7 +18055,7 @@
                 "3"
             ]
         },
-        "LECO Araes: Cemetry road": {
+        "": {
             "Group": [
                 "W"
             ],
@@ -18103,7 +18063,7 @@
                 "10"
             ]
         },
-        "Lewis Place": {
+        "Lewis Roadace": {
             "Group": [
                 "W"
             ],
@@ -18119,7 +18079,7 @@
                 "10"
             ]
         },
-        "Meerigama Rd(Portion)": {
+        "Meerigama Road(Portion)": {
             "Group": [
                 "W"
             ],
@@ -18143,7 +18103,7 @@
                 "10"
             ]
         },
-        "Chilaw Rd": {
+        "Chilaw Road": {
             "Group": [
                 "W"
             ],
@@ -18151,7 +18111,7 @@
                 "10"
             ]
         },
-        "Colombo Rd(portion)": {
+        "Colombo Road(Portion)": {
             "Group": [
                 "W"
             ],
@@ -18159,7 +18119,7 @@
                 "10"
             ]
         },
-        "Old Chilaw Rd": {
+        "Old Chilaw Road": {
             "Group": [
                 "W"
             ],
@@ -18167,7 +18127,7 @@
                 "10"
             ]
         },
-        "Mansion Pl": {
+        "Mansion Road": {
             "Group": [
                 "W"
             ],
@@ -18175,7 +18135,7 @@
                 "10"
             ]
         },
-        "Cannal Rd and Lane": {
+        "Cannal Road And Lane": {
             "Group": [
                 "W"
             ],
@@ -18183,7 +18143,7 @@
                 "10"
             ]
         },
-        "Sebesthian Rd": {
+        "Sebesthian Road": {
             "Group": [
                 "W"
             ],
@@ -18199,7 +18159,7 @@
                 "10"
             ]
         },
-        "Anavi Lane and all connected by roads.": {
+        "Anavi Lane And All Connected By Roads.": {
             "Group": [
                 "W"
             ],
@@ -18485,94 +18445,98 @@
                 "2"
             ]
         },
-        "LECO Areas: Kandy road from new Kelani Birdge to Peliyagoda fly over": {
+        "": {
             "Group": [
+                "V",
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "4",
+                "5",
+                "3"
             ]
         },
-        "Biyagama road": {
+        "Biyagama Road": {
             "Group": [
+                "V",
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "1",
+                "3"
             ]
         },
-        "Old Kandy road": {
+        "Old Kandy Road": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Negombo road from Peliyagoda roundabout to Handala junction": {
+        "Negombo Road From Peliyagoda Roundabout To Handala Junction": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "New Nuge road": {
+        "New Nuge Road": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Nuge road": {
+        "Nuge Road": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Dutugemunu Mw and all connected by roads": {
+        "Dutugemunu Mw And All Connected By Roads": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Kolonnawa area: Ambatale road from Sedawatta to Kohilawatta junction": {
+        "Kolonnawa Area: Ambatale Road From Sedawatta To Kohilawatta Junction": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Kelaninadeegama road": {
+        "Kelaninadeegama Road": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
         "Ramyaweera Mw": {
@@ -18581,8 +18545,8 @@
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
         "Wadullawatta": {
@@ -18591,18 +18555,18 @@
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
-        "Nawalokapura road and all connected by roads": {
+        "Nawalokapura Road And All Connected By Roads": {
             "Group": [
                 "S",
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "5"
+                "5",
+                "3"
             ]
         },
         "Kelaniya Temple": {
@@ -18621,7 +18585,7 @@
                 "1"
             ]
         },
-        "Station Road from Handala Juction Jayanthimahal Junction": {
+        "Station Road From Handala Juction Jayanthimahal Junction": {
             "Group": [
                 "V"
             ],
@@ -18637,7 +18601,7 @@
                 "1"
             ]
         },
-        "Old Negombo Rd": {
+        "Old Negombo Road": {
             "Group": [
                 "V"
             ],
@@ -18645,7 +18609,7 @@
                 "1"
             ]
         },
-        "Sudarshana Rd": {
+        "Sudarshana Road": {
             "Group": [
                 "V"
             ],
@@ -18653,7 +18617,7 @@
                 "1"
             ]
         },
-        "Waragoda Rd": {
+        "Waragoda Road": {
             "Group": [
                 "V"
             ],
@@ -18661,7 +18625,7 @@
                 "1"
             ]
         },
-        "Temple Rd": {
+        "Temple Road": {
             "Group": [
                 "V"
             ],
@@ -18669,7 +18633,7 @@
                 "1"
             ]
         },
-        "Koholwila Rd": {
+        "Koholwila Road": {
             "Group": [
                 "V"
             ],
@@ -18677,7 +18641,7 @@
                 "1"
             ]
         },
-        "Biyagama Rd": {
+        "Old Kandy Road And All Connected By Roads.": {
             "Group": [
                 "V"
             ],
@@ -18685,15 +18649,7 @@
                 "1"
             ]
         },
-        "old Kandy Rd and all Connected by roads.": {
-            "Group": [
-                "V"
-            ],
-            "Feeder No": [
-                "1"
-            ]
-        },
-        "LECO Areas: Kandy Road Kelaniya University to Kiribathgoda town": {
+        "Makola Road": {
             "Group": [
                 "V"
             ],
@@ -18701,7 +18657,7 @@
                 "4"
             ]
         },
-        "Makola road": {
+        "Old Kandy Road (Portion) Via Koholwila Junction": {
             "Group": [
                 "V"
             ],
@@ -18709,7 +18665,7 @@
                 "4"
             ]
         },
-        "Old Kandy road (portion) via Koholwila junction": {
+        "Hunupitiya Road From Swranamahal Junction To Jayanthimahal Junction": {
             "Group": [
                 "V"
             ],
@@ -18717,15 +18673,7 @@
                 "4"
             ]
         },
-        "Hunupitiya road from Swranamahal junction to Jayanthimahal junction": {
-            "Group": [
-                "V"
-            ],
-            "Feeder No": [
-                "4"
-            ]
-        },
-        "Koholwila Rd from Old Kandy Rd to Jonikwatta Junction": {
+        "Koholwila Road From Old Kandy Road To Jonikwatta Junction": {
             "Group": [
                 "V"
             ],
@@ -18765,7 +18713,7 @@
                 "4"
             ]
         },
-        "Uswatta Rd": {
+        "Uswatta Road": {
             "Group": [
                 "V"
             ],
@@ -18773,7 +18721,7 @@
                 "4"
             ]
         },
-        "Eriyawetiya Rd(portion)": {
+        "Eriyawetiya Road(Portion)": {
             "Group": [
                 "V"
             ],
@@ -18789,7 +18737,7 @@
                 "4"
             ]
         },
-        "Dewananda Rd": {
+        "Dewananda Road": {
             "Group": [
                 "V"
             ],
@@ -18797,7 +18745,7 @@
                 "4"
             ]
         },
-        "Simon Pl": {
+        "Simon Road": {
             "Group": [
                 "V"
             ],
@@ -18805,7 +18753,7 @@
                 "4"
             ]
         },
-        "Alwis Pl": {
+        "Alwis Road": {
             "Group": [
                 "V"
             ],
@@ -18813,7 +18761,7 @@
                 "4"
             ]
         },
-        "Dalupitiya Rd from Enderamulla Cemetry to Dalupitiya Junction": {
+        "Dalupitiya Road From Enderamulla Cemetry To Dalupitiya Junction": {
             "Group": [
                 "V"
             ],
@@ -18821,7 +18769,7 @@
                 "4"
             ]
         },
-        "Hospital Rd(portion) and all connected by roads": {
+        "Hospital Road(Portion) And All Connected By Roads": {
             "Group": [
                 "V"
             ],
@@ -18919,7 +18867,7 @@
                 "2"
             ]
         },
-        "Maradana PSS": {
+        "Maradana Pss": {
             "Group": [
                 "Q"
             ],
@@ -18951,7 +18899,7 @@
                 "1"
             ]
         },
-        "Negombo road from Handala Junction to Samagi Mawatha Junction-Kandana via Welisara and Mahabage. Duwa road": {
+        "Negombo Road From Handala Junction To Samagi Mawatha Junction-Kandana Via Welisara And Mahabage. Duwa Road": {
             "Group": [
                 "V"
             ],
@@ -18991,7 +18939,7 @@
                 "8"
             ]
         },
-        "Parakrama Rd": {
+        "Parakrama Road": {
             "Group": [
                 "V"
             ],
@@ -18999,7 +18947,7 @@
                 "8"
             ]
         },
-        "Nawam Mahara Rd": {
+        "Nawam Mahara Road": {
             "Group": [
                 "V"
             ],
@@ -19023,7 +18971,7 @@
                 "8"
             ]
         },
-        "Navy Camp road": {
+        "Navy Camp Road": {
             "Group": [
                 "V"
             ],
@@ -19031,7 +18979,7 @@
                 "8"
             ]
         },
-        "Ragama Road (portion near navy camp)": {
+        "Ragama Road (Portion Near Navy Camp)": {
             "Group": [
                 "V"
             ],
@@ -19039,7 +18987,7 @@
                 "8"
             ]
         },
-        "Adiwissa road": {
+        "Adiwissa Road": {
             "Group": [
                 "V"
             ],
@@ -19047,7 +18995,7 @@
                 "8"
             ]
         },
-        "Thotupola road and all connceted by roads.": {
+        "Thotupola Road And All Connceted By Roads.": {
             "Group": [
                 "V"
             ],
@@ -19137,7 +19085,7 @@
                 "3"
             ]
         },
-        "moragollagama": {
+        "Moragollagama": {
             "Group": [
                 "P"
             ],
@@ -19203,8 +19151,8 @@
         },
         "Nikaweratiya": {
             "Group": [
-                "T",
-                "U"
+                "U",
+                "T"
             ],
             "Feeder No": [
                 "6",
@@ -19325,7 +19273,7 @@
                 "1"
             ]
         },
-        "Andankulam to Pallamdhu": {
+        "Andankulam To Pallamdhu": {
             "Group": [
                 "U"
             ],
@@ -19333,7 +19281,7 @@
                 "2"
             ]
         },
-        "Vannamoddai to Pallivasalpiddy": {
+        "Vannamoddai To Pallivasalpiddy": {
             "Group": [
                 "U"
             ],
@@ -19341,7 +19289,7 @@
                 "2"
             ]
         },
-        "Uyilankulam to Murunkan": {
+        "Uyilankulam To Murunkan": {
             "Group": [
                 "U"
             ],
@@ -19349,7 +19297,7 @@
                 "2"
             ]
         },
-        "Adampan to Thiruketheeswaram": {
+        "Adampan To Thiruketheeswaram": {
             "Group": [
                 "U"
             ],
@@ -19357,7 +19305,7 @@
                 "2"
             ]
         },
-        "Murunkan  to Silawathurai  through Mullikulam": {
+        "Murunkan  To Silawathurai  Through Mullikulam": {
             "Group": [
                 "U"
             ],
@@ -19365,7 +19313,7 @@
                 "2"
             ]
         },
-        "Murunkanpiddy to Naruvilikkulam": {
+        "Murunkanpiddy To Naruvilikkulam": {
             "Group": [
                 "U"
             ],
@@ -19373,7 +19321,7 @@
                 "2"
             ]
         },
-        "Sirunavatkulam through Mannar to Thalaimannar": {
+        "Sirunavatkulam Through Mannar To Thalaimannar": {
             "Group": [
                 "V"
             ],
@@ -19423,7 +19371,7 @@
                 "1"
             ]
         },
-        "255 Rd": {
+        "255 Road": {
             "Group": [
                 "Q"
             ],
@@ -19431,7 +19379,7 @@
                 "1"
             ]
         },
-        "Maharagama Rd": {
+        "Maharagama Road": {
             "Group": [
                 "Q"
             ],
@@ -19439,7 +19387,7 @@
                 "1"
             ]
         },
-        "Miriswatta Rd": {
+        "Miriswatta Road": {
             "Group": [
                 "Q"
             ],
@@ -19519,7 +19467,7 @@
                 "2"
             ]
         },
-        "High level road form Pannipitiya Junction to Nawinna junction via Maharagama Town": {
+        "High Level Road Form Pannipitiya Junction To Nawinna Junction Via Maharagama Town": {
             "Group": [
                 "R"
             ],
@@ -19543,7 +19491,7 @@
                 "9"
             ]
         },
-        "Temple road": {
+        "Temple Road": {
             "Group": [
                 "R"
             ],
@@ -19567,7 +19515,7 @@
                 "9"
             ]
         },
-        "Dehiwala road from Maharagama town to Lake road": {
+        "Dehiwala Road From Maharagama Town To Lake Road": {
             "Group": [
                 "R"
             ],
@@ -19575,7 +19523,7 @@
                 "9"
             ]
         },
-        "Piliyandala road (Portion)": {
+        "Piliyandala Road (Portion)": {
             "Group": [
                 "R"
             ],
@@ -19583,7 +19531,7 @@
                 "9"
             ]
         },
-        "Katuwawala rd": {
+        "Katuwawala Road": {
             "Group": [
                 "R"
             ],
@@ -19599,15 +19547,7 @@
                 "9"
             ]
         },
-        "Katuwawala road": {
-            "Group": [
-                "R"
-            ],
-            "Feeder No": [
-                "9"
-            ]
-        },
-        "Neelammahara Rd and all connected by roads": {
+        "Neelammahara Road And All Connected By Roads": {
             "Group": [
                 "R"
             ],
@@ -19625,18 +19565,18 @@
         },
         "Kottawa": {
             "Group": [
-                "T",
-                "U"
+                "U",
+                "T"
             ],
             "Feeder No": [
-                "12",
-                "8"
+                "8",
+                "12"
             ]
         },
         "Pannipitiya": {
             "Group": [
-                "T",
-                "U"
+                "U",
+                "T"
             ],
             "Feeder No": [
                 "8",
@@ -19659,7 +19599,7 @@
                 "12"
             ]
         },
-        "thalawathugoda": {
+        "Thalawathugoda": {
             "Group": [
                 "T"
             ],
@@ -19691,7 +19631,7 @@
                 "12"
             ]
         },
-        "Hokandara -Malabe road": {
+        "Hokandara -Malabe Road": {
             "Group": [
                 "T"
             ],
@@ -19723,7 +19663,7 @@
                 "8"
             ]
         },
-        "Old Rd Kottawa": {
+        "Old Road Kottawa": {
             "Group": [
                 "U"
             ],
@@ -19821,7 +19761,7 @@
                 "7"
             ]
         },
-        "Piliyandala - Katubedda Rd": {
+        "Piliyandala - Katubedda Road": {
             "Group": [
                 "P"
             ],
@@ -19829,7 +19769,7 @@
                 "2"
             ]
         },
-        "suwarapola": {
+        "Suwarapola": {
             "Group": [
                 "P"
             ],
@@ -19837,7 +19777,7 @@
                 "2"
             ]
         },
-        "Gangabada Rd": {
+        "Gangabada Road": {
             "Group": [
                 "P"
             ],
@@ -19845,7 +19785,7 @@
                 "2"
             ]
         },
-        "Devananda Rd": {
+        "Devananda Road": {
             "Group": [
                 "P"
             ],
@@ -19853,7 +19793,7 @@
                 "2"
             ]
         },
-        "kospalena": {
+        "Kospalena": {
             "Group": [
                 "P"
             ],
@@ -19861,12 +19801,16 @@
                 "2"
             ]
         },
-        "LECO Areas: Galle road from Kurusa Junction to Koralawella": {
+        "": {
             "Group": [
-                "Q"
+                "Q",
+                "W",
+                "V"
             ],
             "Feeder No": [
-                "9"
+                "5",
+                "9",
+                "3"
             ]
         },
         "M.J.C. Fernando Mw": {
@@ -19877,7 +19821,7 @@
                 "9"
             ]
         },
-        "Charles place": {
+        "Charles Roadace": {
             "Group": [
                 "Q"
             ],
@@ -19893,7 +19837,7 @@
                 "9"
             ]
         },
-        "Old Galle Road from Kurusa Junction to paratta junction via Moratuwa town and Digarolla Bridge": {
+        "Old Galle Road From Kurusa Junction To Paratta Junction Via Moratuwa Town And Digarolla Bridge": {
             "Group": [
                 "Q"
             ],
@@ -19917,7 +19861,7 @@
                 "9"
             ]
         },
-        "Moratumulla (portion)": {
+        "Moratumulla (Portion)": {
             "Group": [
                 "Q"
             ],
@@ -19941,7 +19885,7 @@
                 "9"
             ]
         },
-        "Sri Dewananda road": {
+        "Sri Dewananda Road": {
             "Group": [
                 "Q"
             ],
@@ -19949,14 +19893,14 @@
                 "9"
             ]
         },
-        "Willorawatta road": {
+        "Willorawatta Road": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Anandarama Road": {
@@ -19967,7 +19911,7 @@
                 "9"
             ]
         },
-        "Sudarmarama Road (portion) and all connected by roads": {
+        "Sudarmarama Road (Portion) And All Connected By Roads": {
             "Group": [
                 "Q"
             ],
@@ -19975,95 +19919,87 @@
                 "9"
             ]
         },
-        "Thelawala Rd(portion)": {
+        "Thelawala Road(Portion)": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Nelumpura": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Sasana Jothi Mw": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Wimalasiri De Mel Mw": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Rohanapura": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Yogaswara Mw": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
         "Sunil Gallage Mw": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
-        "Thelawala Junction and by roads": {
+        "Thelawala Junction And By Roads": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
-                "3",
-                "9"
+                "9",
+                "3"
             ]
         },
-        "Boralesgamuwa 120 Rd. Gangarama Rd": {
-            "Group": [
-                "V"
-            ],
-            "Feeder No": [
-                "4"
-            ]
-        },
-        "10th Mile ost Rd": {
+        "Boralesgamuwa 120 Road. Gangarama Road": {
             "Group": [
                 "V"
             ],
@@ -20071,7 +20007,7 @@
                 "4"
             ]
         },
-        "wewala": {
+        "10Th Mile Ost Road": {
             "Group": [
                 "V"
             ],
@@ -20079,12 +20015,12 @@
                 "4"
             ]
         },
-        "LECO Areas: Galle road from Germen Tech to Golumadama Junction": {
+        "Wewala": {
             "Group": [
                 "V"
             ],
             "Feeder No": [
-                "5"
+                "4"
             ]
         },
         "Ebeart Lane": {
@@ -20095,7 +20031,7 @@
                 "5"
             ]
         },
-        "Kaldemulla load": {
+        "Kaldemulla Load": {
             "Group": [
                 "V"
             ],
@@ -20103,7 +20039,7 @@
                 "5"
             ]
         },
-        "Angulana Station road": {
+        "Angulana Station Road": {
             "Group": [
                 "V"
             ],
@@ -20111,7 +20047,7 @@
                 "5"
             ]
         },
-        "Soyza flat and road": {
+        "Soyza Flat And Road": {
             "Group": [
                 "V"
             ],
@@ -20119,7 +20055,7 @@
                 "5"
             ]
         },
-        "Thelawala road": {
+        "Thelawala Road": {
             "Group": [
                 "V"
             ],
@@ -20127,7 +20063,7 @@
                 "5"
             ]
         },
-        "Maligawa road": {
+        "Maligawa Road": {
             "Group": [
                 "V"
             ],
@@ -20135,7 +20071,7 @@
                 "5"
             ]
         },
-        "Center road": {
+        "Center Road": {
             "Group": [
                 "V"
             ],
@@ -20175,7 +20111,7 @@
                 "5"
             ]
         },
-        "Ernest Place and road": {
+        "Ernest Roadace And Road": {
             "Group": [
                 "V"
             ],
@@ -20191,7 +20127,7 @@
                 "5"
             ]
         },
-        "Gurupalliya road and all connected by roads": {
+        "Gurupalliya Road And All Connected By Roads": {
             "Group": [
                 "V"
             ],
@@ -20199,7 +20135,7 @@
                 "5"
             ]
         },
-        "LECO Areas: Galle road from Kurusa Junction to Germen Tech via Rawathawatta and Katubedda junctions": {
+        "Polkotuwa Road": {
             "Group": [
                 "W"
             ],
@@ -20207,7 +20143,7 @@
                 "3"
             ]
         },
-        "Polkotuwa road": {
+        "Bandaranayaka Road From Katubedda Junction To University Of Moratuwa": {
             "Group": [
                 "W"
             ],
@@ -20215,7 +20151,7 @@
                 "3"
             ]
         },
-        "Bandaranayaka Road from Katubedda Junction to University of Moratuwa": {
+        "Mill Road": {
             "Group": [
                 "W"
             ],
@@ -20223,7 +20159,7 @@
                 "3"
             ]
         },
-        "Mill road": {
+        "Molpe Road": {
             "Group": [
                 "W"
             ],
@@ -20231,7 +20167,7 @@
                 "3"
             ]
         },
-        "Molpe road": {
+        "Rahula Road": {
             "Group": [
                 "W"
             ],
@@ -20239,7 +20175,7 @@
                 "3"
             ]
         },
-        "Rahula road": {
+        "Model Town Road": {
             "Group": [
                 "W"
             ],
@@ -20247,15 +20183,7 @@
                 "3"
             ]
         },
-        "Model Town road": {
-            "Group": [
-                "W"
-            ],
-            "Feeder No": [
-                "3"
-            ]
-        },
-        "De Soyza road": {
+        "De Soyza Road": {
             "Group": [
                 "W"
             ],
@@ -20271,7 +20199,7 @@
                 "3"
             ]
         },
-        "Piliyandala road": {
+        "Piliyandala Road": {
             "Group": [
                 "W"
             ],
@@ -20279,7 +20207,7 @@
                 "3"
             ]
         },
-        "Anandarama Road and all connected by roads": {
+        "Anandarama Road And All Connected By Roads": {
             "Group": [
                 "W"
             ],
@@ -20537,7 +20465,7 @@
                 "9"
             ]
         },
-        "Udaya MW": {
+        "Udaya Mw": {
             "Group": [
                 "R"
             ],
@@ -20545,7 +20473,7 @@
                 "9"
             ]
         },
-        "Sirimangala MW": {
+        "Sirimangala Mw": {
             "Group": [
                 "R"
             ],
@@ -20577,7 +20505,7 @@
                 "9"
             ]
         },
-        "Ghanamoli MW": {
+        "Ghanamoli Mw": {
             "Group": [
                 "R"
             ],
@@ -20593,7 +20521,7 @@
                 "9"
             ]
         },
-        "Dewala Rd": {
+        "Dewala Road": {
             "Group": [
                 "R"
             ],
@@ -20609,7 +20537,19 @@
                 "9"
             ]
         },
-        "LECO Areas: Kurukulawa Rd": {
+        "": {
+            "Group": [
+                "W",
+                "V",
+                "S"
+            ],
+            "Feeder No": [
+                "8",
+                "3",
+                "11"
+            ]
+        },
+        "Kirimetiyagara Church Road": {
             "Group": [
                 "S"
             ],
@@ -20617,15 +20557,7 @@
                 "3"
             ]
         },
-        "Kirimetiyagara Church Rd": {
-            "Group": [
-                "S"
-            ],
-            "Feeder No": [
-                "3"
-            ]
-        },
-        "Pushparama Rd": {
+        "Pushparama Road": {
             "Group": [
                 "S",
                 "T"
@@ -20635,7 +20567,7 @@
                 "3"
             ]
         },
-        "St. Anthony's Mw": {
+        "St. Anthony'S Mw": {
             "Group": [
                 "S"
             ],
@@ -20643,7 +20575,7 @@
                 "3"
             ]
         },
-        "Ragama Rd from Delpe Junction to Devananda Rd": {
+        "Ragama Road From Delpe Junction To Devananda Road": {
             "Group": [
                 "S"
             ],
@@ -20651,7 +20583,7 @@
                 "3"
             ]
         },
-        "Devananda Rd": {
+        "Devananda Road": {
             "Group": [
                 "S"
             ],
@@ -20659,7 +20591,7 @@
                 "3"
             ]
         },
-        "T.C. Rd": {
+        "T.C. Road": {
             "Group": [
                 "S"
             ],
@@ -20667,7 +20599,7 @@
                 "3"
             ]
         },
-        "Ragama - Kadawatha Rd(portion)": {
+        "Ragama - Kadawatha Road(Portion)": {
             "Group": [
                 "S"
             ],
@@ -20675,7 +20607,7 @@
                 "3"
             ]
         },
-        "Kirimetiyagara Rd": {
+        "Kirimetiyagara Road": {
             "Group": [
                 "S"
             ],
@@ -20699,7 +20631,7 @@
                 "3"
             ]
         },
-        "Galroda Rd": {
+        "Galroda Road": {
             "Group": [
                 "S"
             ],
@@ -20707,7 +20639,7 @@
                 "3"
             ]
         },
-        "Galedanda Rd": {
+        "Galedanda Road": {
             "Group": [
                 "S"
             ],
@@ -20715,7 +20647,7 @@
                 "3"
             ]
         },
-        "Jayasinghe Rd": {
+        "Jayasinghe Road": {
             "Group": [
                 "S"
             ],
@@ -20739,7 +20671,7 @@
                 "3"
             ]
         },
-        "Gammeda Rd": {
+        "Gammeda Road": {
             "Group": [
                 "S"
             ],
@@ -20747,7 +20679,7 @@
                 "3"
             ]
         },
-        "Siriwardana Rd": {
+        "Siriwardana Road": {
             "Group": [
                 "S"
             ],
@@ -20763,7 +20695,7 @@
                 "3"
             ]
         },
-        "Prison Rd": {
+        "Prison Road": {
             "Group": [
                 "S"
             ],
@@ -20787,7 +20719,7 @@
                 "3"
             ]
         },
-        "Heenkenda Rd": {
+        "Heenkenda Road": {
             "Group": [
                 "S"
             ],
@@ -20795,7 +20727,7 @@
                 "3"
             ]
         },
-        "Wattala-Mahara Rd from Dalupitiya Bridge to Mahara Junction": {
+        "Wattala-Mahara Road From Dalupitiya Bridge To Mahara Junction": {
             "Group": [
                 "S"
             ],
@@ -20819,7 +20751,7 @@
                 "3"
             ]
         },
-        "Sri Niketharama Rd": {
+        "Sri Niketharama Road": {
             "Group": [
                 "S"
             ],
@@ -20835,7 +20767,7 @@
                 "3"
             ]
         },
-        "Kandy Rd from Mahara Junction to Gala Junction": {
+        "Kandy Road From Mahara Junction To Gala Junction": {
             "Group": [
                 "S"
             ],
@@ -20869,13 +20801,15 @@
         },
         "Jinasena Mw": {
             "Group": [
-                "S"
+                "S",
+                "T"
             ],
             "Feeder No": [
+                "7",
                 "3"
             ]
         },
-        "Enderamulla Cemetry Rd": {
+        "Enderamulla Cemetry Road": {
             "Group": [
                 "S"
             ],
@@ -20883,7 +20817,7 @@
                 "3"
             ]
         },
-        "Rani Madama Rd": {
+        "Rani Madama Road": {
             "Group": [
                 "S"
             ],
@@ -20891,7 +20825,7 @@
                 "3"
             ]
         },
-        "Uswatta Rd and Lane": {
+        "Uswatta Road And Lane": {
             "Group": [
                 "S"
             ],
@@ -20899,7 +20833,7 @@
                 "3"
             ]
         },
-        "Pinnameda Rd": {
+        "Pinnameda Road": {
             "Group": [
                 "S"
             ],
@@ -20923,7 +20857,7 @@
                 "3"
             ]
         },
-        "Gongitota Rd": {
+        "Gongitota Road": {
             "Group": [
                 "S"
             ],
@@ -20939,7 +20873,7 @@
                 "3"
             ]
         },
-        "Vidi Rd": {
+        "Vidi Road": {
             "Group": [
                 "S"
             ],
@@ -21003,7 +20937,7 @@
                 "3"
             ]
         },
-        "Wedikanda Rd": {
+        "Wedikanda Road": {
             "Group": [
                 "S"
             ],
@@ -21051,7 +20985,7 @@
                 "3"
             ]
         },
-        "Araliya Gardens and all connected by roads": {
+        "Araliya Gardens And All Connected By Roads": {
             "Group": [
                 "S"
             ],
@@ -21067,7 +21001,7 @@
                 "7"
             ]
         },
-        "Kadawataha Ragama Rd": {
+        "Kadawataha Ragama Road": {
             "Group": [
                 "T"
             ],
@@ -21083,7 +21017,7 @@
                 "7"
             ]
         },
-        "Amstrong JN": {
+        "Amstrong Jn": {
             "Group": [
                 "T"
             ],
@@ -21115,7 +21049,7 @@
                 "7"
             ]
         },
-        "S.T.F Rd": {
+        "S.T.F Road": {
             "Group": [
                 "T"
             ],
@@ -21123,7 +21057,7 @@
                 "7"
             ]
         },
-        "Pemananda MW": {
+        "Pemananda Mw": {
             "Group": [
                 "T"
             ],
@@ -21131,7 +21065,7 @@
                 "7"
             ]
         },
-        "Mahakade Rd": {
+        "Mahakade Road": {
             "Group": [
                 "T"
             ],
@@ -21139,7 +21073,7 @@
                 "7"
             ]
         },
-        "Kastukurunda Gonahena Rd": {
+        "Kastukurunda Gonahena Road": {
             "Group": [
                 "T"
             ],
@@ -21147,7 +21081,7 @@
                 "7"
             ]
         },
-        "9th mile post Kandy Rd": {
+        "9Th Mile Post Kandy Road": {
             "Group": [
                 "T"
             ],
@@ -21155,7 +21089,7 @@
                 "7"
             ]
         },
-        "Mahara JN": {
+        "Mahara Jn": {
             "Group": [
                 "T"
             ],
@@ -21163,7 +21097,7 @@
                 "7"
             ]
         },
-        "Jinasena MW": {
+        "Mankada Road": {
             "Group": [
                 "T"
             ],
@@ -21171,7 +21105,7 @@
                 "7"
             ]
         },
-        "Mankada Rd": {
+        "Jayantha Mw": {
             "Group": [
                 "T"
             ],
@@ -21179,7 +21113,7 @@
                 "7"
             ]
         },
-        "Jayantha MW": {
+        "Samadana Mw": {
             "Group": [
                 "T"
             ],
@@ -21187,7 +21121,7 @@
                 "7"
             ]
         },
-        "Samadana MW": {
+        "Darmashoka Mw": {
             "Group": [
                 "T"
             ],
@@ -21195,7 +21129,7 @@
                 "7"
             ]
         },
-        "Darmashoka MW": {
+        "Wijaya Mw": {
             "Group": [
                 "T"
             ],
@@ -21203,7 +21137,7 @@
                 "7"
             ]
         },
-        "Wijaya MW": {
+        "Kusum Mw": {
             "Group": [
                 "T"
             ],
@@ -21211,15 +21145,7 @@
                 "7"
             ]
         },
-        "Kusum MW": {
-            "Group": [
-                "T"
-            ],
-            "Feeder No": [
-                "7"
-            ]
-        },
-        "LECO Areas:Kandy road from Peliyagoda fly over to Kelaniya University": {
+        "Wewelduwa Road": {
             "Group": [
                 "V"
             ],
@@ -21227,7 +21153,7 @@
                 "11"
             ]
         },
-        "Wewelduwa road": {
+        "Manelgama Road": {
             "Group": [
                 "V"
             ],
@@ -21235,7 +21161,7 @@
                 "11"
             ]
         },
-        "Manelgama road": {
+        "Wanawasala Road": {
             "Group": [
                 "V"
             ],
@@ -21243,7 +21169,7 @@
                 "11"
             ]
         },
-        "Wanawasala road": {
+        "Aviriwatta Road": {
             "Group": [
                 "V"
             ],
@@ -21251,7 +21177,7 @@
                 "11"
             ]
         },
-        "Aviriwatta road": {
+        "Thelagapath Road": {
             "Group": [
                 "V"
             ],
@@ -21259,7 +21185,7 @@
                 "11"
             ]
         },
-        "Thelagapath road": {
+        "Station Road": {
             "Group": [
                 "V"
             ],
@@ -21267,7 +21193,7 @@
                 "11"
             ]
         },
-        "Station road": {
+        "Waragoda Road": {
             "Group": [
                 "V"
             ],
@@ -21275,7 +21201,7 @@
                 "11"
             ]
         },
-        "Waragoda road": {
+        "Biyagama Road (Portion) And All Connected By Roads": {
             "Group": [
                 "V"
             ],
@@ -21283,15 +21209,7 @@
                 "11"
             ]
         },
-        "Biyagama road (Portion) and all connected by roads": {
-            "Group": [
-                "V"
-            ],
-            "Feeder No": [
-                "11"
-            ]
-        },
-        "IDH Hospital": {
+        "Idh Hospital": {
             "Group": [
                 "W"
             ],
@@ -21299,7 +21217,7 @@
                 "8"
             ]
         },
-        "LECO areas: Kohilawatta": {
+        "Kohilawatta Road Up To Kotikawatta Junction": {
             "Group": [
                 "W"
             ],
@@ -21307,7 +21225,7 @@
                 "8"
             ]
         },
-        "Kohilawatta road up to Kotikawatta Junction": {
+        "Kotikawatta Junction": {
             "Group": [
                 "W"
             ],
@@ -21315,15 +21233,7 @@
                 "8"
             ]
         },
-        "Kotikawatta junction": {
-            "Group": [
-                "W"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
-        "Ambathale rd": {
+        "Ambathale Road": {
             "Group": [
                 "W"
             ],
@@ -21339,7 +21249,7 @@
                 "8"
             ]
         },
-        "Avissawella road from Kotikawatta Junction towards Weliwita via Nagahawela Junction": {
+        "Avissawella Road From Kotikawatta Junction Towards Weliwita Via Nagahawela Junction": {
             "Group": [
                 "W"
             ],
@@ -21347,7 +21257,7 @@
                 "8"
             ]
         },
-        "IDH junction": {
+        "Idh Junction": {
             "Group": [
                 "W"
             ],
@@ -21363,7 +21273,7 @@
                 "8"
             ]
         },
-        "Kotikawatta road from IDH junction to Kotikawatta Junction": {
+        "Kotikawatta Road From Idh Junction To Kotikawatta Junction": {
             "Group": [
                 "W"
             ],
@@ -21379,7 +21289,7 @@
                 "8"
             ]
         },
-        "Brandiyawatta and all connected by roads": {
+        "Brandiyawatta And All Connected By Roads": {
             "Group": [
                 "W"
             ],
@@ -21399,48 +21309,40 @@
         },
         "High level road from Nawinna Junction to Delkanda via Wijerama Junction.Wijerama Rd and Lane": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Udahamulla Station Rd": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Devananda Rd": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Navinna Rajamahavihara Rd(portion)": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Rapiyal Tennakoon Mw": {
             "Group": [
-                "W",
-                "P"
+                "P",
+                "W"
             ],
             "Feeder No": [
                 "1",
@@ -21449,45 +21351,37 @@
         },
         "Sri Devananda Rd.Janatha Mw": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Wanatha Rd(portion)": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Wijerama Lane(portion)": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
         "Meegahawatta Rd and all connected by roads": {
             "Group": [
-                "W",
                 "P"
             ],
             "Feeder No": [
-                "1",
                 "2"
             ]
         },
-        "Ethulkotte Pss-Rajagiriya town": {
+        "Ethulkotte Pss-Rajagiriya Town": {
             "Group": [
                 "Q"
             ],
@@ -21495,7 +21389,7 @@
                 "9"
             ]
         },
-        "parliament road": {
+        "Parliament Road": {
             "Group": [
                 "Q"
             ],
@@ -21503,7 +21397,7 @@
                 "9"
             ]
         },
-        "welikada junction": {
+        "Welikada Junction": {
             "Group": [
                 "Q"
             ],
@@ -21511,7 +21405,7 @@
                 "9"
             ]
         },
-        "Buthgamuwa road from Rajagiriya to IDH junction": {
+        "Buthgamuwa Road From Rajagiriya To Idh Junction": {
             "Group": [
                 "Q"
             ],
@@ -21519,7 +21413,7 @@
                 "9"
             ]
         },
-        "Ambagaha junction": {
+        "Ambagaha Junction": {
             "Group": [
                 "Q"
             ],
@@ -21527,7 +21421,7 @@
                 "9"
             ]
         },
-        "Madinnagoda road": {
+        "Madinnagoda Road": {
             "Group": [
                 "Q"
             ],
@@ -21535,7 +21429,7 @@
                 "9"
             ]
         },
-        "Meda Welikada road. LECO areas: Kotte road from Ethulkotte to Pitakotte (Sirikotha)": {
+        "Meda Welikada Road.": {
             "Group": [
                 "Q"
             ],
@@ -21543,7 +21437,7 @@
                 "9"
             ]
         },
-        "Epitamulla road": {
+        "Epitamulla Road": {
             "Group": [
                 "Q"
             ],
@@ -21559,7 +21453,7 @@
                 "9"
             ]
         },
-        "Beddegana road": {
+        "Beddegana Road": {
             "Group": [
                 "Q"
             ],
@@ -21567,7 +21461,7 @@
                 "9"
             ]
         },
-        "Mahindarama road": {
+        "Mahindarama Road": {
             "Group": [
                 "Q"
             ],
@@ -21575,7 +21469,7 @@
                 "9"
             ]
         },
-        "Rampart road": {
+        "Rampart Road": {
             "Group": [
                 "Q"
             ],
@@ -21583,7 +21477,7 @@
                 "9"
             ]
         },
-        "Angampiriya road": {
+        "Angampiriya Road": {
             "Group": [
                 "Q"
             ],
@@ -21591,7 +21485,7 @@
                 "9"
             ]
         },
-        "Mission road": {
+        "Mission Road": {
             "Group": [
                 "Q"
             ],
@@ -21599,7 +21493,7 @@
                 "9"
             ]
         },
-        "Buthgamuwa road from Rajagiriya to IDH junction via Ambagaha Junction": {
+        "Buthgamuwa Road From Rajagiriya To Idh Junction Via Ambagaha Junction": {
             "Group": [
                 "Q"
             ],
@@ -21607,7 +21501,7 @@
                 "9"
             ]
         },
-        "Koswatta road": {
+        "Koswatta Road": {
             "Group": [
                 "Q"
             ],
@@ -21615,7 +21509,7 @@
                 "9"
             ]
         },
-        "Sri Jayawardenapura Mw from Ayurweda junction to Bridge near Diyatha Uyana": {
+        "Sri Jayawardenapura Mw From Ayurweda Junction To Bridge Near Diyatha Uyana": {
             "Group": [
                 "Q"
             ],
@@ -21623,7 +21517,7 @@
                 "9"
             ]
         },
-        "Buthgamuwa cross road": {
+        "Buthgamuwa Cross Road": {
             "Group": [
                 "Q"
             ],
@@ -21631,7 +21525,7 @@
                 "9"
             ]
         },
-        "Rajagiriya town from fly over to Election commission office": {
+        "Rajagiriya Town From Fly Over To Election Commission Office": {
             "Group": [
                 "Q"
             ],
@@ -21639,7 +21533,7 @@
                 "9"
             ]
         },
-        "Medawelikada road and all connected by roads.": {
+        "Medawelikada Road And All Connected By Roads.": {
             "Group": [
                 "Q"
             ],
@@ -21647,7 +21541,7 @@
                 "9"
             ]
         },
-        "LECO Areas: Nawala road from Nugegoda super Market to Open University": {
+        "": {
             "Group": [
                 "R"
             ],
@@ -21655,7 +21549,7 @@
                 "3"
             ]
         },
-        "kandewatta Rd": {
+        "Kandewatta Road": {
             "Group": [
                 "R"
             ],
@@ -21663,7 +21557,7 @@
                 "3"
             ]
         },
-        "Stanley Thilakaratna Mw from Jubilee post junctin to Fly over via Nugegoda town": {
+        "Stanley Thilakaratna Mw From Jubilee Post Junctin To Fly Over Via Nugegoda Town": {
             "Group": [
                 "R"
             ],
@@ -21687,7 +21581,7 @@
                 "3"
             ]
         },
-        "Old Kesbewa Road from Nugegoda Supermarket to Delkanda Junction via Kattiya Junction": {
+        "Old Kesbewa Road From Nugegoda Supermarket To Delkanda Junction Via Kattiya Junction": {
             "Group": [
                 "R"
             ],
@@ -21695,7 +21589,7 @@
                 "3"
             ]
         },
-        "Pagiriwatta Road and Lane": {
+        "Pagiriwatta Road And Lane": {
             "Group": [
                 "R"
             ],
@@ -21703,7 +21597,7 @@
                 "3"
             ]
         },
-        "High Level road from Fly over to Delkada Junction": {
+        "High Level Road From Fly Over To Delkada Junction": {
             "Group": [
                 "R"
             ],
@@ -21711,7 +21605,7 @@
                 "3"
             ]
         },
-        "Mirihana Road from Kattiya Junction to Jubilee Post junction": {
+        "Mirihana Road From Kattiya Junction To Jubilee Post Junction": {
             "Group": [
                 "R"
             ],
@@ -21751,7 +21645,7 @@
                 "3"
             ]
         },
-        "Dewala road": {
+        "Dewala Road": {
             "Group": [
                 "R"
             ],
@@ -21775,7 +21669,7 @@
                 "3"
             ]
         },
-        "Kotte Road from Pitakotte to Jubiliee Post Junction": {
+        "Kotte Road From Pitakotte To Jubiliee Post Junction": {
             "Group": [
                 "R"
             ],
@@ -21783,7 +21677,7 @@
                 "3"
             ]
         },
-        "Rajamahavihara Rd and all connected by roads": {
+        "Rajamahavihara Road And All Connected By Roads": {
             "Group": [
                 "R"
             ],
@@ -21791,7 +21685,7 @@
                 "3"
             ]
         },
-        "Baththaramulla-Pannipitiya Rd": {
+        "Baththaramulla-Pannipitiya Road": {
             "Group": [
                 "T"
             ],
@@ -21823,7 +21717,7 @@
                 "4"
             ]
         },
-        "Densil KobbekaduwaMw": {
+        "Densil Kobbekaduwamw": {
             "Group": [
                 "T"
             ],
@@ -21839,7 +21733,7 @@
                 "4"
             ]
         },
-        "Kubukgahaduwa Rd": {
+        "Kubukgahaduwa Road": {
             "Group": [
                 "T"
             ],
@@ -21863,7 +21757,7 @@
                 "8"
             ]
         },
-        "8 mile post": {
+        "8 Mile Post": {
             "Group": [
                 "U"
             ],
@@ -21879,7 +21773,7 @@
                 "8"
             ]
         },
-        "pipe road": {
+        "Pipe Road": {
             "Group": [
                 "U"
             ],
@@ -21887,7 +21781,7 @@
                 "8"
             ]
         },
-        "udumulla road": {
+        "Udumulla Road": {
             "Group": [
                 "U"
             ],
@@ -21903,7 +21797,7 @@
                 "8"
             ]
         },
-        "Thalawathugoda road from Pita Kotte to Kimbulawala Junction": {
+        "Thalawathugoda Road From Pita Kotte To Kimbulawala Junction": {
             "Group": [
                 "W"
             ],
@@ -21911,7 +21805,7 @@
                 "1"
             ]
         },
-        "Hospital road": {
+        "Hospital Road": {
             "Group": [
                 "W"
             ],
@@ -21919,7 +21813,7 @@
                 "1"
             ]
         },
-        "New Hospital road": {
+        "New Hospital Road": {
             "Group": [
                 "W"
             ],
@@ -21927,7 +21821,7 @@
                 "1"
             ]
         },
-        "Thalapathpitiya road": {
+        "Thalapathpitiya Road": {
             "Group": [
                 "W"
             ],
@@ -21935,7 +21829,7 @@
                 "1"
             ]
         },
-        "Madiwela road": {
+        "Madiwela Road": {
             "Group": [
                 "W"
             ],
@@ -21943,7 +21837,7 @@
                 "1"
             ]
         },
-        "Old Kottawa road from Ambuldeniya to Nawinna": {
+        "Old Kottawa Road From Ambuldeniya To Nawinna": {
             "Group": [
                 "W"
             ],
@@ -21951,7 +21845,7 @@
                 "1"
             ]
         },
-        "Wijerama road": {
+        "Wijerama Road": {
             "Group": [
                 "W"
             ],
@@ -21975,7 +21869,7 @@
                 "1"
             ]
         },
-        "High-level road from Wattegedara junction to Gamsaba junction. LECO areas: Old Kottawa Rd from Ambuldeniya junction to Nawinna junction": {
+        "High-Level Road From Wattegedara Junction To Gamsaba Junction.": {
             "Group": [
                 "W"
             ],
@@ -21983,7 +21877,7 @@
                 "1"
             ]
         },
-        "Kumbukgahapokuna road": {
+        "Kumbukgahapokuna Road": {
             "Group": [
                 "W"
             ],
@@ -21991,7 +21885,7 @@
                 "1"
             ]
         },
-        "Madiwela road from Ambuldeniya junction to Thalawathugoda road": {
+        "Madiwela Road From Ambuldeniya Junction To Thalawathugoda Road": {
             "Group": [
                 "W"
             ],
@@ -21999,7 +21893,7 @@
                 "1"
             ]
         },
-        "Pragathipura road": {
+        "Pragathipura Road": {
             "Group": [
                 "W"
             ],
@@ -22007,7 +21901,7 @@
                 "1"
             ]
         },
-        "Thalawathugoda road from Kimbulawala Junction to Pitakotte junction": {
+        "Thalawathugoda Road From Kimbulawala Junction To Pitakotte Junction": {
             "Group": [
                 "W"
             ],
@@ -22015,7 +21909,71 @@
                 "1"
             ]
         },
-        "Pathiragoda road": {
+        "High Level Road From Nawinna Junction To Delkanda Via Wijerama Junction.Wijerama Road And Lane": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Pathiragoda Road": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Udahamulla Station Road": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Devananda Road": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Navinna Rajamahavihara Road(Portion)": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Sri Devananda Road.Janatha Mw": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Wanatha Road(Portion)": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Wijerama Lane(Portion)": {
+            "Group": [
+                "W"
+            ],
+            "Feeder No": [
+                "1"
+            ]
+        },
+        "Meegahawatta Road And All Connected By Roads": {
             "Group": [
                 "W"
             ],
@@ -22059,8 +22017,8 @@
         },
         "Naranwatta": {
             "Group": [
-                "R",
-                "P"
+                "P",
+                "R"
             ],
             "Feeder No": [
                 "10",
@@ -22171,7 +22129,7 @@
                 "6"
             ]
         },
-        "RMP Mill": {
+        "Rmp Mill": {
             "Group": [
                 "R"
             ],
@@ -22275,7 +22233,7 @@
                 "7"
             ]
         },
-        "Veyangoda CSC-Thihariya millagaha watta": {
+        "Veyangoda Csc-Thihariya Millagaha Watta": {
             "Group": [
                 "U"
             ],
@@ -22283,7 +22241,7 @@
                 "4"
             ]
         },
-        "ceyko project": {
+        "Ceyko Project": {
             "Group": [
                 "U"
             ],
@@ -22291,7 +22249,7 @@
                 "4"
             ]
         },
-        "tissa timber": {
+        "Tissa Timber": {
             "Group": [
                 "U"
             ],
@@ -22299,7 +22257,7 @@
                 "4"
             ]
         },
-        "thihariya sanasa": {
+        "Thihariya Sanasa": {
             "Group": [
                 "U"
             ],
@@ -22307,7 +22265,7 @@
                 "4"
             ]
         },
-        "sanasa sahana piyasa": {
+        "Sanasa Sahana Piyasa": {
             "Group": [
                 "U"
             ],
@@ -22315,7 +22273,7 @@
                 "4"
             ]
         },
-        "ackzoon lanka": {
+        "Ackzoon Lanka": {
             "Group": [
                 "U"
             ],
@@ -22323,7 +22281,7 @@
                 "4"
             ]
         },
-        "Thihariya Mada Rd": {
+        "Thihariya Mada Road": {
             "Group": [
                 "U"
             ],
@@ -22331,7 +22289,7 @@
                 "4"
             ]
         },
-        "serandip": {
+        "Serandip": {
             "Group": [
                 "U"
             ],
@@ -22347,7 +22305,7 @@
                 "4"
             ]
         },
-        "kalagedihena": {
+        "Kalagedihena": {
             "Group": [
                 "U"
             ],
@@ -22355,7 +22313,7 @@
                 "4"
             ]
         },
-        "glass glow": {
+        "Glass Glow": {
             "Group": [
                 "U"
             ],
@@ -22363,7 +22321,7 @@
                 "4"
             ]
         },
-        "sugasthanna junction": {
+        "Sugasthanna Junction": {
             "Group": [
                 "U"
             ],
@@ -22380,14 +22338,6 @@
             ]
         },
         "Mangalathiriya": {
-            "Group": [
-                "U"
-            ],
-            "Feeder No": [
-                "4"
-            ]
-        },
-        "Kalagedihena": {
             "Group": [
                 "U"
             ],
@@ -22427,7 +22377,7 @@
                 "4"
             ]
         },
-        "Bogamuwa church Rd": {
+        "Bogamuwa Church Road": {
             "Group": [
                 "U"
             ],
@@ -22435,7 +22385,7 @@
                 "4"
             ]
         },
-        "Nittambuwa CSC- Nittambuwa town HNB Bank & Sirisada Hospital around area": {
+        "Nittambuwa Csc- Nittambuwa Town Hnb Bank & Sirisada Hospital Around Area": {
             "Group": [
                 "U"
             ],
@@ -22443,7 +22393,7 @@
                 "4"
             ]
         },
-        "Around area Arpico show room": {
+        "Around Area Arpico Show Room": {
             "Group": [
                 "U"
             ],
@@ -22459,7 +22409,7 @@
                 "4"
             ]
         },
-        "Around  area Bandaranayaka Samdiya": {
+        "Around  Area Bandaranayaka Samdiya": {
             "Group": [
                 "U"
             ],
@@ -22467,7 +22417,7 @@
                 "4"
             ]
         },
-        "orchad  Wattha": {
+        "Orchad  Wattha": {
             "Group": [
                 "U"
             ],
@@ -22483,7 +22433,7 @@
                 "4"
             ]
         },
-        "Around area Sangabodi Collage": {
+        "Around Area Sangabodi Collage": {
             "Group": [
                 "U"
             ],
@@ -22507,7 +22457,7 @@
                 "4"
             ]
         },
-        "Thihariya town": {
+        "Thihariya Town": {
             "Group": [
                 "U"
             ],
@@ -22851,7 +22801,7 @@
                 "4"
             ]
         },
-        "Veyangoda CSC-Around Food Stores": {
+        "Veyangoda Csc-Around Food Stores": {
             "Group": [
                 "V"
             ],
@@ -22867,7 +22817,7 @@
                 "5"
             ]
         },
-        "Telecom": {
+        "Te": {
             "Group": [
                 "V"
             ],
@@ -22915,7 +22865,7 @@
                 "5"
             ]
         },
-        "around Naiwala Technical": {
+        "Around Naiwala Technical": {
             "Group": [
                 "V"
             ],
@@ -23115,7 +23065,7 @@
                 "5"
             ]
         },
-        "Korase road                                                                                                              Pasyala CSC-Pallewela": {
+        "Korase Road                                                                                                              Pasyala Csc-Pallewela": {
             "Group": [
                 "V"
             ],
@@ -23331,7 +23281,7 @@
                 "5"
             ]
         },
-        "Dunagaha CSC": {
+        "Dunagaha Csc": {
             "Group": [
                 "V"
             ],
@@ -23355,7 +23305,7 @@
                 "8"
             ]
         },
-        "MIriswatta Road": {
+        "Miriswatta Road": {
             "Group": [
                 "V"
             ],
@@ -23363,7 +23313,7 @@
                 "8"
             ]
         },
-        "Nittambuwa CSC-Nittambuwa town Peoples Bank & Nihal Super around area": {
+        "Nittambuwa Csc-Nittambuwa Town Peoples Bank & Nihal Super Around Area": {
             "Group": [
                 "W"
             ],
@@ -23371,7 +23321,7 @@
                 "3"
             ]
         },
-        "Nittabuwa C.T.B around area": {
+        "Nittabuwa C.T.B Around Area": {
             "Group": [
                 "W"
             ],
@@ -23379,7 +23329,7 @@
                 "3"
             ]
         },
-        "Jayasooriya MW": {
+        "Jayasooriya Mw": {
             "Group": [
                 "W"
             ],
@@ -23419,7 +23369,7 @@
                 "3"
             ]
         },
-        "Ranpokunagama Housing Scheme totally": {
+        "Ranpokunagama Housing Scheme Totally": {
             "Group": [
                 "W"
             ],
@@ -23427,7 +23377,7 @@
                 "3"
             ]
         },
-        "Pasyala CSC-Napagoda": {
+        "Pasyala Csc-Napagoda": {
             "Group": [
                 "W"
             ],
@@ -23587,7 +23537,7 @@
                 "3"
             ]
         },
-        "Abillapitiya Rd": {
+        "Abillapitiya Road": {
             "Group": [
                 "W"
             ],
@@ -23595,7 +23545,7 @@
                 "3"
             ]
         },
-        "Pasyala Telecom": {
+        "Pasyala Te": {
             "Group": [
                 "W"
             ],
@@ -23691,7 +23641,7 @@
                 "3"
             ]
         },
-        "Mirigama Rd": {
+        "Mirigama Road": {
             "Group": [
                 "W"
             ],
@@ -23731,7 +23681,7 @@
                 "3"
             ]
         },
-        "Biraha farm": {
+        "Biraha Farm": {
             "Group": [
                 "W"
             ],
@@ -23787,7 +23737,7 @@
                 "3"
             ]
         },
-        "sampathpura": {
+        "Sampathpura": {
             "Group": [
                 "W"
             ],
@@ -23811,7 +23761,7 @@
                 "3"
             ]
         },
-        "Maibula Rd": {
+        "Maibula Road": {
             "Group": [
                 "W"
             ],
@@ -23827,7 +23777,7 @@
                 "3"
             ]
         },
-        "Haggalla pola": {
+        "Haggalla Pola": {
             "Group": [
                 "W"
             ],
@@ -23909,7 +23859,7 @@
                 "A F1"
             ]
         },
-        "Galle Rd - Sagara Rd - Marine Drive - Lorenz Rd - Castle Lane": {
+        "Galle Road - Sagara Road - Marine Drive - Lorenz Road - Castle Lane": {
             "Group": [
                 "P"
             ],
@@ -23917,7 +23867,7 @@
                 "A F2"
             ]
         },
-        "Bullers Rd": {
+        "Bullers Road": {
             "Group": [
                 "P"
             ],
@@ -23925,7 +23875,7 @@
                 "A F3"
             ]
         },
-        "Premier Pacific - R.A De Mel Mw - Galle Rd/ R.A. De Mel Mw - Bauddhaloka Mw": {
+        "Premier Pacific - R.A De Mel Mw - Galle Road/ R.A. De Mel Mw - Bauddhaloka Mw": {
             "Group": [
                 "S"
             ],
@@ -23933,7 +23883,7 @@
                 "A-F5"
             ]
         },
-        "Galle Rd - Bauddhaloka Mw - Edward Lane": {
+        "Galle Road - Bauddhaloka Mw - Edward Lane": {
             "Group": [
                 "S"
             ],
@@ -23949,7 +23899,7 @@
                 "A-F10"
             ]
         },
-        "Indra Lane - Galle Rd - Bethseda Place/ Haig Rd - Daisy Villa Av - De Vos Av - R.A. De Mel Mw - Joseph's Lane": {
+        "Indra Lane - Galle Road - Bethseda Roadace/ Haig Road - Daisy Villa Av - De Vos Av - R.A. De Mel Mw - Joseph'S Lane": {
             "Group": [
                 "S"
             ],
@@ -23957,7 +23907,7 @@
                 "A-F12"
             ]
         },
-        "Police station (Havelok) - De fonseka road -  Gower Street - Bauddhaloka Mw - Reid Av - Havelok Rd": {
+        "Police Station (Havelok) - De Fonseka Road -  Gower Street - Bauddhaloka Mw - Reid Av - Havelok Road": {
             "Group": [
                 "U"
             ],
@@ -23965,7 +23915,7 @@
                 "A-F13"
             ]
         },
-        "Jawaththa Rd - Elpitigala Flats": {
+        "Jawaththa Road - Elpitigala Flats": {
             "Group": [
                 "U"
             ],
@@ -23973,7 +23923,7 @@
                 "A-F14"
             ]
         },
-        "Havelock Rd - Bauddhaloka Mw - Stanmore Crescent - Classens Place": {
+        "Havelock Road - Bauddhaloka Mw - Stanmore Crescent - Classens Roadace": {
             "Group": [
                 "U"
             ],
@@ -23991,7 +23941,7 @@
                 "C F1"
             ]
         },
-        "Grandpass Rd - R. Premadasa Stadium": {
+        "Grandpass Road - R. Premadasa Stadium": {
             "Group": [
                 "P"
             ],
@@ -23999,7 +23949,7 @@
                 "C F3"
             ]
         },
-        "Maligawaththa Place": {
+        "Maligawaththa Roadace": {
             "Group": [
                 "P"
             ],
@@ -24007,7 +23957,7 @@
                 "C F3"
             ]
         },
-        "Kettharama Temple Rd": {
+        "Kettharama Temple Road": {
             "Group": [
                 "P"
             ],
@@ -24015,7 +23965,7 @@
                 "C F3"
             ]
         },
-        "Madampitiya Rd - Sri Pannananda Mw - St. Mary's Rd/ Madampitiya Rd - Aluthmawatha - Rajawaththa Rd - Modera Street - St. James St - K. Cyril C Perera Mw": {
+        "Madampitiya Road - Sri Pannananda Mw - St. Mary'S Road/ Madampitiya Road - Aluthmawatha - Rajawaththa Road - Modera Street - St. James St - K. Cyril C Perera Mw": {
             "Group": [
                 "R"
             ],
@@ -24039,7 +23989,7 @@
                 "C-F9"
             ]
         },
-        "Mayfield Rd": {
+        "Mayfield Road": {
             "Group": [
                 "V"
             ],
@@ -24065,7 +24015,7 @@
                 "E F3"
             ]
         },
-        "Galle Rd - Dharmapala mw - R.A De Mel Mw": {
+        "Galle Road - Dharmapala Mw - R.A De Mel Mw": {
             "Group": [
                 "P"
             ],
@@ -24081,7 +24031,7 @@
                 "E F1"
             ]
         },
-        "Hunupitiya lake road": {
+        "Hunupitiya Lake Road": {
             "Group": [
                 "P"
             ],
@@ -24097,7 +24047,7 @@
                 "E F1"
             ]
         },
-        "Sir james peiris mw": {
+        "Sir James Peiris Mw": {
             "Group": [
                 "P"
             ],
@@ -24113,7 +24063,7 @@
                 "E F 11"
             ]
         },
-        "Cambridge Place": {
+        "Cambridge Roadace": {
             "Group": [
                 "P"
             ],
@@ -24121,7 +24071,7 @@
                 "E F 11"
             ]
         },
-        "Sir Marcus Fernando Rd": {
+        "Sir Marcus Fernando Road": {
             "Group": [
                 "P"
             ],
@@ -24145,7 +24095,7 @@
                 "E F 11"
             ]
         },
-        "Duplication Rd - 25th Lane - Ananda Kumaraswamy Mw - Clifford Av - Dharmapala mw": {
+        "Duplication Road - 25Th Lane - Ananda Kumaraswamy Mw - Clifford Av - Dharmapala Mw": {
             "Group": [
                 "W"
             ],
@@ -24219,7 +24169,7 @@
                 "3"
             ]
         },
-        "LECO PSS Aniyakanda": {
+        "": {
             "Group": [
                 "S"
             ],
@@ -24243,7 +24193,7 @@
                 "6"
             ]
         },
-        "Kanaththa rd": {
+        "Kanaththa Road": {
             "Group": [
                 "S"
             ],
@@ -24259,7 +24209,7 @@
                 "6"
             ]
         },
-        "Thewatta Rd": {
+        "Thewatta Road": {
             "Group": [
                 "S"
             ],
@@ -24331,7 +24281,7 @@
                 "6"
             ]
         },
-        "Lanka matha Mw": {
+        "Lanka Matha Mw": {
             "Group": [
                 "S"
             ],
@@ -24339,7 +24289,7 @@
                 "6"
             ]
         },
-        "Horape Temple Rd": {
+        "Horape Temple Road": {
             "Group": [
                 "S"
             ],
@@ -24347,7 +24297,7 @@
                 "6"
             ]
         },
-        "Kadawatha Rd": {
+        "Kadawatha Road": {
             "Group": [
                 "S"
             ],
@@ -24355,7 +24305,7 @@
                 "6"
             ]
         },
-        "Thuduwe gedara": {
+        "Thuduwe Gedara": {
             "Group": [
                 "S"
             ],
@@ -24371,7 +24321,7 @@
                 "6"
             ]
         },
-        "Part of Ekala Industrial Zone. Udammita Road": {
+        "Part Of Ekala Industrial Zone. Udammita Road": {
             "Group": [
                 "T"
             ],
@@ -24395,7 +24345,7 @@
                 "5"
             ]
         },
-        "Ja ela Bus stand": {
+        "Ja Ela Bus Stand": {
             "Group": [
                 "W"
             ],
@@ -24403,7 +24353,7 @@
                 "5"
             ]
         },
-        "Minuwangoda road": {
+        "Minuwangoda Road": {
             "Group": [
                 "W"
             ],
@@ -24511,8 +24461,8 @@
     "Chilaw": {
         "Madampe": {
             "Group": [
-                "W",
-                "Q"
+                "Q",
+                "W"
             ],
             "Feeder No": [
                 "3",
@@ -24583,7 +24533,7 @@
                 "3"
             ]
         },
-        "Bowaththa to Kadigamuwa": {
+        "Bowaththa To Kadigamuwa": {
             "Group": [
                 "R"
             ],
@@ -24591,7 +24541,7 @@
                 "1"
             ]
         },
-        "weerapokuna": {
+        "Weerapokuna": {
             "Group": [
                 "R"
             ],
@@ -24607,7 +24557,7 @@
                 "1"
             ]
         },
-        "Puwakwetiya to Boraluwewa. Nithalawa dalupotha to Guruluwela": {
+        "Puwakwetiya To Boraluwewa. Nithalawa Dalupotha To Guruluwela": {
             "Group": [
                 "R"
             ],
@@ -24615,7 +24565,7 @@
                 "1"
             ]
         },
-        "Bowaththa to Panduwasnuwara": {
+        "Bowaththa To Panduwasnuwara": {
             "Group": [
                 "R"
             ],
@@ -24647,7 +24597,7 @@
                 "1"
             ]
         },
-        "Girathalana to madaina": {
+        "Girathalana To Madaina": {
             "Group": [
                 "R"
             ],
@@ -24663,7 +24613,7 @@
                 "1"
             ]
         },
-        "Hettipola town": {
+        "Hettipola Town": {
             "Group": [
                 "R"
             ],
@@ -24687,7 +24637,7 @@
                 "1"
             ]
         },
-        "sembukattiya": {
+        "Sembukattiya": {
             "Group": [
                 "T"
             ],
@@ -24695,7 +24645,7 @@
                 "7"
             ]
         },
-        "Hatharaman handiya": {
+        "Hatharaman Handiya": {
             "Group": [
                 "T"
             ],
@@ -24719,7 +24669,7 @@
                 "7"
             ]
         },
-        "wathuwaththa": {
+        "Wathuwaththa": {
             "Group": [
                 "T"
             ],
@@ -24783,7 +24733,7 @@
                 "8"
             ]
         },
-        "PanawewaGalwewa thisogama": {
+        "Panawewagalwewa Thisogama": {
             "Group": [
                 "U"
             ],
@@ -25025,7 +24975,7 @@
                 "8"
             ]
         },
-        "Part of Murukandy": {
+        "Part Of Murukandy": {
             "Group": [
                 "Q"
             ],
@@ -25049,7 +24999,7 @@
                 "8"
             ]
         },
-        "Iranaimadhu Junction to Thiruvaiyaru": {
+        "Iranaimadhu Junction To Thiruvaiyaru": {
             "Group": [
                 "Q"
             ],
@@ -25201,7 +25151,7 @@
                 "4"
             ]
         },
-        "Olumadhu to 3rd Mile Post": {
+        "Olumadhu To 3Rd Mile Post": {
             "Group": [
                 "T"
             ],
@@ -25209,7 +25159,7 @@
                 "4"
             ]
         },
-        "Katsilamdhu to Muththayankaddukulam": {
+        "Katsilamdhu To Muththayankaddukulam": {
             "Group": [
                 "T"
             ],
@@ -25249,7 +25199,7 @@
                 "4"
             ]
         },
-        "Oddusuddan Junction through Nedunkerny to Vedivaiththakal": {
+        "Oddusuddan Junction Through Nedunkerny To Vedivaiththakal": {
             "Group": [
                 "T"
             ],
@@ -25289,7 +25239,7 @@
                 "4"
             ]
         },
-        "Mankulam Junction to Kanakarayankulam to Puliyankulam.": {
+        "Mankulam Junction To Kanakarayankulam To Puliyankulam.": {
             "Group": [
                 "T"
             ],
@@ -25361,7 +25311,7 @@
                 "2"
             ]
         },
-        "Part of Murukundy": {
+        "Part Of Murukundy": {
             "Group": [
                 "U"
             ],
@@ -25369,7 +25319,7 @@
                 "2"
             ]
         },
-        "Akkarayankulam to Vannerikkulam": {
+        "Akkarayankulam To Vannerikkulam": {
             "Group": [
                 "U"
             ],
@@ -25377,7 +25327,7 @@
                 "2"
             ]
         },
-        "Jeyapuram to Valaippadu": {
+        "Jeyapuram To Valaippadu": {
             "Group": [
                 "U"
             ],
@@ -25385,7 +25335,7 @@
                 "2"
             ]
         },
-        "Pallavarayankaddu to Vellankulam": {
+        "Pallavarayankaddu To Vellankulam": {
             "Group": [
                 "U"
             ],
@@ -25409,7 +25359,7 @@
                 "1"
             ]
         },
-        "Ratnapuram through Vaddakachchi to Irananimadhu": {
+        "Ratnapuram Through Vaddakachchi To Irananimadhu": {
             "Group": [
                 "V"
             ],
@@ -25421,15 +25371,15 @@
     "Kolonnawa": {
         "Meethotamulla Gantry": {
             "Group": [
-                "S",
-                "Q"
+                "Q",
+                "S"
             ],
             "Feeder No": [
                 "7",
                 "2"
             ]
         },
-        "LECO Areas:Nawala road from Rajagiriya Flyover to Open University via Koswatta and Nawala junctions": {
+        "": {
             "Group": [
                 "Q"
             ],
@@ -25445,7 +25395,7 @@
                 "8"
             ]
         },
-        "Nuwarawatta Rd": {
+        "Nuwarawatta Road": {
             "Group": [
                 "Q"
             ],
@@ -25469,7 +25419,7 @@
                 "8"
             ]
         },
-        "Old Rd": {
+        "Old Road": {
             "Group": [
                 "Q"
             ],
@@ -25477,7 +25427,7 @@
                 "8"
             ]
         },
-        "5th": {
+        "5Th": {
             "Group": [
                 "Q"
             ],
@@ -25485,7 +25435,7 @@
                 "8"
             ]
         },
-        "7th and 8th Lanes": {
+        "7Th And 8Th Lanes": {
             "Group": [
                 "Q"
             ],
@@ -25493,7 +25443,7 @@
                 "8"
             ]
         },
-        "Narahenpita Rd (portion)": {
+        "Narahenpita Road (Portion)": {
             "Group": [
                 "Q"
             ],
@@ -25517,7 +25467,7 @@
                 "8"
             ]
         },
-        "5th and 7th Lanes": {
+        "5Th And 7Th Lanes": {
             "Group": [
                 "Q"
             ],
@@ -25525,7 +25475,7 @@
                 "8"
             ]
         },
-        "Suwarna Pl": {
+        "Suwarna Road": {
             "Group": [
                 "Q"
             ],
@@ -25533,7 +25483,7 @@
                 "8"
             ]
         },
-        "4th and 6th Lanes": {
+        "4Th And 6Th Lanes": {
             "Group": [
                 "Q"
             ],
@@ -25573,7 +25523,7 @@
                 "8"
             ]
         },
-        "Galpotha Rd": {
+        "Galpotha Road": {
             "Group": [
                 "Q"
             ],
@@ -25581,7 +25531,7 @@
                 "8"
             ]
         },
-        "1st and 2nd Lanes": {
+        "1St And 2Nd Lanes": {
             "Group": [
                 "Q"
             ],
@@ -25589,7 +25539,7 @@
                 "8"
             ]
         },
-        "Waluwatta Pl": {
+        "Waluwatta Road": {
             "Group": [
                 "Q"
             ],
@@ -25637,7 +25587,17 @@
                 "8"
             ]
         },
-        "Koswatta Rd": {
+        "Koswatta Road": {
+            "Group": [
+                "Q",
+                "U"
+            ],
+            "Feeder No": [
+                "4",
+                "8"
+            ]
+        },
+        "De Mel Watta Road": {
             "Group": [
                 "Q"
             ],
@@ -25645,7 +25605,7 @@
                 "8"
             ]
         },
-        "De Mel Watta Rd": {
+        "Suwarnadisi Road": {
             "Group": [
                 "Q"
             ],
@@ -25653,15 +25613,7 @@
                 "8"
             ]
         },
-        "Suwarnadisi Pl": {
-            "Group": [
-                "Q"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
-        "Koswatta 2nd and 3rd Lanes": {
+        "Koswatta 2Nd And 3Rd Lanes": {
             "Group": [
                 "Q"
             ],
@@ -25685,7 +25637,7 @@
                 "8"
             ]
         },
-        "4th Lane": {
+        "4Th Lane": {
             "Group": [
                 "Q"
             ],
@@ -25693,7 +25645,7 @@
                 "8"
             ]
         },
-        "1st Lane": {
+        "1St Lane": {
             "Group": [
                 "Q"
             ],
@@ -25701,7 +25653,7 @@
                 "8"
             ]
         },
-        "Dharmanikethana Temple Rd": {
+        "Dharmanikethana Temple Road": {
             "Group": [
                 "Q"
             ],
@@ -25725,7 +25677,7 @@
                 "8"
             ]
         },
-        "Park Lane(portion)": {
+        "Park Lane(Portion)": {
             "Group": [
                 "Q"
             ],
@@ -25741,7 +25693,7 @@
                 "8"
             ]
         },
-        "Nawala 2nd Lane": {
+        "Nawala 2Nd Lane": {
             "Group": [
                 "Q"
             ],
@@ -25765,7 +25717,7 @@
                 "8"
             ]
         },
-        "Wijeba Mw(portion)": {
+        "Wijeba Mw(Portion)": {
             "Group": [
                 "Q"
             ],
@@ -25773,7 +25725,7 @@
                 "8"
             ]
         },
-        "Sarasavi Gardens(portion)": {
+        "Sarasavi Gardens(Portion)": {
             "Group": [
                 "Q"
             ],
@@ -25789,7 +25741,7 @@
                 "8"
             ]
         },
-        "Temple Rd": {
+        "Temple Road": {
             "Group": [
                 "Q"
             ],
@@ -25797,7 +25749,7 @@
                 "8"
             ]
         },
-        "Sri Ghanengra Mw(portion)": {
+        "Sri Ghanengra Mw(Portion)": {
             "Group": [
                 "Q"
             ],
@@ -25829,7 +25781,7 @@
                 "8"
             ]
         },
-        "Queens Park and by roads": {
+        "Queens Park And By Roads": {
             "Group": [
                 "Q"
             ],
@@ -25837,7 +25789,7 @@
                 "8"
             ]
         },
-        "Kotte Road from Election Commission to Ayurweda Roundabout": {
+        "Kotte Road From Election Commission To Ayurweda Roundabout": {
             "Group": [
                 "U"
             ],
@@ -25853,7 +25805,7 @@
                 "1 or 6"
             ]
         },
-        "Moragasmulla Rd": {
+        "Moragasmulla Road": {
             "Group": [
                 "U"
             ],
@@ -25885,7 +25837,7 @@
                 "1 or 6"
             ]
         },
-        "Kolonnawa Rd": {
+        "Kolonnawa Road": {
             "Group": [
                 "U"
             ],
@@ -25893,7 +25845,7 @@
                 "1 or 6"
             ]
         },
-        "IDH road from Kolonnawa to IDH junction": {
+        "Idh Road From Kolonnawa To Idh Junction": {
             "Group": [
                 "U"
             ],
@@ -25917,7 +25869,7 @@
                 "1 or 6"
             ]
         },
-        "Avissawella road from Baseline to Kotikawatta Junction via Orugodawatta": {
+        "Avissawella Road From Baseline To Kotikawatta Junction Via Orugodawatta": {
             "Group": [
                 "U"
             ],
@@ -25949,7 +25901,7 @@
                 "1 or 6"
             ]
         },
-        "Kittampahuwa Rd and all connected by roads": {
+        "Kittampahuwa Road And All Connected By Roads": {
             "Group": [
                 "U"
             ],
@@ -25965,7 +25917,7 @@
                 "4"
             ]
         },
-        "Narahenpita road": {
+        "Narahenpita Road": {
             "Group": [
                 "U"
             ],
@@ -25973,7 +25925,7 @@
                 "4"
             ]
         },
-        "Open university": {
+        "Open University": {
             "Group": [
                 "U"
             ],
@@ -25997,7 +25949,7 @@
                 "4"
             ]
         },
-        "Koswatta road": {
+        "Kirimandala Mawatha (Portion)": {
             "Group": [
                 "U"
             ],
@@ -26005,15 +25957,7 @@
                 "4"
             ]
         },
-        "Kirimandala Mawatha (portion)": {
-            "Group": [
-                "U"
-            ],
-            "Feeder No": [
-                "4"
-            ]
-        },
-        "old Nawala road": {
+        "Old Nawala Road": {
             "Group": [
                 "U"
             ],
@@ -26029,7 +25973,7 @@
                 "4"
             ]
         },
-        "Nawala road from Welikada junction to Open University": {
+        "Nawala Road From Welikada Junction To Open University": {
             "Group": [
                 "U"
             ],
@@ -26063,7 +26007,7 @@
                 "6"
             ]
         },
-        "Gampaha CSC - Gampaha Town": {
+        "Gampaha Csc - Gampaha Town": {
             "Group": [
                 "Q"
             ],
@@ -26071,7 +26015,7 @@
                 "9"
             ]
         },
-        "Church Rd": {
+        "Church Road": {
             "Group": [
                 "Q"
             ],
@@ -26095,7 +26039,7 @@
                 "9"
             ]
         },
-        "Siyane Rd": {
+        "Siyane Road": {
             "Group": [
                 "Q"
             ],
@@ -26103,7 +26047,7 @@
                 "9"
             ]
         },
-        "Colombo Rd": {
+        "Colombo Road": {
             "Group": [
                 "Q"
             ],
@@ -26111,7 +26055,7 @@
                 "9"
             ]
         },
-        "Ananda MW": {
+        "Ananda Mw": {
             "Group": [
                 "Q"
             ],
@@ -26119,7 +26063,7 @@
                 "9"
             ]
         },
-        "Wijaya Rd": {
+        "Wijaya Road": {
             "Group": [
                 "Q"
             ],
@@ -26127,7 +26071,7 @@
                 "9"
             ]
         },
-        "Court Rd": {
+        "Court Road": {
             "Group": [
                 "Q"
             ],
@@ -26135,7 +26079,7 @@
                 "9"
             ]
         },
-        "Yakkala CSC - Hansagiri Rd": {
+        "Yakkala Csc - Hansagiri Road": {
             "Group": [
                 "Q"
             ],
@@ -26199,7 +26143,7 @@
                 "9"
             ]
         },
-        "Kirikitta mulla": {
+        "Kirikitta Mulla": {
             "Group": [
                 "Q"
             ],
@@ -26279,7 +26223,7 @@
                 "9"
             ]
         },
-        "Negombo road from Ja Ela town to Dandugama": {
+        "Negombo Road From Ja Ela Town To Dandugama": {
             "Group": [
                 "R"
             ],
@@ -26287,7 +26231,7 @@
                 "12"
             ]
         },
-        "Ja ela Town": {
+        "Ja Ela Town": {
             "Group": [
                 "R"
             ],
@@ -26295,7 +26239,7 @@
                 "12"
             ]
         },
-        "Pamunugama Rd from Bopitiya to Ja ela": {
+        "Pamunugama Road From Bopitiya To Ja Ela": {
             "Group": [
                 "R"
             ],
@@ -26303,7 +26247,7 @@
                 "12"
             ]
         },
-        "Convent rd": {
+        "Convent Road": {
             "Group": [
                 "R"
             ],
@@ -26311,7 +26255,7 @@
                 "12"
             ]
         },
-        "Kaleliya Rd": {
+        "Kaleliya Road": {
             "Group": [
                 "R"
             ],
@@ -26319,7 +26263,7 @@
                 "12"
             ]
         },
-        "Suduwella Rd": {
+        "Suduwella Road": {
             "Group": [
                 "R"
             ],
@@ -26327,7 +26271,7 @@
                 "12"
             ]
         },
-        "Nedurupitiya Rd": {
+        "Nedurupitiya Road": {
             "Group": [
                 "R"
             ],
@@ -26343,7 +26287,7 @@
                 "12"
             ]
         },
-        "GamageWella Rd and all connected by roads.": {
+        "Gamagewella Road And All Connected By Roads.": {
             "Group": [
                 "R"
             ],
@@ -26359,7 +26303,7 @@
                 "13"
             ]
         },
-        "Hadirama to Peellawatta": {
+        "Hadirama To Peellawatta": {
             "Group": [
                 "R"
             ],
@@ -26407,7 +26351,7 @@
                 "13"
             ]
         },
-        "Wagowwa to Dewalapola": {
+        "Wagowwa To Dewalapola": {
             "Group": [
                 "R"
             ],
@@ -26447,7 +26391,7 @@
                 "13"
             ]
         },
-        "Muhungamuwa to Udugampola Pradesheeya sabhawa": {
+        "Muhungamuwa To Udugampola Pradesheeya Sabhawa": {
             "Group": [
                 "R"
             ],
@@ -26495,7 +26439,7 @@
                 "13"
             ]
         },
-        "nadagamuwa": {
+        "Nadagamuwa": {
             "Group": [
                 "R"
             ],
@@ -26519,7 +26463,7 @@
                 "10"
             ]
         },
-        "Akkara panaha": {
+        "Akkara Panaha": {
             "Group": [
                 "S"
             ],
@@ -26567,12 +26511,15 @@
                 "10"
             ]
         },
-        "Leco Area: Negombo road from Kurana to Liyangemulla via Katunayaka. Blue Diamond Road": {
+        "": {
             "Group": [
+                "U",
                 "T"
             ],
             "Feeder No": [
-                "1"
+                "8",
+                "1",
+                "3"
             ]
         },
         "Global City": {
@@ -26583,7 +26530,7 @@
                 "1"
             ]
         },
-        "and all Connected Road": {
+        "And All Connected Road": {
             "Group": [
                 "T"
             ],
@@ -26591,15 +26538,7 @@
                 "1"
             ]
         },
-        "LECO : Thalduwa Road": {
-            "Group": [
-                "T"
-            ],
-            "Feeder No": [
-                "8"
-            ]
-        },
-        "st. Jude place": {
+        "St. Jude Roadace": {
             "Group": [
                 "T"
             ],
@@ -26615,7 +26554,7 @@
                 "8"
             ]
         },
-        "Minuwangoda road": {
+        "Minuwangoda Road": {
             "Group": [
                 "T"
             ],
@@ -26623,7 +26562,7 @@
                 "8"
             ]
         },
-        "Kimbulapitiya road": {
+        "Kimbulapitiya Road": {
             "Group": [
                 "T"
             ],
@@ -26631,7 +26570,7 @@
                 "8"
             ]
         },
-        "st. Joseph Street": {
+        "St. Joseph Street": {
             "Group": [
                 "T"
             ],
@@ -26639,7 +26578,7 @@
                 "8"
             ]
         },
-        "Customhouse road": {
+        "Customhouse Road": {
             "Group": [
                 "T"
             ],
@@ -26647,7 +26586,7 @@
                 "8"
             ]
         },
-        "Colombo road from Kurana to Negombo": {
+        "Colombo Road From Kurana To Negombo": {
             "Group": [
                 "T"
             ],
@@ -26663,7 +26602,7 @@
                 "8"
             ]
         },
-        "Rajasinghe road": {
+        "Rajasinghe Road": {
             "Group": [
                 "T"
             ],
@@ -26671,7 +26610,7 @@
                 "8"
             ]
         },
-        "st. Anne's road and all connected by roads": {
+        "St. Anne'S Road And All Connected By Roads": {
             "Group": [
                 "T"
             ],
@@ -26679,7 +26618,7 @@
                 "8"
             ]
         },
-        "LECO Areas: Negombo Road from Liyanagemull to Dandugama via Seeduwa": {
+        "Kotugoda Road From Seeduwa To Church Junction": {
             "Group": [
                 "U"
             ],
@@ -26687,7 +26626,7 @@
                 "3"
             ]
         },
-        "Kotugoda road from Seeduwa to Church Junction": {
+        "Amuna Road": {
             "Group": [
                 "U"
             ],
@@ -26695,15 +26634,7 @@
                 "3"
             ]
         },
-        "Amuna road": {
-            "Group": [
-                "U"
-            ],
-            "Feeder No": [
-                "3"
-            ]
-        },
-        "Distillery road": {
+        "Distillery Road": {
             "Group": [
                 "U"
             ],
@@ -26719,7 +26650,7 @@
                 "3"
             ]
         },
-        "Baseline road and all connected by roads.": {
+        "Baseline Road And All Connected By Roads.": {
             "Group": [
                 "U"
             ],
@@ -26811,12 +26742,12 @@
         },
         "Hasalaka": {
             "Group": [
-                "T",
-                "V"
+                "V",
+                "T"
             ],
             "Feeder No": [
-                "1",
-                "6"
+                "6",
+                "1"
             ]
         },
         "Morayaya": {
@@ -27211,7 +27142,7 @@
                 "4"
             ]
         },
-        "medagampitiya": {
+        "Medagampitiya": {
             "Group": [
                 "W"
             ],
@@ -27355,7 +27286,7 @@
                 "4"
             ]
         },
-        "kadirapura": {
+        "Kadirapura": {
             "Group": [
                 "W"
             ],
@@ -27503,7 +27434,7 @@
                 "8"
             ]
         },
-        "UperKothmale": {
+        "Uperkothmale": {
             "Group": [
                 "U"
             ],
@@ -27633,7 +27564,7 @@
                 "4"
             ]
         },
-        "weerapura": {
+        "Weerapura": {
             "Group": [
                 "S"
             ],
@@ -27747,7 +27678,7 @@
                 "1"
             ]
         },
-        "Alas garden": {
+        "Alas Garden": {
             "Group": [
                 "S"
             ],
@@ -27787,7 +27718,7 @@
                 "1"
             ]
         },
-        "MahadivulwewaNamalwaththa": {
+        "Mahadivulwewanamalwaththa": {
             "Group": [
                 "S"
             ],
@@ -27851,7 +27782,7 @@
                 "1"
             ]
         },
-        "Jinna nagar": {
+        "Jinna Nagar": {
             "Group": [
                 "S"
             ],
@@ -27859,7 +27790,7 @@
                 "1"
             ]
         },
-        "3rd MP": {
+        "3Rd Mp": {
             "Group": [
                 "S"
             ],
@@ -27883,7 +27814,7 @@
                 "1"
             ]
         },
-        "NC Road": {
+        "Nc Road": {
             "Group": [
                 "S"
             ],
@@ -27891,7 +27822,17 @@
                 "1"
             ]
         },
-        "Part of Main Street": {
+        "Part Of Main Street": {
+            "Group": [
+                "V",
+                "S"
+            ],
+            "Feeder No": [
+                "6",
+                "1"
+            ]
+        },
+        "Part Of Dockyard Road": {
             "Group": [
                 "S"
             ],
@@ -27899,15 +27840,7 @@
                 "1"
             ]
         },
-        "part of Dockyard Rd": {
-            "Group": [
-                "S"
-            ],
-            "Feeder No": [
-                "1"
-            ]
-        },
-        "Central Rd": {
+        "Central Road": {
             "Group": [
                 "S"
             ],
@@ -27939,7 +27872,7 @@
                 "1"
             ]
         },
-        "part of Abayapura": {
+        "Part Of Abayapura": {
             "Group": [
                 "S"
             ],
@@ -27955,7 +27888,7 @@
                 "5"
             ]
         },
-        "Chaina bay": {
+        "Chaina Bay": {
             "Group": [
                 "V"
             ],
@@ -27995,7 +27928,7 @@
                 "5"
             ]
         },
-        "Marbel beach": {
+        "Marbel Beach": {
             "Group": [
                 "V"
             ],
@@ -28035,7 +27968,7 @@
                 "6"
             ]
         },
-        "Orr's Hill": {
+        "Orr'S Hill": {
             "Group": [
                 "V"
             ],
@@ -28051,7 +27984,7 @@
                 "6"
             ]
         },
-        "Rajawarodayan square": {
+        "Rajawarodayan Square": {
             "Group": [
                 "V"
             ],
@@ -28059,7 +27992,7 @@
                 "6"
             ]
         },
-        "Inner habour Rd": {
+        "Inner Habour Road": {
             "Group": [
                 "V"
             ],
@@ -28067,7 +28000,7 @@
                 "6"
             ]
         },
-        "Power House Rd": {
+        "Power House Road": {
             "Group": [
                 "V"
             ],
@@ -28075,7 +28008,7 @@
                 "6"
             ]
         },
-        "Vihar Rd": {
+        "Vihar Road": {
             "Group": [
                 "V"
             ],
@@ -28091,7 +28024,7 @@
                 "6"
             ]
         },
-        "Part of main street": {
+        "Dockyard Road": {
             "Group": [
                 "V"
             ],
@@ -28099,15 +28032,7 @@
                 "6"
             ]
         },
-        "Dockyard Rd": {
-            "Group": [
-                "V"
-            ],
-            "Feeder No": [
-                "6"
-            ]
-        },
-        "Court Rd": {
+        "Court Road": {
             "Group": [
                 "V"
             ],
@@ -28139,7 +28064,7 @@
                 "3"
             ]
         },
-        "Part of Thabalagamuwa": {
+        "Part Of Thabalagamuwa": {
             "Group": [
                 "W"
             ],
@@ -28171,7 +28096,7 @@
                 "3"
             ]
         },
-        "Muthur town": {
+        "Muthur Town": {
             "Group": [
                 "W"
             ],
@@ -28237,7 +28162,7 @@
                 "7"
             ]
         },
-        "Kalavanchikudy town": {
+        "Kalavanchikudy Town": {
             "Group": [
                 "Q"
             ],
@@ -28295,12 +28220,12 @@
         },
         "Karadiyanaru": {
             "Group": [
-                "T",
-                "U"
+                "U",
+                "T"
             ],
             "Feeder No": [
-                "2",
-                "4"
+                "4",
+                "2"
             ]
         },
         "Illuppachenai": {
@@ -28367,7 +28292,7 @@
                 "2"
             ]
         },
-        "Nichchi nagar": {
+        "Nichchi Nagar": {
             "Group": [
                 "T"
             ],
@@ -28383,7 +28308,7 @@
                 "4"
             ]
         },
-        "tampitiya": {
+        "Tampitiya": {
             "Group": [
                 "U"
             ],
@@ -28665,14 +28590,14 @@
                 "1"
             ]
         },
-        "Part of Vavuniya Town": {
+        "Part Of Vavuniya Town": {
             "Group": [
-                "U",
-                "R"
+                "R",
+                "U"
             ],
             "Feeder No": [
-                "3",
-                "4"
+                "4",
+                "3"
             ]
         },
         "Rampaikulam": {
@@ -28723,7 +28648,7 @@
                 "3"
             ]
         },
-        "Boo-oya": {
+        "Boo-Oya": {
             "Group": [
                 "R"
             ],
@@ -28731,7 +28656,7 @@
                 "3"
             ]
         },
-        "Pahala aluthwaththa": {
+        "Pahala Aluthwaththa": {
             "Group": [
                 "R"
             ],
@@ -28827,7 +28752,7 @@
                 "3"
             ]
         },
-        "Velikulam to Thudduwahai": {
+        "Velikulam To Thudduwahai": {
             "Group": [
                 "R"
             ],
@@ -28835,7 +28760,7 @@
                 "3"
             ]
         },
-        "Thudduwewa to Thandikkulam": {
+        "Thudduwewa To Thandikkulam": {
             "Group": [
                 "R"
             ],
@@ -28843,7 +28768,7 @@
                 "6"
             ]
         },
-        "Paththiniyarmahilankulam to Manipuram": {
+        "Paththiniyarmahilankulam To Manipuram": {
             "Group": [
                 "R"
             ],
@@ -28867,7 +28792,7 @@
                 "6"
             ]
         },
-        "Eechchankulam to Eeswaripuram": {
+        "Eechchankulam To Eeswaripuram": {
             "Group": [
                 "R"
             ],
@@ -28947,7 +28872,7 @@
                 "6"
             ]
         },
-        "Mamadu to Bogaswewa": {
+        "Mamadu To Bogaswewa": {
             "Group": [
                 "R"
             ],
@@ -28955,7 +28880,7 @@
                 "6"
             ]
         },
-        "Parayanalankulam to Murunkan": {
+        "Parayanalankulam To Murunkan": {
             "Group": [
                 "U"
             ],
@@ -28963,7 +28888,7 @@
                 "4"
             ]
         },
-        "Parayanalankulam to Muhathankulam": {
+        "Parayanalankulam To Muhathankulam": {
             "Group": [
                 "U"
             ],
@@ -29043,7 +28968,7 @@
                 "4"
             ]
         },
-        "Poovarasankulam to Cheddikulam": {
+        "Poovarasankulam To Cheddikulam": {
             "Group": [
                 "U"
             ],
@@ -29139,7 +29064,7 @@
                 "5"
             ]
         },
-        "Mamaduwa to Bogaswewa": {
+        "Mamaduwa To Bogaswewa": {
             "Group": [
                 "W"
             ],
@@ -29147,7 +29072,7 @@
                 "5"
             ]
         },
-        "Nelukkulam to Parayanalankulam": {
+        "Nelukkulam To Parayanalankulam": {
             "Group": [
                 "W"
             ],
@@ -29155,7 +29080,7 @@
                 "2"
             ]
         },
-        "Pulithariththapuliyankulam to Chekkaddipulavu": {
+        "Pulithariththapuliyankulam To Chekkaddipulavu": {
             "Group": [
                 "W"
             ],
@@ -29163,7 +29088,7 @@
                 "2"
             ]
         },
-        "Piramanalankulam to periyathampanai": {
+        "Piramanalankulam To Periyathampanai": {
             "Group": [
                 "W"
             ],
@@ -29171,7 +29096,7 @@
                 "2"
             ]
         },
-        "Periyapandivirichchan to Madhu": {
+        "Periyapandivirichchan To Madhu": {
             "Group": [
                 "W"
             ],
@@ -29179,7 +29104,7 @@
                 "2"
             ]
         },
-        "Thadchanamaruthamadhu to Periyamadhu": {
+        "Thadchanamaruthamadhu To Periyamadhu": {
             "Group": [
                 "W"
             ],
@@ -29187,7 +29112,7 @@
                 "2"
             ]
         },
-        "Eechchalawakkai to Pallamadhu": {
+        "Eechchalawakkai To Pallamadhu": {
             "Group": [
                 "W"
             ],
@@ -29195,7 +29120,7 @@
                 "2"
             ]
         },
-        "Vidathaltheevu to Vellankulam": {
+        "Vidathaltheevu To Vellankulam": {
             "Group": [
                 "W"
             ],
@@ -29203,7 +29128,7 @@
                 "2"
             ]
         },
-        "Vellamkulam to Ganeshapuram": {
+        "Vellamkulam To Ganeshapuram": {
             "Group": [
                 "W"
             ],
@@ -29245,7 +29170,7 @@
                 "F F19"
             ]
         },
-        "Wekanda Jumma masjid rd": {
+        "Wekanda Jumma Masjid Road": {
             "Group": [
                 "Q"
             ],
@@ -29253,7 +29178,7 @@
                 "F F19"
             ]
         },
-        "Kumaran Rathnam Rd": {
+        "Kumaran Rathnam Road": {
             "Group": [
                 "Q"
             ],
@@ -29261,7 +29186,7 @@
                 "F F19"
             ]
         },
-        "Duke street": {
+        "Duke Street": {
             "Group": [
                 "T"
             ],
@@ -29269,7 +29194,7 @@
                 "F F1"
             ]
         },
-        "Janadipathi mawatha": {
+        "Janadipathi Mawatha": {
             "Group": [
                 "T"
             ],
@@ -29287,7 +29212,7 @@
                 "I F5"
             ]
         },
-        "Jayantha weerasekara Mw - Maligawattha Rd - Panchikawatta Rd - Dematagoda Rd/ Maligawatta New Town Rd - Sevana Rd": {
+        "Jayantha Weerasekara Mw - Maligawattha Road - Panchikawatta Road - Dematagoda Road/ Maligawatta New Town Road - Sevana Road": {
             "Group": [
                 "R"
             ],
@@ -29303,7 +29228,7 @@
                 "I-F11"
             ]
         },
-        "Dharmapala Mw/ TB Jayah Mw - Hyde Park Corner - Union Place - Vauxhall Street": {
+        "Dharmapala Mw/ Tb Jayah Mw - Hyde Park Corner - Union Roadace - Vauxhall Street": {
             "Group": [
                 "T"
             ],
@@ -29311,7 +29236,7 @@
                 "I-F15"
             ]
         },
-        "Park st": {
+        "Park St": {
             "Group": [
                 "T"
             ],
@@ -29319,7 +29244,7 @@
                 "I- F13"
             ]
         },
-        "T.B Jaya Mw - Vinayalankara Mw - Hyde park corner": {
+        "T.B Jaya Mw - Vinayalankara Mw - Hyde Park Corner": {
             "Group": [
                 "V"
             ],
@@ -29335,7 +29260,7 @@
                 "I-F17"
             ]
         },
-        "Maradana Technical -Olcott Mw - Maradana Rd - Sri Sangaraja Mw": {
+        "Maradana Technical -Olcott Mw - Maradana Road - Sri Sangaraja Mw": {
             "Group": [
                 "W"
             ],
@@ -29351,7 +29276,7 @@
                 "I-F9"
             ]
         },
-        "D.R. Wijewardana Mw - Maradana Rd - Panchikawattha Rd - Abayasingharama Rd": {
+        "D.R. Wijewardana Mw - Maradana Road - Panchikawattha Road - Abayasingharama Road": {
             "Group": [
                 "W"
             ],
@@ -29369,7 +29294,7 @@
                 "E  F17"
             ]
         },
-        "Bank of DFCC (Nawam Mawatha)": {
+        "Bank Of Dfcc (Nawam Mawatha)": {
             "Group": [
                 "Q"
             ],
@@ -29392,11 +29317,19 @@
                 "Q"
             ],
             "Feeder No": [
-                "B-F7",
                 "B-F1"
             ]
         },
-        "Main st": {
+        "Main St": {
+            "Group": [
+                "Q"
+            ],
+            "Feeder No": [
+                "B-F12",
+                "B-F2"
+            ]
+        },
+        "Reclamation Road": {
             "Group": [
                 "Q"
             ],
@@ -29404,7 +29337,7 @@
                 "B-F2"
             ]
         },
-        "Reclamation Rd": {
+        "Nhm  Abdul Kadar Mw": {
             "Group": [
                 "Q"
             ],
@@ -29412,15 +29345,7 @@
                 "B-F2"
             ]
         },
-        "NHM  Abdul Kadar Mw": {
-            "Group": [
-                "Q"
-            ],
-            "Feeder No": [
-                "B-F2"
-            ]
-        },
-        "janadhipathi Mawatha": {
+        "Janadhipathi Mawatha": {
             "Group": [
                 "Q"
             ],
@@ -29428,7 +29353,7 @@
                 "B-F7"
             ]
         },
-        "Galle buck road": {
+        "Duke St": {
             "Group": [
                 "Q"
             ],
@@ -29436,7 +29361,15 @@
                 "B-F7"
             ]
         },
-        "Old moor st": {
+        "Galle Buck Road": {
+            "Group": [
+                "Q"
+            ],
+            "Feeder No": [
+                "B-F7"
+            ]
+        },
+        "Old Moor St": {
             "Group": [
                 "Q"
             ],
@@ -29444,7 +29377,7 @@
                 "B-F8"
             ]
         },
-        "Abdul Hameed st": {
+        "Abdul Hameed St": {
             "Group": [
                 "Q"
             ],
@@ -29460,7 +29393,7 @@
                 "B-F8"
             ]
         },
-        "Wolfendhal st": {
+        "Wolfendhal St": {
             "Group": [
                 "Q"
             ],
@@ -29468,7 +29401,7 @@
                 "B-F8"
             ]
         },
-        "Dam st": {
+        "Dam St": {
             "Group": [
                 "Q"
             ],
@@ -29476,7 +29409,7 @@
                 "B-F12"
             ]
         },
-        "5th cross st": {
+        "5Th Cross St": {
             "Group": [
                 "Q"
             ],
@@ -29484,7 +29417,7 @@
                 "B-F12"
             ]
         },
-        "main st": {
+        "Kathireshan St": {
             "Group": [
                 "Q"
             ],
@@ -29492,15 +29425,7 @@
                 "B-F12"
             ]
         },
-        "Kathireshan st": {
-            "Group": [
-                "Q"
-            ],
-            "Feeder No": [
-                "B-F12"
-            ]
-        },
-        "central rd": {
+        "Central Road": {
             "Group": [
                 "Q"
             ],
@@ -29550,7 +29475,16 @@
                 "H-F02"
             ]
         },
-        "Aluthmawatha Rd": {
+        "Aluthmawatha Road": {
+            "Group": [
+                "Q"
+            ],
+            "Feeder No": [
+                "H-F04",
+                "H-F02"
+            ]
+        },
+        "Cristy Perera Mw": {
             "Group": [
                 "Q"
             ],
@@ -29558,7 +29492,7 @@
                 "H-F02"
             ]
         },
-        "Cristy perera Mw": {
+        "New Chetty St": {
             "Group": [
                 "Q"
             ],
@@ -29566,15 +29500,7 @@
                 "H-F02"
             ]
         },
-        "New chetty st": {
-            "Group": [
-                "Q"
-            ],
-            "Feeder No": [
-                "H-F02"
-            ]
-        },
-        "Jinarathana Rd": {
+        "Jinarathana Road": {
             "Group": [
                 "Q"
             ],
@@ -29590,7 +29516,7 @@
                 "H-F01"
             ]
         },
-        "sri pannananda Mw": {
+        "Sri Pannananda Mw": {
             "Group": [
                 "Q"
             ],
@@ -29598,7 +29524,7 @@
                 "H-F01"
             ]
         },
-        "Madampitiya Rd": {
+        "Madampitiya Road": {
             "Group": [
                 "Q"
             ],
@@ -29614,7 +29540,7 @@
                 "H-F01"
             ]
         },
-        "Aluthmawatha rd": {
+        "Vystwyke Road": {
             "Group": [
                 "Q"
             ],
@@ -29622,7 +29548,7 @@
                 "H-F04"
             ]
         },
-        "Vystwyke Rd": {
+        "Center Road": {
             "Group": [
                 "Q"
             ],
@@ -29630,15 +29556,7 @@
                 "H-F04"
             ]
         },
-        "Center Rd": {
-            "Group": [
-                "Q"
-            ],
-            "Feeder No": [
-                "H-F04"
-            ]
-        },
-        "Kalyani Gangarama Rd": {
+        "Kalyani Gangarama Road": {
             "Group": [
                 "Q"
             ],
@@ -29654,7 +29572,7 @@
                 "H-F04"
             ]
         },
-        "Church rd": {
+        "Church Road": {
             "Group": [
                 "Q"
             ],
@@ -29722,7 +29640,7 @@
                 "1"
             ]
         },
-        "okkampitiya": {
+        "Okkampitiya": {
             "Group": [
                 "V"
             ],
@@ -29934,10 +29852,12 @@
         },
         "Wayamba University": {
             "Group": [
-                "R"
+                "R",
+                "T"
             ],
             "Feeder No": [
-                "4"
+                "4",
+                "2"
             ]
         },
         "Makandura": {
@@ -30132,7 +30052,7 @@
                 "2"
             ]
         },
-        "Bowatta road": {
+        "Bowatta Road": {
             "Group": [
                 "T"
             ],
@@ -30140,15 +30060,7 @@
                 "2"
             ]
         },
-        "meegahakotuwa": {
-            "Group": [
-                "T"
-            ],
-            "Feeder No": [
-                "2"
-            ]
-        },
-        "wayamba university": {
+        "Meegahakotuwa": {
             "Group": [
                 "T"
             ],
@@ -30164,7 +30076,7 @@
                 "2"
             ]
         },
-        "labuyaya": {
+        "Labuyaya": {
             "Group": [
                 "T"
             ],
@@ -30172,7 +30084,7 @@
                 "2"
             ]
         },
-        "wawagama road": {
+        "Wawagama Road": {
             "Group": [
                 "T"
             ],
@@ -30200,8 +30112,8 @@
     "Chunnakam": {
         "Chunnakam": {
             "Group": [
-                "S",
-                "W"
+                "W",
+                "S"
             ],
             "Feeder No": [
                 "6",
@@ -30410,8 +30322,8 @@
         },
         "Siruppidy": {
             "Group": [
-                "S",
-                "V"
+                "V",
+                "S"
             ],
             "Feeder No": [
                 "10",
@@ -30746,7 +30658,7 @@
                 "8"
             ]
         },
-        "Hospital KKS Road Junction": {
+        "Hospital Kks Road Junction": {
             "Group": [
                 "U"
             ],
@@ -30762,7 +30674,7 @@
                 "8"
             ]
         },
-        "1st Cross Street": {
+        "1St Cross Street": {
             "Group": [
                 "U"
             ],
@@ -30770,7 +30682,7 @@
                 "8"
             ]
         },
-        "2nd Cross Street": {
+        "2Nd Cross Street": {
             "Group": [
                 "U"
             ],
@@ -30778,7 +30690,7 @@
                 "8"
             ]
         },
-        "3rd Cross Street": {
+        "3Rd Cross Street": {
             "Group": [
                 "U"
             ],
@@ -30834,7 +30746,7 @@
                 "11"
             ]
         },
-        "Thirunelvely to Vembady Juntion": {
+        "Thirunelvely To Vembady Juntion": {
             "Group": [
                 "U"
             ],
@@ -30866,7 +30778,7 @@
                 "11"
             ]
         },
-        "Ramanathan Road throgh Mulavai Junction to Passayoor": {
+        "Ramanathan Road Throgh Mulavai Junction To Passayoor": {
             "Group": [
                 "U"
             ],
@@ -30874,7 +30786,7 @@
                 "11"
             ]
         },
-        "Vembady Junction to Muneeswaran": {
+        "Vembady Junction To Muneeswaran": {
             "Group": [
                 "U"
             ],
@@ -30882,7 +30794,7 @@
                 "11"
             ]
         },
-        "Kaladdi to Sivanpannai": {
+        "Kaladdi To Sivanpannai": {
             "Group": [
                 "U"
             ],
@@ -31370,8 +31282,8 @@
                 "T"
             ],
             "Feeder No": [
-                "3",
-                "8"
+                "8",
+                "3"
             ]
         },
         "Kohuwala": {
@@ -31398,7 +31310,7 @@
                 "8"
             ]
         },
-        "Attidiya PSS and Dehiwala PSS": {
+        "Attidiya Pss And Dehiwala Pss": {
             "Group": [
                 "V"
             ],
@@ -31406,7 +31318,7 @@
                 "6"
             ]
         },
-        "LECO Araes: Colombo - Horana road from Boralesgamuwa park to Woodland Ave via Boralesgamuwa and Pepiliyana Junctions": {
+        "": {
             "Group": [
                 "W"
             ],
@@ -31414,7 +31326,7 @@
                 "7"
             ]
         },
-        "Dehiwala road from Boralasgamu wewa to Bellanthota Junction via Boralesgamuwa junction": {
+        "Dehiwala Road From Boralasgamu Wewa To Bellanthota Junction Via Boralesgamuwa Junction": {
             "Group": [
                 "W"
             ],
@@ -31438,7 +31350,7 @@
                 "7"
             ]
         },
-        "bodirajarama Rd": {
+        "Bodirajarama Road": {
             "Group": [
                 "W"
             ],
@@ -31446,7 +31358,7 @@
                 "7"
             ]
         },
-        "Old Kesbewa road from Raththanapitiya towards Delkada": {
+        "Old Kesbewa Road From Raththanapitiya Towards Delkada": {
             "Group": [
                 "W"
             ],
@@ -31454,7 +31366,7 @@
                 "7"
             ]
         },
-        "Campus road from Raththanapitiya to Wijerama": {
+        "Campus Road From Raththanapitiya To Wijerama": {
             "Group": [
                 "W"
             ],
@@ -31478,7 +31390,7 @@
                 "7"
             ]
         },
-        "Pirivena road": {
+        "Pirivena Road": {
             "Group": [
                 "W"
             ],
@@ -31486,7 +31398,7 @@
                 "7"
             ]
         },
-        "Embillawatta road": {
+        "Embillawatta Road": {
             "Group": [
                 "W"
             ],
@@ -31494,7 +31406,7 @@
                 "7"
             ]
         },
-        "gramasanwardana road and all connected by roads": {
+        "Gramasanwardana Road And All Connected By Roads": {
             "Group": [
                 "W"
             ],
@@ -31618,7 +31530,7 @@
                 "G-F3"
             ]
         },
-        "Mayura place": {
+        "Mayura Roadace": {
             "Group": [
                 "S"
             ],
@@ -31634,7 +31546,7 @@
                 "G-F4"
             ]
         },
-        "Kirula Rd": {
+        "Kirula Road": {
             "Group": [
                 "S"
             ],
@@ -31642,7 +31554,7 @@
                 "G-F8"
             ]
         },
-        "Pathiba Rd": {
+        "Pathiba Road": {
             "Group": [
                 "S"
             ],
@@ -31650,7 +31562,7 @@
                 "G-F8"
             ]
         },
-        "park Rd": {
+        "Park Road": {
             "Group": [
                 "S"
             ],
@@ -31658,7 +31570,7 @@
                 "G-F8"
             ]
         },
-        "Galle road": {
+        "Galle Road": {
             "Group": [
                 "S"
             ],
@@ -31666,7 +31578,7 @@
                 "G-F9"
             ]
         },
-        "statoin rd": {
+        "Statoin Road": {
             "Group": [
                 "S"
             ],
@@ -31742,7 +31654,7 @@
                 "M-F19"
             ]
         },
-        "crescat": {
+        "Crescat": {
             "Group": [
                 "T"
             ],
@@ -31750,7 +31662,7 @@
                 "M-F2"
             ]
         },
-        "R A De mel Mw": {
+        "R A De Mel Mw": {
             "Group": [
                 "T"
             ],
@@ -31758,7 +31670,7 @@
                 "M-F2"
             ]
         },
-        "Nawam mw": {
+        "Nawam Mw": {
             "Group": [
                 "T"
             ],
@@ -31766,7 +31678,7 @@
                 "M-F2"
             ]
         },
-        "Union Place": {
+        "Union Roadace": {
             "Group": [
                 "T"
             ],
@@ -31774,7 +31686,7 @@
                 "M-F2"
             ]
         },
-        "Malay st": {
+        "Malay St": {
             "Group": [
                 "T"
             ],
@@ -31782,7 +31694,7 @@
                 "M-F3,F4,F7"
             ]
         },
-        "Kew road": {
+        "Kew Road": {
             "Group": [
                 "T"
             ],
@@ -31790,7 +31702,7 @@
                 "M-13"
             ]
         },
-        "Vauxhall lane": {
+        "Vauxhall Lane": {
             "Group": [
                 "T"
             ],
@@ -31798,7 +31710,7 @@
                 "M-13"
             ]
         },
-        "Kumara rathnam road": {
+        "Kumara Rathnam Road": {
             "Group": [
                 "T"
             ],
@@ -31806,7 +31718,7 @@
                 "M-13"
             ]
         },
-        "Sir Chittampalam gardnier mawatha": {
+        "Sir Chittampalam Gardnier Mawatha": {
             "Group": [
                 "T"
             ],
@@ -31814,7 +31726,7 @@
                 "M-13"
             ]
         },
-        "8TH LANE": {
+        "8Th Lane": {
             "Group": [
                 "T"
             ],
@@ -31927,8 +31839,7 @@
                 "U"
             ],
             "Feeder No": [
-                "D - F12",
-                "D - F8"
+                "D - F12"
             ]
         },
         "Narahenpita": {
@@ -31946,6 +31857,14 @@
             ],
             "Feeder No": [
                 "D - F12",
+                "D - F8"
+            ]
+        },
+        "Some Areas In Borella": {
+            "Group": [
+                "U"
+            ],
+            "Feeder No": [
                 "D - F8"
             ]
         }
@@ -31998,8 +31917,7 @@
                 "V"
             ],
             "Feeder No": [
-                "I-F18",
-                "I-F1"
+                "I-F18"
             ]
         },
         "Darmpala mawatha": {
@@ -32010,7 +31928,15 @@
                 "I-F18"
             ]
         },
-        "Braybrook plce": {
+        "Union Roadace": {
+            "Group": [
+                "V"
+            ],
+            "Feeder No": [
+                "I-F1"
+            ]
+        },
+        "Braybrook Roadce": {
             "Group": [
                 "V"
             ],
@@ -32025,19 +31951,20 @@
                 "W"
             ],
             "Feeder No": [
-                "N-F 10",
-                "N-F 9"
+                "N-F 9",
+                "N-F 10"
             ]
         },
-        "Union place": {
+        "Union Roadace": {
             "Group": [
                 "W"
             ],
             "Feeder No": [
+                "N-F18",
                 "N-F8"
             ]
         },
-        "Sir james  peiris Mw": {
+        "Sir James  Peiris Mw": {
             "Group": [
                 "W"
             ],
@@ -32045,15 +31972,7 @@
                 "N-F18"
             ]
         },
-        "vauxhall street": {
-            "Group": [
-                "W"
-            ],
-            "Feeder No": [
-                "N-F18"
-            ]
-        },
-        "union place": {
+        "Vauxhall Street": {
             "Group": [
                 "W"
             ],

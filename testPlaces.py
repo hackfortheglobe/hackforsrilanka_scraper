@@ -6,7 +6,8 @@ import pandas as pd
 
 base = Path(__file__).resolve().parent
 loc = os.path.join(base,'assets','ceb_2022-04-25-27.pdf')
-print(extract_places(loc))
+print(loc)
+# print(extract_places(loc)[1])
 
 # json_places = extract_places(loc)
 #

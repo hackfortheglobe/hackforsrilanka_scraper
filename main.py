@@ -111,7 +111,7 @@ def get_dates(pdf_local_path):
     dates= re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\D\d\d\D)',pdf_local_path)
     if len(dates)==1:
         date = ''.join(dates[0])
-        return f'{date} 00:00:00'
+        return [f'{date} 00:00:00']
     start = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[0]))[0])[-2:])
     end = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[1]))[0])[-2:])
     #putting pdf dates into datetime format  by using if else statemnts
@@ -177,6 +177,7 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
                 groups = row[all_groups[1][1]].split(',')
                 for group in groups:
                     for date in get_dates(pdf_local_path):
+                        print(get_dates(pdf_local_path))
                         schedules['schedules'].append({'Group':group.strip(),'Starting Period':f'{date} {timings[0]}','Ending Period':f'{date} {timings[-1]}'})
         return schedules
 
@@ -278,6 +279,10 @@ def extract_places(pdf_local_path):
             if row[1][0] in final_dic.keys():
                 # looping through places to save data
                 for place in row[1][2]:
+                    place = place.title()
+                    place = re.sub(r'\srd',' Road',place,flags=re.IGNORECASE)
+                    place = re.sub(r'\spl',' Road',place,flags=re.IGNORECASE)
+                    place = re.sub(r'(\s)?LECO.+(\.)?','',place,flags=re.IGNORECASE)
                     # checking if place is already stored or not.. as key of District
                     if place in final_dic['{}'.format(row[1][0])].keys():
                         final_dic['{}'.format(row[1][0])][place]['Group'].append(group.split()[1])
