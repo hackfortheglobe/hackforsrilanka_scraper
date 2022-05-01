@@ -1,13 +1,16 @@
-from main import extract_places
+from main import extract_data
 import os
 from pathlib import Path
 import json
 import pandas as pd
 
 base = Path(__file__).resolve().parent
-loc = os.path.join(base,'assets','ceb_2022-04-25-27.pdf')
+loc = os.path.join(base,'assets','ceb_2022-04-25to27.pdf')
 print(loc)
-# print(extract_places(loc)[1])
+
+extraction = extract_data(loc)
+print(extraction[0])
+print(extraction[1])
 
 # json_places = extract_places(loc)
 #

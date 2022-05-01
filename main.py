@@ -121,21 +121,15 @@ def get_dates(pdf_local_path):
     elif start>sl_time.today().day and start<end:
         start_date = dt(2022,sl_time.today().month, start)
         end_date = dt(2022,sl_time.today().month+1, end)
-
     else:
         start_date = dt(2022,sl_time.today().month,start)
         end_date = dt(2022,sl_time.today().month, end)
     return date_range(start_date,end_date)
 
 
-def extract_schedules(localDocPath):
+def old_extract_schedules(localDocPath):
     tables = camelot.read_pdf(localDocPath)
-    dataframe = process_tables(tables)
-    # convert to json format {"group":..., "start_time":..., "end_time":...}
-    json_out = dataframe.reset_index(drop=True).to_json(orient='records')
-    return json_out
-
-def process_tables(tables):
+    
     logger.info("Processing Tables")
     dff = pd.DataFrame()
     for ii in range(2):
@@ -162,26 +156,12 @@ def process_tables(tables):
                 dff = dff.append(pd.DataFrame(data={'group_name': ele, 'starting_period': [df.iloc[jj]['starting_period']],
                                                     'ending_period': [df.iloc[jj]['ending_period']]
                                                     }))
-        return dff
-def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
-    # converting schedues data from pdf to dictionary form
-    schedules = {'schedules':[]}
-    for table_no in range(0,len(all_groups)):
-        #passing rows of current table
-        for index,row in data_dic['data{}'.format(table_no)].iterrows():
-            joined_row = ' '.join(row.values)
-            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
-            time_matches = time_patt.findall(joined_row)
-            timings = [time_match for time_match in time_matches]
-            if timings:
-                groups = row[all_groups[1][1]].split(',')
-                for group in groups:
-                    for date in get_dates(pdf_local_path):
-                        print(get_dates(pdf_local_path))
-                        schedules['schedules'].append({'Group':group.strip(),'Starting Period':f'{date} {timings[0]}','Ending Period':f'{date} {timings[-1]}'})
-        return schedules
 
-def extract_places(pdf_local_path):
+    # convert to json format {"group":..., "start_time":..., "end_time":...}
+    json_out = dff.reset_index(drop=True).to_json(orient='records')
+    return json_out
+
+def extract_data(pdf_local_path):
     # Reading the pdf file
     tables = camelot.read_pdf(pdf_local_path,pages='all')
 
@@ -215,8 +195,37 @@ def extract_places(pdf_local_path):
                 if letter in x:
                     groups.append(letter)
     groups = sorted(list(set(groups)))
+    
+    
     schedules = extract_schedule_data(data_dic,all_groups,groups,pdf_local_path)
+    places = extract_places_data(data_dic,all_groups,groups,actual_groups)
 
+    return [places,schedules]
+
+
+def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
+    # converting schedues data from pdf to dictionary form
+    schedules = {'schedules':[]}
+    for table_no in range(0,len(all_groups)):
+        #passing rows of current table
+        for index,row in data_dic['data{}'.format(table_no)].iterrows():
+            joined_row = ' '.join(row.values)
+            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
+            time_matches = time_patt.findall(joined_row)
+            timings = [time_match for time_match in time_matches]
+            if timings:
+                groups = row[all_groups[1][1]].split(',')
+                for group in groups:
+                    for date in get_dates(pdf_local_path):
+                        schedules['schedules'].append({'group':group.strip(),'starting_period':f'{date} {timings[0]}','ending_period':f'{date} {timings[-1]}'})
+    
+    # Save into a file for dev
+    if dev_mode:
+        with open('./outputs/extracted_places.json', 'w') as outfile:
+            json.dump(schedules, outfile, indent=4)
+    return schedules
+
+def extract_places_data(data_dic,all_groups,groups,actual_groups):
     main_dict = {}
     group_count = 0
     # settings indexes,removing extra row, assigning groups
@@ -233,7 +242,7 @@ def extract_places(pdf_local_path):
                 elif 'Affected' in col:
                     col_check.append(True)
                 elif 'Feeder' in col:
-                        col_check.append(True)
+                    col_check.append(True)
                 else:
                     col_check.append(False)
             # Starting a New Group
@@ -285,27 +294,29 @@ def extract_places(pdf_local_path):
                     place = re.sub(r'(\s)?LECO.+(\.)?','',place,flags=re.IGNORECASE)
                     # checking if place is already stored or not.. as key of District
                     if place in final_dic['{}'.format(row[1][0])].keys():
-                        final_dic['{}'.format(row[1][0])][place]['Group'].append(group.split()[1])
-                        final_dic['{}'.format(row[1][0])][place]['Feeder No'].append(row[1][1])
+                        final_dic['{}'.format(row[1][0])][place]['groups'].append(group.split()[1])
+                        final_dic['{}'.format(row[1][0])][place]['feeders'].append(row[1][1])
 
                         # saving only unique groups and feeder No
-                        final_dic['{}'.format(row[1][0])][place]['Group'] = list(set(final_dic['{}'.format(row[1][0])][place]['Group']))
-                        final_dic['{}'.format(row[1][0])][place]['Feeder No'] = list(set(final_dic['{}'.format(row[1][0])][place]['Feeder No']))
+                        final_dic['{}'.format(row[1][0])][place]['groups'] = list(set(final_dic['{}'.format(row[1][0])][place]['groups']))
+                        final_dic['{}'.format(row[1][0])][place]['feeders'] = list(set(final_dic['{}'.format(row[1][0])][place]['feeders']))
 
                     # if place is not saved yet
                     else:
-                        final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
+                        final_dic['{}'.format(row[1][0])][place] = {'groups':[(group.split()[1])],'feeders':[row[1][1]]}
             else:
                 final_dic['{}'.format(row[1][0])] = {}
                 for place in row[1][2]:
-                    final_dic['{}'.format(row[1][0])][place] = {'Group':[(group.split()[1])],'Feeder No':[row[1][1]]}
+                    final_dic['{}'.format(row[1][0])][place] = {'groups':[(group.split()[1])],'feeders':[row[1][1]]}
 
-    # Save into a file
+    # Save into a file for dev
     if dev_mode:
-        with open('places_data.json', 'w') as outfile:
+        with open('./outputs/extracted_schedules.json', 'w') as outfile:
             json.dump(final_dic, outfile, indent=4)
 
-    return [final_dic,schedules]
+    return final_dic
+
+
 
 def logFinish(reason):
     logger.info("========> %s" % (reason))
@@ -339,23 +350,39 @@ if __name__ == "__main__":
     logger.info("Saving Google Doc into " + localDocPath)
     download_file_from_google_drive(targetId, localDocPath)
 
-    # Extract places
-    json_places = extract_places(localDocPath)
+    # Detect dates
+    #informed_days = get_dates(localDocPath)
+    #logger.info("Informed days: %s" % (informed_days))
+
+    # Extract data
+    extracted_data = extract_data(localDocPath)
+    json_places = extracted_data[0]
+    json_schedules = extracted_data[1]
+
+    # Print extracted places
     gss_count = len(json_places)
     area_count = 0
     for gss_name in json_places.keys():
         current_gss_areas = len(json_places[gss_name])
         area_count = area_count + current_gss_areas
-    logger.info("Obtained places: %s areas in %s gss" % (area_count, gss_count))
-    #logger.info(json_places)
+    logger.info("Extracted places: %s areas in %s gss" % (area_count, gss_count))
+    logger.info(json_places)
+
+    # Print extracted schedules
+    schedules_count = len(json_schedules["schedules"])
+    logger.info("Extracted schedules: %s power cuts" % (schedules_count))
+    logger.info(json_schedules)
+
+
+
 
     #TODO: Pushing locations to our API
 
     # Extract schedules
-    json_schedules = extract_schedules(localDocPath)
+    json_schedules = old_extract_schedules(localDocPath)
     dict_schedules = {"schedules": json.loads(json_schedules)}
     schedules_count = len(json_schedules)
-    logger.info("Obtained schedules: %s new items" % (schedules_count))
+    logger.info("Old schedules: %s new items" % (schedules_count))
     #logger.info(dict_schedules)
 
 
