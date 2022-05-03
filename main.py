@@ -17,8 +17,15 @@ import re
 from pathlib import Path
 import string
 import numpy as np
-from datetime import datetime as dt
 from datetime import datetime as dt,timedelta
+# pdfminer imports to extrcat dates from pdf
+from io import StringIO
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfdocument import PDFDocument
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfparser import PDFParser
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from storage import Storage
@@ -107,29 +114,38 @@ def date_range(start, end):
     return days
 
 #getting the dates from pdf file name
-def get_dates(pdf_local_path):
-    dates= re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\D\d\d\D)',pdf_local_path)
-    if len(dates)==1:
-        date = ''.join(dates[0])
-        return [f'{date} 00:00:00']
-    start = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[0]))[0])[-2:])
-    end = int(''.join(re.findall(r'(\d\d\d\d[-.]\d\d[-.]\d\d)|(\d+)',''.join(dates[1]))[0])[-2:])
-    #putting pdf dates into datetime format  by using if else statemnts
-    if start<end and start<sl_time.today().day:
-        start_date = dt(2022,sl_time.today().month+1, start)
-        end_date = dt(2022,sl_time.today().month+1, end)
-    elif start>sl_time.today().day and start<end:
-        start_date = dt(2022,sl_time.today().month, start)
-        end_date = dt(2022,sl_time.today().month+1, end)
+def get_dates(localDocPath):
+    months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    output_string = StringIO()
+    with open(localDocPath, 'rb') as in_file:
+        parser = PDFParser(in_file)
+        doc = PDFDocument(parser)
+        rsrcmgr = PDFResourceManager()
+        device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        for page in PDFPage.create_pages(doc):
+            interpreter.process_page(page)
+    pdf_data= output_string.getvalue()
+    dates_line = re.findall(r'Demand Management Schedule.+\b\d{2}\D+\b',pdf_data)
+    dates = re.findall(r'\b\d{2}\D',dates_line[0])
+    months = re.findall('|'.join(months),dates_line[0])
+    dates = list(map(lambda x: re.findall(r'\d{2}',x)[0],dates))
+    if len(dates) == 1:
+        return [dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')]
     else:
-        start_date = dt(2022,sl_time.today().month,start)
-        end_date = dt(2022,sl_time.today().month, end)
-    return date_range(start_date,end_date)
+        if len(months)==1:
+            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
+            end_date = dt.strptime(f'{months[0][0:3]} {dates[1]} 2022','%b %d %Y')
+            return date_range(start_date,end_date)
+        else:
+            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
+            end_date = dt.strptime(f'{months[1][0:3]} {dates[1]} 2022','%b %d %Y')
+            return date_range(start_date,end_date)
 
 
 def old_extract_schedules(localDocPath):
     tables = camelot.read_pdf(localDocPath)
-    
+
     logger.info("Processing Tables")
     dff = pd.DataFrame()
     for ii in range(2):
@@ -195,8 +211,8 @@ def extract_data(pdf_local_path):
                 if letter in x:
                     groups.append(letter)
     groups = sorted(list(set(groups)))
-    
-    
+
+
     schedules = extract_schedule_data(data_dic,all_groups,groups,pdf_local_path)
     places = extract_places_data(data_dic,all_groups,groups,actual_groups)
 
@@ -217,8 +233,10 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
                 groups = row[all_groups[1][1]].split(',')
                 for group in groups:
                     for date in get_dates(pdf_local_path):
-                        schedules['schedules'].append({'group':group.strip(),'starting_period':f'{date} {timings[0]}','ending_period':f'{date} {timings[-1]}'})
-    
+                        schedules['schedules'].append({'group_name':group.strip(),
+                        'starting_period':f'{date.strftime("%d/%m/%Y")} {timings[0]}',
+                        'ending_period':f'{date.strftime("%d/%m/%Y")} {timings[-1]}'})
+
     # Save into a file for dev
     if dev_mode:
         with open('./outputs/extracted_places.json', 'w') as outfile:
@@ -291,7 +309,10 @@ def extract_places_data(data_dic,all_groups,groups,actual_groups):
                     place = place.title()
                     place = re.sub(r'\srd',' Road',place,flags=re.IGNORECASE)
                     place = re.sub(r'\spl',' Road',place,flags=re.IGNORECASE)
-                    place = re.sub(r'(\s)?LECO.+(\.)?','',place,flags=re.IGNORECASE)
+                    place = re.sub(r'\bleco\s(areas|araes).+\.?','',place,flags=re.IGNORECASE)
+                    # skipping place which is empty after cleaning the place
+                    if not len(place):
+                        continue
                     # checking if place is already stored or not.. as key of District
                     if place in final_dic['{}'.format(row[1][0])].keys():
                         final_dic['{}'.format(row[1][0])][place]['groups'].append(group.split()[1])
