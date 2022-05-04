@@ -234,8 +234,8 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
                 for group in groups:
                     for date in get_dates(pdf_local_path):
                         schedules['schedules'].append({'group_name':group.strip(),
-                        'starting_period':f'{date.strftime("%d/%m/%Y")} {timings[0]}',
-                        'ending_period':f'{date.strftime("%d/%m/%Y")} {timings[-1]}'})
+                        'starting_period':f'{date.strftime("%Y-%m-%d")} {timings[0].strip()}',
+                        'ending_period':f'{date.strftime("%Y-%m-%d")} {timings[-1].strip()}'})
 
     # Save into a file for dev
     if dev_mode:
