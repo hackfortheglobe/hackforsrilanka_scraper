@@ -107,15 +107,31 @@ def save_response_content(response, destination):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
 
-#this function gives all days between two dates in datetime format
-def date_range(start, end):
-    delta = end - start  # as timedelta
-    days = [start + timedelta(days=i) for i in range(delta.days + 1)]
-    return days
 
-#getting the dates from pdf file name
+# Get the dates affecting the schedule
 def get_dates(localDocPath):
     months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    dates_line = extract_dates_line(localDocPath)
+    dates = re.findall(r'\b\d{2}\D',dates_line)
+    months = re.findall('|'.join(months),dates_line)
+    dates = list(map(lambda x: re.findall(r'\d{2}',x)[0],dates))
+    
+    if len(dates) == 1:
+        range = [dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')]
+    else:
+        if len(months)==1:
+            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
+            end_date = dt.strptime(f'{months[0][0:3]} {dates[1]} 2022','%b %d %Y')
+        else:
+            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
+            end_date = dt.strptime(f'{months[1][0:3]} {dates[1]} 2022','%b %d %Y')
+        range = get_dates_between(start_date,end_date)
+        
+    print("Document dates: ", range)
+    return range
+
+# Read the days affecting the schedule by reading the first line at the pdf
+def extract_dates_line(localDocPath):
     output_string = StringIO()
     with open(localDocPath, 'rb') as in_file:
         parser = PDFParser(in_file)
@@ -126,22 +142,15 @@ def get_dates(localDocPath):
         for page in PDFPage.create_pages(doc):
             interpreter.process_page(page)
     pdf_data= output_string.getvalue()
-    dates_line = re.findall(r'Demand Management Schedule.+\b\d{2}\D+\b',pdf_data)
-    dates = re.findall(r'\b\d{2}\D',dates_line[0])
-    months = re.findall('|'.join(months),dates_line[0])
-    dates = list(map(lambda x: re.findall(r'\d{2}',x)[0],dates))
-    if len(dates) == 1:
-        return [dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')]
-    else:
-        if len(months)==1:
-            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
-            end_date = dt.strptime(f'{months[0][0:3]} {dates[1]} 2022','%b %d %Y')
-            return date_range(start_date,end_date)
-        else:
-            start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
-            end_date = dt.strptime(f'{months[1][0:3]} {dates[1]} 2022','%b %d %Y')
-            return date_range(start_date,end_date)
+    dates_line = re.findall(r'Demand Management Schedule.+\b\d{2}\D+\b',pdf_data)[0]
+    print ("Document title: ", dates_line)
+    return dates_line
 
+# Gives all days between two dates in datetime format
+def get_dates_between(start, end):
+    delta = end - start  # as timedelta
+    days = [start + timedelta(days=i) for i in range(delta.days + 1)]
+    return days
 
 def old_extract_schedules(localDocPath):
     tables = camelot.read_pdf(localDocPath)
@@ -222,6 +231,7 @@ def extract_data(pdf_local_path):
 def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
     # converting schedues data from pdf to dictionary form
     schedules = {'schedules':[]}
+    date_range = get_dates(pdf_local_path)
     for table_no in range(0,len(all_groups)):
         #passing rows of current table
         for index,row in data_dic['data{}'.format(table_no)].iterrows():
@@ -232,7 +242,7 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
             if timings:
                 groups = row[all_groups[1][1]].split(',')
                 for group in groups:
-                    for date in get_dates(pdf_local_path):
+                    for date in date_range:
                         schedules['schedules'].append({'group_name':group.strip(),
                         'starting_period':f'{date.strftime("%Y-%m-%d")} {timings[0].strip()}',
                         'ending_period':f'{date.strftime("%Y-%m-%d")} {timings[-1].strip()}'})
@@ -387,12 +397,12 @@ if __name__ == "__main__":
         current_gss_areas = len(json_places[gss_name])
         area_count = area_count + current_gss_areas
     logger.info("Extracted places: %s areas in %s gss" % (area_count, gss_count))
-    logger.info(json_places)
+    #logger.info(json_places)
 
     # Print extracted schedules
     schedules_count = len(json_schedules["schedules"])
     logger.info("Extracted schedules: %s power cuts" % (schedules_count))
-    logger.info(json_schedules)
+    #logger.info(json_schedules)
 
     # Sucessful finish
     logFinish("Scraper finished successfully!")
