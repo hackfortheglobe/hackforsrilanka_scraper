@@ -239,7 +239,7 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
 
     # Save into a file for dev
     if dev_mode:
-        with open('./outputs/extracted_places.json', 'w') as outfile:
+        with open('./outputs/extracted_schedules.json', 'w') as outfile:
             json.dump(schedules, outfile, indent=4)
     return schedules
 
@@ -332,7 +332,7 @@ def extract_places_data(data_dic,all_groups,groups,actual_groups):
 
     # Save into a file for dev
     if dev_mode:
-        with open('./outputs/extracted_schedules.json', 'w') as outfile:
+        with open('./outputs/extracted_places.json', 'w') as outfile:
             json.dump(final_dic, outfile, indent=4)
 
     return final_dic
@@ -394,12 +394,12 @@ if __name__ == "__main__":
     logger.info("Extracted schedules: %s power cuts" % (schedules_count))
     logger.info(json_schedules)
 
+    # Sucessful finish
+    logFinish("Scraper finished successfully!")
 
+    # Death old code
 
-
-    #TODO: Pushing locations to our API
-
-    # Extract schedules
+    # Extract schedules (old way)
     json_schedules = old_extract_schedules(localDocPath)
     dict_schedules = {"schedules": json.loads(json_schedules)}
     schedules_count = len(json_schedules)
