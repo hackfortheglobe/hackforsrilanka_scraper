@@ -257,26 +257,33 @@ def extract_data(pdf_local_path):
 
     return [places,schedules]
 
-
 def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
     # converting schedues data from pdf to dictionary form
     schedules = {'schedules':[]}
     date_range = get_dates(pdf_local_path)
+    print("Document schedule tables:",len(all_groups))
     for table_no in range(0,len(all_groups)):
         #passing rows of current table
-        for index,row in data_dic['data{}'.format(table_no)].iterrows():
+        current_table = data_dic['data{}'.format(table_no)]
+        print("Document schedule table #",table_no + 1," has ",len(current_table)," data rows.")
+        for index,row in current_table.iterrows():
             joined_row = ' '.join(row.values)
             time_patt = re.compile(r'\s\d?\d.\d{2}\s')
             time_matches = time_patt.findall(joined_row)
             timings = [time_match for time_match in time_matches]
             if timings:
-                groups = row[all_groups[1][1]].split(',')
+                groups = []
+                group_field = row[all_groups[1][1]]
+                # Split groups: can be comma separate or all together
+                if ',' in group_field:
+                    groups = group_field.split(',')
+                else:
+                    groups = list(group_field)
                 for group in groups:
                     for date in date_range:
                         schedules['schedules'].append({'group_name':group.strip(),
                         'starting_period':f'{date.strftime("%Y-%m-%d")} {timings[0].strip()}',
                         'ending_period':f'{date.strftime("%Y-%m-%d")} {timings[-1].strip()}'})
-
     # Save into a file for dev
     if dev_mode:
         with open('./outputs/extracted_schedules.json', 'w') as outfile:
