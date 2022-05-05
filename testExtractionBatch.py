@@ -20,7 +20,8 @@ pdfFileNames = ["ceb_2022-04-09",
     "ceb_2022-04-18",
     "ceb_2022-04-25to27",
     "ceb_2022-04-28to30",
-    "ceb_2022-05-01to04"]
+    "ceb_2022-05-01to04",
+    "ceb_2022-05-05"]
 
 def add_to_summary(text_to_append):
     print(text_to_append)
@@ -95,7 +96,7 @@ for pdfFileName in pdfFileNames:
     csvPath = os.path.join(base,'outputs', pdfFileName + "_schedules" + '.csv')
     data = []
     for schedule in json_schedules["schedules"]:
-        row = {"group": schedule["group"], "starting_period": schedule["starting_period"], "endinging_period": schedule["starting_period"]}
+        row = {"group_name": schedule["group_name"], "starting_period": schedule["starting_period"], "endinging_period": schedule["starting_period"]}
         data.append(row)
     df = pd.DataFrame(data)
     df.to_csv (csvPath, index = None)
