@@ -115,7 +115,7 @@ def get_dates(localDocPath):
     dates = re.findall(r'\b\d{2}\D',dates_line)
     months = re.findall('|'.join(months),dates_line)
     dates = list(map(lambda x: re.findall(r'\d{2}',x)[0],dates))
-    
+
     if len(dates) == 1:
         range = [dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')]
     else:
@@ -126,7 +126,7 @@ def get_dates(localDocPath):
             start_date = dt.strptime(f'{months[0][0:3]} {dates[0]} 2022','%b %d %Y')
             end_date = dt.strptime(f'{months[1][0:3]} {dates[1]} 2022','%b %d %Y')
         range = get_dates_between(start_date,end_date)
-        
+
     print("Document dates: ", range)
     return range
 
@@ -145,6 +145,36 @@ def extract_dates_line(localDocPath):
     dates_line = re.findall(r'Demand Management Schedule.+\b\d{2}\D+\b',pdf_data)[0]
     print ("Document title: ", dates_line)
     return dates_line
+
+def cleaned_areas(main_dict):
+    for key,value in main_dict.items():
+        count=0
+        for places in value['Affected area']:
+            places = [ x.strip() for x in places.replace("\n", "").split(',')]
+            places = list(map(lambda x: re.sub(r'\srd(\b|\s)',' Road ',x,flags=re.IGNORECASE),places))
+            places = list(map(lambda x: re.sub(r'\spl(\b|\s)',' Place',x,flags=re.IGNORECASE),places))
+            places = list(filter(lambda x: x if 'colony' not in x else None,places))
+            places = list(map(lambda x: re.sub(r'[.]?(\w|\s|^\.|\b)+\bleco\b(\w|\s|:|\(|\))+[.]?','',x,flags=re.IGNORECASE),places))
+            places = list(map(lambda x: x.capitalize(),places))
+            main_dict[key]['Affected area'][count] = places
+            count+=1
+    return main_dict
+
+def reset_index(main_dict):
+    for group,table in main_dict.items():
+        table.reset_index(drop=True,inplace=True)
+    return main_dict
+
+def fix_multiple_row(main_dict):
+    for table in main_dict.values():
+        table['GSS'][table['GSS']==''] = np.NaN
+        table['Feeder No'][table['Feeder No']==''] = np.NaN
+        table['GSS'].fillna(method='ffill',inplace=True)
+        table['Feeder No'].fillna(method='ffill',inplace=True)
+    return main_dict
+
+
+
 
 # Gives all days between two dates in datetime format
 def get_dates_between(start, end):
@@ -256,10 +286,27 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
 def extract_places_data(data_dic,all_groups,groups,actual_groups):
     main_dict = {}
     group_count = 0
+    not_found=True
     # settings indexes,removing extra row, assigning groups
     for table_no in range(len(all_groups),len(data_dic)):
         # it checks whether tht table has 3 cols
         # it rules out of adding unsymmetrical data to group which just got processed
+        if data_dic['data{}'.format(table_no)].shape[1] != 3 or not_found:
+            col_check=[]
+            for col in data_dic['data{}'.format(table_no)].iloc[0].values:
+                if 'GSS' in col:
+                    col_check.append(True)
+                elif 'Affected' in col:
+                    col_check.append(True)
+                elif 'Feeder' in col:
+                    col_check.append(True)
+                else:
+                    col_check.append(False)
+            if all(col_check):
+                not_found =False
+            else:
+                not_found=True
+                continue
 
         if data_dic['data{}'.format(table_no)].shape[1] == 3:
             # it checks whether the data is countinuing for last group or data for new group
@@ -294,19 +341,13 @@ def extract_places_data(data_dic,all_groups,groups,actual_groups):
                 data_dic['data{}'.format(table_no)].columns = ['GSS','Feeder No','Affected area']
                 main_dict[last_group] = pd.concat([main_dict[last_group],data_dic['data{}'.format(table_no)]])
 
-    # Resetting index
-    for group,table in main_dict.items():
-        table.reset_index(drop=True)
-    # Cleaning new lines ('/n') and splitting it using separator (',')
-    for table in main_dict.values():
-        table['Affected area'] = table['Affected area'].apply(lambda x : list(filter(None,[y.strip() for y in x.replace("\n", "").split(',')])))
-        table['GSS'] = table['GSS'].apply(lambda x : x.replace('\n',''))
-    # Fixing multiple rows issue in single row
-    for table in main_dict.values():
-        table['GSS'][table['GSS']==''] = np.NaN
-        table['Feeder No'][table['Feeder No']==''] = np.NaN
-        table['GSS'].fillna(method='ffill')
-        table['Feeder No'].fillna(method='ffill')
+    # resetiing index to make data continous
+    main_dict = reset_index(main_dict)
+    # fixing multiple rows in same row
+    main_dict = fix_multiple_row(main_dict)
+
+    # cleaning areas here
+    main_dict = cleaned_areas(main_dict)
 
     # Creating final output as json dictionary
     final_dic = {}
@@ -316,10 +357,6 @@ def extract_places_data(data_dic,all_groups,groups,actual_groups):
             if row[1][0] in final_dic.keys():
                 # looping through places to save data
                 for place in row[1][2]:
-                    place = place.title()
-                    place = re.sub(r'\srd',' Road',place,flags=re.IGNORECASE)
-                    place = re.sub(r'\spl',' Road',place,flags=re.IGNORECASE)
-                    place = re.sub(r'\bleco\s(areas|araes).+\.?','',place,flags=re.IGNORECASE)
                     # skipping place which is empty after cleaning the place
                     if not len(place):
                         continue
@@ -340,7 +377,7 @@ def extract_places_data(data_dic,all_groups,groups,actual_groups):
                 for place in row[1][2]:
                     final_dic['{}'.format(row[1][0])][place] = {'groups':[(group.split()[1])],'feeders':[row[1][1]]}
 
-    # Save into a file for dev
+#     Save into a file for dev
     if dev_mode:
         with open('./outputs/extracted_places.json', 'w') as outfile:
             json.dump(final_dic, outfile, indent=4)
