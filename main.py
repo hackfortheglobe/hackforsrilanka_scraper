@@ -149,15 +149,21 @@ def extract_dates_line(localDocPath):
 def cleaned_areas(main_dict):
     for key,value in main_dict.items():
         count=0
-        for places in value['Affected area']:
+        for places,gss in value[['Affected area','GSS']].itertuples(index=False):
+            # cleaning GSS
+            gss = re.sub(r'(\b|\s)new_','',gss.replace("\n", ""),flags=re.IGNORECASE)
+            main_dict[key]['GSS'][count] = gss
+            # cleaning Affected Area
             places = [ x.strip() for x in places.replace("\n", "").split(',')]
             places = list(map(lambda x: re.sub(r'\srd(\b|\s)',' Road ',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: re.sub(r'\spl(\b|\s)',' Place',x,flags=re.IGNORECASE),places))
-            places = list(filter(lambda x: x if 'colony' not in x else None,places))
+            places = list(filter(lambda x: x if 'colony' or 'colonies' not in x.lower() else None,places))
+            places = list(map(lambda x: re.sub(r'(\b|\s)new_','',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: re.sub(r'[.]?(\w|\s|^\.|\b)+\bleco\b(\w|\s|:|\(|\))+[.]?','',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: x.capitalize(),places))
             main_dict[key]['Affected area'][count] = places
             count+=1
+
     return main_dict
 
 def reset_index(main_dict):
@@ -257,33 +263,26 @@ def extract_data(pdf_local_path):
 
     return [places,schedules]
 
+
 def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
     # converting schedues data from pdf to dictionary form
     schedules = {'schedules':[]}
     date_range = get_dates(pdf_local_path)
-    print("Document schedule tables:",len(all_groups))
     for table_no in range(0,len(all_groups)):
         #passing rows of current table
-        current_table = data_dic['data{}'.format(table_no)]
-        print("Document schedule table #",table_no + 1," has ",len(current_table)," data rows.")
-        for index,row in current_table.iterrows():
+        for index,row in data_dic['data{}'.format(table_no)].iterrows():
             joined_row = ' '.join(row.values)
             time_patt = re.compile(r'\s\d?\d.\d{2}\s')
             time_matches = time_patt.findall(joined_row)
             timings = [time_match for time_match in time_matches]
             if timings:
-                groups = []
-                group_field = row[all_groups[1][1]]
-                # Split groups: can be comma separate or all together
-                if ',' in group_field:
-                    groups = group_field.split(',')
-                else:
-                    groups = list(group_field)
+                groups = row[all_groups[1][1]].split(',')
                 for group in groups:
                     for date in date_range:
                         schedules['schedules'].append({'group_name':group.strip(),
                         'starting_period':f'{date.strftime("%Y-%m-%d")} {timings[0].strip()}',
                         'ending_period':f'{date.strftime("%Y-%m-%d")} {timings[-1].strip()}'})
+
     # Save into a file for dev
     if dev_mode:
         with open('./outputs/extracted_schedules.json', 'w') as outfile:
