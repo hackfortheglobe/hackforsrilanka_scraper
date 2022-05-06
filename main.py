@@ -154,10 +154,11 @@ def cleaned_areas(main_dict):
             gss = re.sub(r'(\b|\s)new_','',gss.replace("\n", ""),flags=re.IGNORECASE)
             main_dict[key]['GSS'][count] = gss
             # cleaning Affected Area
-            places = [ x.strip() for x in places.replace("\n", "").split(',')]
+            places = [ x.replace("\n", "").strip() for x in places.split(',')]
+            places = [x for x in places if len(x)>3]
             places = list(map(lambda x: re.sub(r'\srd(\b|\s)',' Road ',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: re.sub(r'\spl(\b|\s)',' Place',x,flags=re.IGNORECASE),places))
-            places = list(filter(lambda x: x if 'colony' or 'colonies' not in x.lower() else None,places))
+            places = [x for x in places if 'colony' not in x.lower() and 'colonies' not in x.lower()]
             places = list(map(lambda x: re.sub(r'(\b|\s)new_','',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: re.sub(r'[.]?(\w|\s|^\.|\b)+\bleco\b(\w|\s|:|\(|\))+[.]?','',x,flags=re.IGNORECASE),places))
             places = list(map(lambda x: x.capitalize(),places))
@@ -178,8 +179,6 @@ def fix_multiple_row(main_dict):
         table['GSS'].fillna(method='ffill',inplace=True)
         table['Feeder No'].fillna(method='ffill',inplace=True)
     return main_dict
-
-
 
 
 # Gives all days between two dates in datetime format
@@ -263,6 +262,42 @@ def extract_data(pdf_local_path):
 
     return [places,schedules]
 
+def clean_schedules_timings(timings):
+    timings1 = []
+    for time in timings:
+        print('Time :',time)
+        time = time.strip()
+        pattern = r'[:. ]'
+        if 'a.m' in time or 'p.m' in time:
+            time = re.split(pattern,time)
+            print('Time after regex : ',time)
+
+            print(f'time 0 {time[0]} time 1 {time[1]} time 2 {time[2]} time 3 {time[3]}')
+            # it is 12 hour format
+            if time[2] == "a" and int(time[0]) == "12":
+                timings1.append(f'00:{time[1]}')
+            # remove the AM
+            elif time[2] == "a":
+                timings1.append(time[0]+':'+time[1])
+                # Checking if last two elements of time
+                # is PM and first two elements are 12
+            elif time[2] == "p" and time[2] == "12":
+                timings1.append(f'12:{time[1]}')
+            else:
+                # add 12 to hours and remove PM
+                timings1.append(str(int(time[0]) + 12)+':'+time[1])
+    return timings1
+
+def timeformat_convert24_hr(timings):
+    if 'a.m' in timings[0] or 'p.m' in timings[0]:
+        # it is 12 hour format
+        timings = clean_schedules_timings(timings)
+        return timings
+    else:
+        # it is 24 hours format
+        timings = [timing.strip() for timing in timings]
+        return timings
+
 
 def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
     # converting schedues data from pdf to dictionary form
@@ -272,11 +307,20 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
         #passing rows of current table
         for index,row in data_dic['data{}'.format(table_no)].iterrows():
             joined_row = ' '.join(row.values)
-            time_patt = re.compile(r'\s\d?\d.\d{2}\s')
-            time_matches = time_patt.findall(joined_row)
-            timings = [time_match for time_match in time_matches]
+            timings = re.finditer(r'\s\d?\d[:.]\d{2}\s(a.m|p.m)?',joined_row)
+            print('Timings after match : ',timings)
+            timings = [i.group(0) for i in timings]
+            print('Timings after list : ',timings)
+            timings = timeformat_convert24_hr(timings)
+            print('Timings After func : ',timings)
             if timings:
-                groups = row[all_groups[1][1]].split(',')
+                if ',' in row[all_groups[1][1]]:
+                    groups = row[all_groups[1][1]].split(',')
+                else:
+                    if 'CC' in row[all_groups[1][1]]:
+                        continue
+                    else:
+                        groups = [group for group in row[all_groups[1][1]]]
                 for group in groups:
                     for date in date_range:
                         schedules['schedules'].append({'group_name':group.strip(),

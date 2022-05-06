@@ -5,7 +5,7 @@ import json
 import pandas as pd
 
 base = Path(__file__).resolve().parent
-loc = os.path.join(base,'assets','ceb_2022-04-25to27.pdf')
+loc = os.path.join(base,'assets','06th-08th May 2022.pdf')
 print(loc)
 
 extraction = extract_data(loc)
