@@ -21,7 +21,8 @@ pdfFileNames = ["ceb_2022-04-09",
     "ceb_2022-04-25to27",
     "ceb_2022-04-28to30",
     "ceb_2022-05-01to04",
-    "ceb_2022-05-05"]
+    "ceb_2022-05-05",
+    "ceb_2022-05-06to08"]
 
 def add_to_summary(text_to_append):
     print(text_to_append)

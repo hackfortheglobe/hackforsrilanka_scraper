@@ -265,14 +265,14 @@ def extract_data(pdf_local_path):
 def clean_schedules_timings(timings):
     timings1 = []
     for time in timings:
-        print('Time :',time)
+        #print('Time :',time)
         time = time.strip()
         pattern = r'[:. ]'
         if 'a.m' in time or 'p.m' in time:
             time = re.split(pattern,time)
-            print('Time after regex : ',time)
+            #print('Time after regex : ',time)
 
-            print(f'time 0 {time[0]} time 1 {time[1]} time 2 {time[2]} time 3 {time[3]}')
+            #print(f'time 0 {time[0]} time 1 {time[1]} time 2 {time[2]} time 3 {time[3]}')
             # it is 12 hour format
             if time[2] == "a" and int(time[0]) == "12":
                 timings1.append(f'00:{time[1]}')
@@ -308,11 +308,11 @@ def extract_schedule_data(data_dic,all_groups,groups,pdf_local_path):
         for index,row in data_dic['data{}'.format(table_no)].iterrows():
             joined_row = ' '.join(row.values)
             timings = re.finditer(r'\s\d?\d[:.]\d{2}\s(a.m|p.m)?',joined_row)
-            print('Timings after match : ',timings)
+            #print('Timings after match : ',timings)
             timings = [i.group(0) for i in timings]
-            print('Timings after list : ',timings)
+            #print('Timings after list : ',timings)
             timings = timeformat_convert24_hr(timings)
-            print('Timings After func : ',timings)
+            #print('Timings After func : ',timings)
             if timings:
                 if ',' in row[all_groups[1][1]]:
                     groups = row[all_groups[1][1]].split(',')
